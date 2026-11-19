@@ -164,3 +164,4 @@ P36 13:05 odpowiedź (Artur w pokoju): A — licznik „+N dalszych miejsc” ty
 P37 13:05 odpowiedź (Artur w pokoju): A — pewność w skali (wysoka czerwona, średnia pomarańczowa, niska żółta), napis przy pozycji w kolorze decyzji
 P38 13:05 odpowiedź (Artur w pokoju): A — w raporcie zostaje wiersz „wygaszone wyborem ładunku: N”
 P39 13:05 odpowiedź (Artur w pokoju): nic z ekranu nie wyrzucać
+13:06 Szef: P34–P39 odpowiedziane (Artur w pokoju, wszystkie A, P39 nic) → makieta R3 (ostatnia runda) do Programisty
