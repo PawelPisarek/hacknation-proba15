@@ -4,7 +4,7 @@
 
 | # | Historyjka | Ekran | KA |
 |---|---|---|---|
-| H1 | Wybór auta | E1 | KA4 |
+| H1 | Wybór auta lub własne zdjęcie | E1 | KA4, KA11 |
 | H2 | Wybór rodzaju towaru | E2 | KA3, KA5 |
 | H3 | Dobór wzorca i pasek „wzorzec niepewny” | E2 | KA1 |
 | H4 | Porównanie obok siebie z różnicą | E2 | KA6, KA7 |
@@ -14,6 +14,10 @@
 | H8 | „Brak zaznaczeń” na czystym aucie | E2 | KA3 |
 | H9 | Raport z auta | E4 | KA4 |
 | H10 | Wynik wiarygodny na trudniejszych danych | — | KA8 |
+
+## H1b. Własne zdjęcie (E1, P27)
+**Jako** operator RTG, **chcę** wczytać własne zdjęcie naczepy przyciskiem „wczytaj własne zdjęcie” obok dwóch aut pokazu, **żeby** sprawdzić narzędzie na aucie, którego akurat mam obraz.
+Kryteria: (1) przycisk obok dwóch aut pokazu; (2) wczytany plik .bmp daje wynik z tymi samymi zasadami: ≤ 5 zaznaczeń + „+N dalszych miejsc”, wzorzec dobrany sam (KA11, KA9); (3) dalej ta sama ścieżka: towar, decyzje, raport.
 
 ## H1. Wybór auta (E1)
 **Jako** operator RTG, **chcę** wczytać jedno z dwóch aut (A „z dodatkiem”, B „czyste”), **żeby** zacząć kontrolę bez przygotowań.

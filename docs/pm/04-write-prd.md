@@ -2,7 +2,7 @@
 
 **Author**: Projektant (zespół Hackathon) — z ustaleń Artura (produkt) i Pawła (technika)
 **Date**: 2026-11-19
-**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P26)
+**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P27)
 
 ## 1. Summary
 Narzędzie dla operatora RTG KAS: system sam porównuje obraz badanej naczepy z obrazem wzorcowej, pustej naczepy tego samego typu i zaznacza do 5 miejsc podejrzanych (najpewniejsze pierwsze). Operator na jednym ekranie z podziałem (wzorzec obok badanego) zatwierdza „do kontroli” albo odrzuca z powodem. Wynik trafia do raportu z auta. Dane: sztuczne obrazy .bmp (zdjęć KAS nie mamy); wynik z usługi na karcie OMENa (GTX 1050 4 GB).
@@ -31,7 +31,7 @@ Jeden segment: operator RTG (Służba Celno-Skarbowa) przy stanowisku na granicy
 ## 7. Solution
 
 ### 7.1 Ścieżka główna (demo ≤ 2 min, ustalenie Szefa; dwa auta, P18)
-1. Wybór auta (A: z dodatkiem, 7 miejsc → 5 + „+2 dalszych miejsc” — **udawane dane pokazu**; B: czyste).
+1. Wybór auta (A: z dodatkiem, 7 miejsc → 5 + „+2 dalszych miejsc” — **udawane dane pokazu**; B: czyste) albo wczytanie własnego zdjęcia (przycisk „wczytaj własne zdjęcie”, P27).
 2. Operator wybiera rodzaj zgłoszonego towaru (P19, P20, P23) — 6 grup + „nie wiem”.
 3. Wynik: wzorzec i badany obraz obok siebie z podświetloną różnicą (P15, P22), z boku lista zaznaczeń.
 4. Klik w pozycję listy pokazuje miejsce na obu obrazach (P22).
@@ -59,7 +59,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 ### 7.5 Opis makiety dla Programisty (ekrany i udawane dane)
 | Ekran | Zawartość | Udawane dane |
 |---|---|---|
-| E1 Wybór auta | dwa auta do wczytania | A „z dodatkiem”, B „czyste” |
+| E1 Wybór auta | dwa auta pokazu + przycisk „wczytaj własne zdjęcie” (P27) | A „z dodatkiem”, B „czyste” |
 | E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc” (**udawane dane pokazu**), jedna pozycja w podłodze z dopiskiem „typowe miejsce skrytki: podwójna podłoga” (P26); B: brak zaznaczeń, wzorzec W-PL-014 |
 | E3 Powód odrzucenia | lista 4 powodów | element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne |
 | E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje | numer kontroli sztuczny |
@@ -75,6 +75,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 - **KA8 (Z8):** FN na trudniejszym wariancie rośnie najwyżej o 10 pp, FP na czystych zostaje 0 („strojenie” = progi na łatwym wariancie; „nauka” = model z czystych, §5).
 - **KA9 (P21):** na ekranie zawsze ≤ 5 zaznaczeń + „+N dalszych miejsc”.
 - **KA10 (P26):** na aucie z dodatkiem w podłodze właściwa pozycja listy ma dopisek „typowe miejsce skrytki: podwójna podłoga”, bez osobnego okna.
+- **KA11 (P27):** własny plik .bmp wczytany przyciskiem „wczytaj własne zdjęcie” daje wynik z tymi samymi zasadami: ≤ 5 zaznaczeń + „+N dalszych miejsc”, wzorzec dobrany sam (z paskiem „wzorzec niepewny”, gdy trzeba).
 
 ### 7.7 Ryzyka
 - Limit 5 może ukryć skrytkę poza piątką — łagodzi „+N dalszych miejsc”.
