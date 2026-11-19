@@ -19,6 +19,8 @@ Co wchodzi do MVP i demo (jedno auto czyste + jedno z dodatkiem, P18, główna �
 ## W MVP wprost z P19
 Wybór zgłoszonego towaru z listy (plus „pusta naczepa”) jest w MVP, bo wynika z odpowiedzi Artura P19 — nie z założenia Z5. Bez wybranego towaru (albo przy „nie wiem”) nie wygaszamy niczego (P19). Wariant „pusta naczepa bez wyboru” **wchodzi do oceny czystych** z celem 0 zaznaczeń (Z3a, decyzja Szefa 11:32); do oceny czystych nie wchodzi tylko załadowana naczepa bez wyboru towaru.
 
+**P21 (Artur w pokoju 11:34), wymaganie MVP:** zawsze najwyżej 5 zaznaczeń na ekranie, najpewniejsze pierwsze — także przy „nie wiem” i bez wyboru towaru. Gdy system wie, że miejsc było więcej, pokazuje „+N dalszych miejsc”. „Nie wygaszamy niczego” znaczy tylko, że nie pomijamy miejsc z ładunkiem przy ocenianiu; ekran pokazuje 5 + licznik reszty.
+
 ## Pomysły (krok 2) i wybór Artura (moment (b), 11:25)
 Wybrane:
 1. **Dobór wzorca** — system sam szuka najbliższej pustej naczepy tego typu w bibliotece; gdy typu brak: najbliższa podobna + „wzorzec niepewny” (P6, P11, P19). **Wybór zgłoszonego towaru z listy jest częścią tego pomysłu i jest w MVP (P19).**
@@ -36,7 +38,7 @@ Najryzykowniejsze: **Z1 dobór wzorca**.
 | # | Założenie | Kategoria | Eksperyment | Kryterium |
 |---|---|---|---|---|
 | Z1 | System znajdzie właściwy wzorzec w bibliotece (**najryzykowniejsze**) | wykonalność | Na zbiorze testowym: dla każdego badanego obrazu sprawdzić, czy wybrany wzorzec to ten sam typ naczepy | trafność doboru zmierzona i podana; przy złym typie widoczne „wzorzec niepewny”; próg poda Programista po krzywej z przebiegu bazowego |
-| Z2 | Do 5 zaznaczeń wystarcza na złapanie dodatków | wartość | Policzyć FN przy limicie 5 | FN na zbiorze testowym podane obok FP; próg poda Programista po krzywej z przebiegu bazowego |
+| Z2 | Do 5 zaznaczeń wystarcza na złapanie dodatków | wartość | Policzyć FN przy limicie 5 (także przy „nie wiem”; licznik „+N dalszych miejsc” nie liczy się jako zaznaczenie) | FN na zbiorze testowym podane obok FP; próg poda Programista po krzywej z przebiegu bazowego |
 | Z3 | Czyste naczepy dostają 0 zaznaczeń (zadanie §6). Przebieg automatyczny i partiami odbywa się bez operatora, więc obowiązuje „nie wiem” (nic nie jest wygaszane); czyste obrazy z oceny wg §6 to puste naczepy (§3) | wykonalność | Dwa warianty: (a) **pusta naczepa bez wyboru towaru** — pusty wzorzec kontra pusty badany; (b) **załadowana naczepa z prawidłowym wyborem towaru** | w obu wariantach 0 zaznaczeń; krzywa próg → FP/FN raportowana osobno |
 | Z4 | Operator zdąży ocenić zaznaczenia w kilka minut (P2) | użyteczność | Demo: przejście 1 auta od wyboru towaru do raportu | główna ścieżka w demo ≤ 2 min (ustalenie Szefa) |
 | Z5 | Wybór zgłoszonego towaru z listy ogranicza zbędne ramki na zgodnym ładunku, nie ukrywając skrytek | wartość / ryzyko | Para: ten sam ładunek z i bez dodatku; porównać ramki przy wyborze towaru i bez wyboru | dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają; próg poda Programista po krzywej z przebiegu bazowego |
@@ -45,6 +47,11 @@ Najryzykowniejsze: **Z1 dobór wzorca**.
 | Z8 | Wynik na danych sztucznych z zakłóceniami (szum, przesunięcie) przenosi się na trudniejszy wariant zbioru | wiarygodność | „Strojenie” = dobór progów i parametrów na łatwym wariancie; „nauka” = model z obrazów czystych (§5). Stroić na łatwym, ocenić FP/FN na trudniejszym | FN na trudniejszym wariancie rośnie najwyżej o 10 punktów procentowych, a FP na czystych zostaje 0 |
 
 Te eksperymenty wracają w `/write-prd` i specu jako kryteria akceptacji i ryzyka.
+
+## Ryzyka do speca (z recenzji 1b R3 i P21)
+- Limit 5 przy „nie wiem” może ukryć prawdziwą skrytkę poza pierwszą piątką — łagodzi licznik „+N dalszych miejsc” (P21), ocenę FN liczymy na pełnej liście i na pierwszej piątce osobno.
+- Ocena czystych: jeśli poda załadowane czyste naczepy, bez wyboru towaru pojawią się fałszywe alarmy.
+- Różne rozumienie „wszystko” (nie pomijamy ładunku vs pokazujemy wszystko) — w specu opisać jedną regułą: 5 + licznik.
 
 ## Czego nie wiem o produkcie
 Pytania P2–P20 mają odpowiedź. Otwarte tylko założenia: liczba aut dziennie (P14); progi Z1, Z2 i Z5 wpisze Programista po krzywej z przebiegu bazowego (do tego czasu bez liczb).

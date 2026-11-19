@@ -83,3 +83,4 @@ P21 11:33 Artur: gdy towar „nie wiem” (albo nie wybrany), pokazujemy też na
 11:34 Projektant: 1b R3 pkt 1 — sekcja „W MVP wprost z P19” i Z3 poprawione w 02 (pusta bez wyboru wchodzi do oceny czystych), kosmetyka tabeli; P21 zadane Arturowi w pokoju (linia P21 z 11:33, ntfy już poszło)
 P21 11:34 odpowiedź (Artur w pokoju): zawsze najwyżej 5 zaznaczeń, najpewniejsze pierwsze; gdy system wie, że było więcej, pokazuje „+N dalszych miejsc”
 11:36 Szef: P21 odpowiedziane (Artur w pokoju 11:34) — 1b: Projektant wpisuje P21 i ryzyka R3 do 02, po meldunku ze skillem 1b zamknięte, start pytań (c)
+11:36 Projektant: 1b — P21 (5 + „+N dalszych miejsc”) i ryzyka R3 wpisane w docs/pm/02; 1b zamknięte, start pytań (c)
