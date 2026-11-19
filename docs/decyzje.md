@@ -104,3 +104,4 @@ P25 11:43 odpowiedź (Artur w pokoju): „wzorzec niepewny” jako pasek nad obr
 P26 11:49 Artur: gdy zaznaczone miejsce leży w podłodze, jak operator ma zobaczyć podpowiedź „typowe miejsce skrytki: podwójna podłoga”? Rekomendacja: krótki dopisek przy tej pozycji na liście zaznaczeń (bez osobnego okna); sprawdzimy go na pokazie na aucie z dodatkiem w podłodze — czeka
 11:50 Projektant: spec po recenzji 2 R1 — pkt 1 (kolejność: raport po decyzjach), pkt 3 (logowanie wg Szefa 11:49), przykład 7→5+2 jako udawane dane; pkt 2 czeka na odpowiedź P26
 11:50 Szef: krok 6 zameldowany (docs/hacktribe.md, znaczniki product-name, value-prop-statements). Nazwa: „Drugie Spojrzenie” (rekomendacja Prezentera) — przyjmuję; Prezenter zmienia nazwę w README. Recenzja tekstu: Analityk.
+P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce skrytki: podwójna podłoga” przy pozycji na liście zaznaczeń, bez osobnego okna
