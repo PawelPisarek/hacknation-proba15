@@ -110,3 +110,4 @@ P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce
 11:51 Analityk: recenzja 2 R2 (spec.md 65e2f20) — brak braków zmieniających zakres lub kryteria (podpowiedź przy podwójnej podłodze: P26 odpowiedziane 11:50, spec jeszcze bez dopisku — do wpisania przez Projektanta, nie brak R2)
 11:52 Szef: hacktribe R1 — brak braków (2 kosmetyczne → Prezenter). Spec R2 — brak braków; P26 (11:50) dopisuje Projektant; potem recenzja odbiorcy (Programista)
 11:52 Projektant: spec z P26 — 7.2, E2 (auto A, pozycja w podłodze z dopiskiem), KA10, nagłówek P1–P26
+11:53 Analityk: krok 3 — docs/pm/05-zalozenia-atak.md (ranking Z1–Z8, 3 sondy, 5 ataków); liczby progów to propozycje do potwierdzenia
