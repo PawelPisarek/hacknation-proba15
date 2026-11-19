@@ -189,3 +189,11 @@ P46 14:03 Artur: co z ekranu makiety wyrzucić (runda 3, odpowiedzi idą do wers
 14:04 Projektant: spec zgodny z P34–P38 (7.2 pusta naczepa, +N rozwijane i raz, 7.3/E4 wiersz „wygaszone wyborem ładunku”, KA9/KA12/KA13), P40–P46 jako otwarte w 7.8
 14:04 Prezenter: slajdy DRAFT
 14:05 Szef: zebrano P40–P44 (Artur w pokoju: A, A, A, A, B) → 01-mvp + Programista; P45, P46 czekają; pre-mortem BLOK → 01-mvp
+P40 14:05 odpowiedź: A — wygaszamy tylko wnętrze ładunku, nie dach, podłogę i ścianę przednią (Artur w pokoju)
+P41 14:05 odpowiedź: A — po rozwinięciu „Zaznaczenia (7)”, ta sama zasada w raporcie (Artur w pokoju)
+P42 14:05 odpowiedź: A — komunikat „Brakuje decyzji: N, w tym M w dalszych miejscach” z przyciskiem „rozwiń” (Artur w pokoju)
+P43 14:05 odpowiedź: A — „do kontroli” niebieski, czerwień tylko dla wysokiej pewności, wyraźniejszy tekst odrzuconych (Artur w pokoju)
+P44 14:05 odpowiedź: B — decyzje przy miejscach, które zostają, zachowujemy („operator nie ma czasu klikać drugi raz”); wbrew rekomendacji A, odpowiedź Artura wygrywa (Artur w pokoju)
+P45 14:05 odpowiedź: A — w pełni auto A, auto B i własne zdjęcie jako krótkie ujęcia poza 2 min (Artur w pokoju)
+P46 14:05 odpowiedź: nic (Artur w pokoju)
+14:05 Projektant: spec poprawiony o P40–P46 (KA17, 7.8); zmiana dla makiety/MVP: P44 B — zmiana towaru nie kasuje decyzji przy miejscach, które zostają
