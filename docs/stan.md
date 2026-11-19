@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:51 sobota
+# Stan (Szef) — 11:52 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -9,10 +9,10 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 1a /competitive-analysis | Projektant | zamknięte (R3) |
 | 1b /discover | Projektant | zamknięte (778bb05) |
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
-| 2 /write-prd docs/spec.md | Projektant | recenzja 2 (Analityk); podpowiedź podłogi ← P26 |
+| 2 /write-prd docs/spec.md | Projektant | R2 czyste; dopisek P26, potem recenzja odbiorcy (Programista) |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
-| 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zameldowane, nazwa „Drugie Spojrzenie”; recenzja 1 (Analityk) |
+| 6 nazwa + hasło → docs/hacktribe.md | Prezenter | R1 czyste; kosmetyka + README |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
-Otwarte: P26 (Artur, 11:49 — wygląd podpowiedzi przy podwójnej podłodze).
+Otwarte: —
 Lista Artura na noc: —
