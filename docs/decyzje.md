@@ -211,3 +211,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:10 Analityk: recenzja slajdy/demo R2, 0 braków (docs/pm/10, sekcja R2): brak braków zmieniających zakres lub kryteria; 3 uwagi technika (krok 8 w „Przed nagraniem”, „bez konwersji”, mianownik FP)
 14:11 Szef: slajdy/demo zamknięte po R2 (0 braków); uwagi techniczne → Prezenter (krok demo, slajd 5) i Programista (mianownik FP w 05-sondy)
 14:11 Prezenter: kosmetyka slajdy/demo + hacktribe zgodny
+14:11 Prezenter: kosmetyka slajdy/demo + hacktribe zgodny (poprawki faktycznie naniesione)

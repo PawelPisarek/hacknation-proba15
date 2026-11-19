@@ -7,7 +7,7 @@
 **Uwaga prawdziwościowa:** dane to sztuczne obrazy; w makiecie wynik jest udawany. Mówimy to wprost w kroku 1; „wygaszone: N” i „+N dalszych miejsc” (kroki 3–4) to udawane dane pokazu.
 
 ## Przed nagraniem
-- Otwórz link, ekran E1 „Wybierz auto”. Przygotuj plik zdjęcia/obrazu do kroku 8 (.bmp, .png lub .jpg).
+- Otwórz link, ekran E1 „Wybierz auto”. Przygotuj plik zdjęcia/obrazu do ujęcia „Własne zdjęcie” (.bmp, .png lub .jpg).
 - Okno przeglądarki na pełny ekran; kolumna listy zaznaczeń z boku widoczna bez przewijania.
 
 ## Kroki

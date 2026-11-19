@@ -1,6 +1,6 @@
 # HackTribe — pola formularza (do wklejenia przez człowieka)
 
-Źródła: docs/spec.md (problem, użytkownik, ekran), docs/decyzje.md. Bez liczb skuteczności — nie mamy jeszcze pomiarów. Dane w projekcie są sztuczne.
+Źródła: docs/spec.md (problem, użytkownik, ekran), docs/decyzje.md. Dane w projekcie są sztuczne; liczb skuteczności nie podajemy w opisie (pomiary na danych syntetycznych: docs/pm/05-sondy.md — FP na pustych 82/125, nie zero; wariant łatwy). Zgodne ze slajdami R2 i P40–P46 (14:05): wygaszanie tylko wnętrza ładunku, decyzje zachowane przy zmianie towaru.
 
 ## 1. Nazwa projektu — 17 zn. (limit 30)
 
@@ -18,9 +18,9 @@ https://github.com/PawelPisarek/hacknation-proba15
 
 Pusta naczepa obok badanej: system zaznacza do 5 miejsc, w których mogła zostać ukryta skrytka.
 
-## 5. Opis wstępny — 408 zn. (limit 500)
+## 5. Opis wstępny — 433 zn. (limit 500)
 
-Stoisz przy obrazie RTG i masz kilka minut na auto. Ekran pokazuje obok siebie pustą naczepę tego samego typu (albo najbliższej podobnej — wtedy z ostrzeżeniem) i badaną, a system podświetla do pięciu miejsc, które się różnią. Przy każdym wybierasz „do kontroli” albo „odrzuć” z powodem, a decyzje trafiają do raportu. Ty decydujesz, system tylko pokazuje, gdzie spojrzeć drugi raz.
+Stoisz przy obrazie RTG i masz kilka minut na auto. Ekran pokazuje obok siebie pustą naczepę tego samego typu (albo najbliższej podobnej — wtedy z ostrzeżeniem) i badaną, a system podświetla do pięciu miejsc, które się różnią. Przy każdym wybierasz „do kontroli” albo „odrzuć” z powodem, a decyzje trafiają do raportu. Ty decydujesz; system pokazuje, gdzie spojrzeć drugi raz (dane w makiecie są sztuczne).
 
 ---
 

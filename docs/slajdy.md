@@ -43,7 +43,7 @@ Zrzuty: `docs/zrzuty/` (makieta R3, udawane dane).
 
 - Nowe: wzorzec dobierany przez system (z flagą „niepewny”), wybór zgłoszonego towaru, lista do 5 miejsc z oceną pewności, decyzje operatora w raporcie.
 - Wygaszanie wyborem towaru: tylko wnętrze ładunku, nie dach, podłoga ani ściana przednia (P40 A, Artur 14:05). Czy MVP to już robi — **do uzupełnienia** (po MVP).
-- Wejście: obrazy .bmp ok. 50 MB, bez konwersji (zadanie §3); praca bez internetu i chmury (spec).
+- Wejście: obrazy .bmp ok. 50 MB, bez konwersji po stronie użytkownika; zadanie §3 wymaga też kompresji i przetwarzania partiami — **do uzupełnienia** (po MVP); praca bez internetu i chmury (spec).
 - Skala zadania: ok. 200 obrazów, ok. 10 GB (zadanie §7). Ze zmierzonego czasu (max 1,10 s na obraz 50 MB, metoda różnicy, 05-sondy) wychodzi ok. 3,7 min na 200 obrazów sekwencyjnie — **wyliczenie, nie pomiar**; przetwarzanie partiami w MVP — **do uzupełnienia**.
 
 **Pokaż:** `makieta-R3-E2-A-ladunek.png`.
