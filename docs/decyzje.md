@@ -230,3 +230,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 UPROSZCZENIE: usługa na karcie kończy się po 90 min bez żądań — start ręczny skrypty/usluga_start.sh przed pokazem (OMEN_HOST w zmiennej) — 0,5 h na stałą usługę z autostartem
 UPROSZCZENIE: tryb awaryjny tylko dla aut A i B (zapisany prawdziwy wynik); własne zdjęcie bez usługi → komunikat — nie do zrobienia bez karty
 UPROSZCZENIE: wybór towaru liczony na ekranie z listy „gasi” zwróconej przez kartę (bez ponownej analizy) — wynik ten sam, zmiana towaru natychmiast
+15:02 Szef: wybór towaru gasił 24/68 trafionych dodatków (O35) → granica wnętrza (podłoga, dach) bez wygaszania, z dopiskiem; ponowny O35 (Programista)
