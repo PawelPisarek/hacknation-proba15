@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:42 sobota
+# Stan (Szef) — 11:43 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -9,9 +9,9 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 1a /competitive-analysis | Projektant | zamknięte (R3) |
 | 1b /discover | Projektant | zamknięte (778bb05) |
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
-| przesłuchanie Artura (c): wybór wariantu, potem /write-prd | Projektant | zlecone |
+| (c) zamknięte → /write-prd docs/spec.md | Projektant | w toku |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
-Otwarte: P22 odpowiedź w pokoju 11:42 (wariant 3 + lista z wariantu 2) — wpis Projektanta; P23–P25 (Artur, 11:42: miejsce wyboru towaru, przyciski decyzji, wzorzec niepewny).
+Otwarte: — (P22–P25 odpowiedziane w pokoju 11:42–11:43: wariant 3 + lista z boku, wybór towaru nad obrazami w linii, decyzja przy każdej pozycji, pasek „wzorzec niepewny”).
 Lista Artura na noc: —
