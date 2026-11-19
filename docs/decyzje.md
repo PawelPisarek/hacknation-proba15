@@ -61,3 +61,4 @@ P16 11:26 odpowiedź (Artur w pokoju): samo oznaczenie w raporcie
 P17 11:26 odpowiedź (Artur w pokoju): tak — komunikat „brak zaznaczeń” i pokazany użyty wzorzec
 P18 11:26 odpowiedź (Artur w pokoju): dwa auta (czyste + z dodatkiem)
 P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego samego typu; operator przed analizą wybiera rodzaj zgłoszonego towaru z listy (plus „pusta naczepa”), by zgodny ładunek nie dostawał ramek; bez wyboru zaznaczamy wszystko (P5)
+11:26 Analityk: recenzja 1a R3 — brak braków zmieniających zakres lub kryteria (wzorzec zależny od P19, nie brak)
