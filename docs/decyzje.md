@@ -236,3 +236,4 @@ UPROSZCZENIE: wybór towaru liczony na ekranie z listy „gasi” zwróconej prz
 15:17 Szef: zrzuty MVP E1–E4 → recenzja R1 (Analityk, docs/pm/13)
 15:19 Analityk: recenzja zrzutów MVP R1 — 7 braków (docs/pm/13-recenzja-zrzutow-mvp.md); produktowe 1–7: auto A 15 miejsc zamiast 7, brak zrzutu dopisku granicy, brak stanów po decyzji, własne zdjęcie 99% przy niepewnym wzorcu, pasek awaryjny, nagłówek/numery, wypis wygaszonych
 15:20 Szef: recenzja zrzutów MVP R1 (7 braków, docs/pm/13) rozstrzygnięta bez Artura (spec i ustalenia): 2–7 → Programista (dopisek granicy, stany po decyzji, pewność przy wzorcu niepewnym, żywa usługa, nagłówek i numery, wygaszone z numerami); 1 — 15 miejsc auta A to prawdziwy wynik → Projektant poprawia spec
+15:20 Projektant: spec — auto A wg prawdziwego wyniku (15 miejsc = 5 + „+10 dalszych”; liczby jako wynik z zapisu MVP, nagłówki „Zaznaczenia (N)”); zakres i reguły bez zmian
