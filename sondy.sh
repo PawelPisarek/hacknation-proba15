@@ -12,10 +12,10 @@ G="--wariant biblioteka --grupy 36 --czyste 1 --z-dodatkami 2 --skala 0.25 --zia
 [ -f "$DANE/bib_trudny/etykiety.json" ] || python -m rtg.generator --wyjscie "$DANE/bib_trudny" $G --trudny
 [ -f "$DANE/bib_duzy/etykiety.json" ] || python -m rtg.generator --wyjscie "$DANE/bib_duzy" --wariant biblioteka \
   --grupy 3 --biblioteka 3 --nauka-towaru 1 --czyste 1 --z-dodatkami 1 --skala 1 --bity 24 --ziarno 22
-W=wyniki/sondy; mkdir -p $W
-python -m rtg.wykryj --dane "$DANE/bib" --metoda roznica nauka --towar nie_wiem zgloszony --zapas 1.0 --wyjscie $W/bib
-python -m rtg.wykryj --dane "$DANE/bib_trudny" --metoda roznica nauka --towar nie_wiem zgloszony --zapas 1.0 --wyjscie $W/bib_trudny
-python -m rtg.wykryj --dane "$DANE/bib_duzy" --metoda roznica nauka --towar nie_wiem zgloszony --zapas 1.0 --wyjscie $W/bib_duzy
+W=${W:-$DANE/sondy_wyniki}; mkdir -p $W  # trwałe: przerwany przebieg nie liczy od nowa
+[ -f $W/bib/nauka_zgloszony.json ] || python -m rtg.wykryj --dane "$DANE/bib" --metoda roznica nauka --towar nie_wiem zgloszony --zapas 1.0 --wyjscie $W/bib
+[ -f $W/bib_trudny/nauka_zgloszony.json ] || python -m rtg.wykryj --dane "$DANE/bib_trudny" --metoda roznica nauka --towar nie_wiem zgloszony --zapas 1.0 --wyjscie $W/bib_trudny
+[ -f $W/bib_duzy/nauka_zgloszony.json ] || python -m rtg.wykryj --dane "$DANE/bib_duzy" --metoda roznica nauka --towar nie_wiem zgloszony --zapas 1.0 --wyjscie $W/bib_duzy
 for M in roznica nauka; do
   echo "=== SONDA 1 ($M, bez wyboru towaru): dobór wzorca, niepewny, FP na czystych pustych — punkt pracy zapas 1.1 ==="
   python -m rtg.ocena --dane "$DANE/bib" --wyniki $W/bib/${M}_nie_wiem.json --mnoznik 1.1 --krzywa 1,1.1,1.25,1.5,2,3 --wymagaj || true
@@ -32,4 +32,4 @@ echo "=== SONDA 3: pamięć karty PatchCore / EfficientAD (H7) ==="
 python -c "import torchvision" 2>/dev/null || pip install -q torchvision --index-url https://download.pytorch.org/whl/cu126 || true
 python -m rtg.sonda_pamiec --szer 1824 --wys 576 || true
 python -m rtg.sonda_pamiec --szer 7300 --wys 2300 || true
-python -m rtg.raport --dane "$DANE/bib" --wyniki $W/bib/nauka_zgloszony.json --wyjscie $W/raport --ile 8
+mkdir -p wyniki && cp -r $W wyniki/sondy
