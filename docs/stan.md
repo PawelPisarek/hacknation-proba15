@@ -1,4 +1,4 @@
-# Stan (Szef) — 14:05 sobota
+# Stan (Szef) — 14:06 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
@@ -18,6 +18,6 @@ Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 M
 | README: tabela „Użyte narzędzia” | Prezenter | zamknięte (biblioteki makiety i MVP uzupełni Programista) |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); dwa auta pokazu + „wczytaj własne zdjęcie” (P27); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta (raport po wszystkich decyzjach, P30); każdy ładunek wygasza swoje miejsca, „wygaszone: N” (P29); zdjęcie .bmp/.png/.jpg (P31); kolor konturu po decyzji + cofnij (P32); pusta naczepa nic nie wygasza (P34); dalsze miejsca do rozwinięcia i decyzji (P35); skala kolorów pewności (P37).
-Otwarte: P45 (pokaz 2 min), P46 (co wyrzucić) — Artur, 14:03; P40–P44 odpowiedziane 14:04
-W toku: MVP (Programista, + P40–P44 + pre-mortem BLOK); spec P40–P44 (Projektant); recenzja slajdów + demo R1 (Analityk); slajdy DRAFT i pre-mortem zamknięte
+Otwarte: — (P40–P46 odpowiedziane 14:04–14:05)
+W toku: MVP (Programista, + P40–P44 + pre-mortem BLOK); recenzja slajdów + demo R1 i recenzja speca P34–P46 (Analityk); spec P40–P46 zamknięty do recenzji
 Lista Artura na noc: P2–P38 z makiety + wnioski z sond → MVP (01-mvp-z-makiety.md), materiały do stanu faktycznego (Prezenter), pre-mortem (Analityk).
