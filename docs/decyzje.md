@@ -37,3 +37,5 @@ P11 11:25 odpowiedź (Artur w pokoju): tak, z biblioteki; gdy brak tego typu —
 11:25 Projektant: z zadania §6 (Analityk, R1 pkt 2) — na czystym obrazie nie wolno zaznaczyć żadnych miejsc, każdy alarm to FP; ustalone, nie pytanie. Z P5 „kilka zaznaczeń” = górna granica P8 (5), nie cel na czystym aucie
 P12 11:25 Artur: perspektywa przeglądu rynku — porównujemy wg funkcji dla operatora czy wg ceny/wejścia na rynek? — czeka
 P13 11:25 Artur: co w wybranych pomysłach zmienić i czy któryś z odrzuconych (3 poza podwójną podłogą, 7) warto wziąć w części? — czeka
+11:23 Projektant: pominięte (perspektywa porównania, kto szuka konkurentów) — decyzja Szefa 11:22: z zadania (narzędzie dla KAS, nie produkt na rynek) perspektywa = funkcje i sposób porównania, nie cena/rynek; konkurentów szukamy sami poza wymienionymi; nie pytamy Artura (P12 dublował — do zamknięcia przez Szefa)
+11:23 Projektant: 1a R1 poprawione w docs/pm/01 (5 pozycji: prior art ACXIS/patenty, FP zależne od P5, podejście E tylko na zbiorze sztucznym, perspektywa, źródła/niezweryfikowane)
