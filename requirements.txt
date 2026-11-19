@@ -1,0 +1,3 @@
+numpy>=1.24
+pillow>=10
+# torch (CUDA) instalowany osobno na OMENie — patrz README
