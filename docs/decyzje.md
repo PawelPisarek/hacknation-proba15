@@ -7,3 +7,10 @@
 11:17 Szef: nazwa zespołu „Hackathon”.
 P1 11:17 Paweł: kto jest kim — Paweł technika, Artur produkt, nikt więcej? — czeka
 P1 11:18 odpowiedź: tak — Paweł technika (rozmowa z Szefem), Artur produkt (pokój Produkt), nikt więcej
+11:19 Projektant: pominięte (jaki to produkt/kategoria, których konkurentów, perspektywa, do czego analiza) — z zadania: wyszukiwarka anomalii RTG KAS, konkurenci to dostawcy sprzętu i podejścia do porównania obrazów
+P2 11:19 Artur: kto jest głównym użytkownikiem — operator przy stanowisku RTG czy analityk później z repozytorium? — czeka
+P3 11:19 Artur: jaki problem ma dziś użytkownik przy ocenie obrazu (czas, przeoczone skrytki)? — czeka
+P4 11:19 Artur: co użytkownik ma zyskać najbardziej — mniej przeoczonych skrytek czy mniej czasu na obraz? — czeka
+P5 11:19 Artur: co gorsze — alarm na czystej naczepie czy przeoczony dodatek? — czeka
+P6 11:19 Artur: wzorzec do każdego obrazu wskazuje użytkownik czy system dobiera go sam? — czeka
+P7 11:19 Artur: po alarmie użytkownik zatwierdza/odrzuca miejsca czy tylko czyta raport? — czeka
