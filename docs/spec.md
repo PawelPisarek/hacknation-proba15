@@ -2,7 +2,7 @@
 
 **Author**: Projektant (zespół Hackathon) — z ustaleń Artura (produkt) i Pawła (technika)
 **Date**: 2026-11-19
-**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P27)
+**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P33)
 
 ## 1. Summary
 Narzędzie dla operatora RTG KAS: system sam porównuje obraz badanej naczepy z obrazem wzorcowej, pustej naczepy tego samego typu i zaznacza do 5 miejsc podejrzanych (najpewniejsze pierwsze). Operator na jednym ekranie z podziałem (wzorzec obok badanego) zatwierdza „do kontroli” albo odrzuca z powodem. Wynik trafia do raportu z auta. Dane: sztuczne obrazy .bmp (zdjęć KAS nie mamy); wynik z usługi na karcie OMENa (GTX 1050 4 GB).

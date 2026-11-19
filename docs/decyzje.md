@@ -157,3 +157,4 @@ P36 13:04 Artur: licznik „+N dalszych miejsc” tylko raz, przy nagłówku (A)
 P37 13:04 Artur: kolory — pewność w skali (wysoka czerwona, średnia pomarańczowa, niska żółta), a napis przy pozycji w kolorze decyzji (A) czy jak teraz (B)? rekomendacja A — czeka
 P38 13:04 Artur: w raporcie z auta wiersz „wygaszone wyborem ładunku: N” zostaje (A) czy znika (B)? rekomendacja A — czeka
 P39 13:04 Artur: co z ekranu makiety wyrzucić (runda 2)? rekomendacja: nic — czeka
+13:04 Projektant: spec uzupełniony o P28–P32 (7.2, E4, KA12–KA15), nagłówek P1–P33; pytania 34–39 w pokoju
