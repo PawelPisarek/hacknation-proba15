@@ -31,12 +31,12 @@ Jeden segment: operator RTG (Służba Celno-Skarbowa) przy stanowisku na granicy
 ## 7. Solution
 
 ### 7.1 Ścieżka główna (demo ≤ 2 min, ustalenie Szefa; dwa auta, P18)
-1. Wybór auta (A: z dodatkiem, 7 miejsc → 5 + „+2 dalszych miejsc”; B: czyste).
+1. Wybór auta (A: z dodatkiem, 7 miejsc → 5 + „+2 dalszych miejsc” — **udawane dane pokazu**; B: czyste).
 2. Operator wybiera rodzaj zgłoszonego towaru (P19, P20, P23) — 6 grup + „nie wiem”.
 3. Wynik: wzorzec i badany obraz obok siebie z podświetloną różnicą (P15, P22), z boku lista zaznaczeń.
 4. Klik w pozycję listy pokazuje miejsce na obu obrazach (P22).
 5. Przy każdej pozycji „do kontroli” albo „odrzuć” (powód z listy) (P7, P24).
-6. Raport z auta. Auto B: „brak zaznaczeń” + użyty wzorzec (P17).
+6. Raport z auta (E4) powstaje po decyzjach operatora i je zawiera (P7, P10). Auto B: „brak zaznaczeń” + użyty wzorzec (P17).
 
 ### 7.2 Ekran główny (wariant 3 + lista z wariantu 2; makieta: https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/3/)
 - **Linia nad obrazami:** wybór rodzaju towaru: drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa, „nie wiem” (zaznaczamy wszystko) (P20, P23). Bez wyboru = „nie wiem”.
@@ -45,14 +45,14 @@ Jeden segment: operator RTG (Służba Celno-Skarbowa) przy stanowisku na granicy
 - **Lista zaznaczeń z boku:** do 5, najpewniejsze pierwsze, z oceną pewności (P8). Gdy było więcej: „+N dalszych miejsc” (licznik, nie zaznaczenie) (P21) — także przy „nie wiem”.
 - **Przy każdej pozycji:** „do kontroli” / „odrzuć”; odrzucenie wymaga powodu: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P9).
 - **Brak zaznaczeń:** komunikat „brak zaznaczeń” i pokazany użyty wzorzec (P17).
-- **Podpowiedź przy podwójnej podłodze** — tylko ta część pomysłu „typowe miejsca” (P3, moment b).
+- **Podpowiedź przy podwójnej podłodze** — tylko ta część pomysłu „typowe miejsca” (P3, moment b). Sposób pokazania czeka na odpowiedź P26 (brak ekranu i kryterium do tego czasu).
 
 ### 7.3 Raport z auta (P10, P16, §9)
 Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty wzorzec (+ „wzorzec niepewny”), zaznaczenia z oceną, decyzje operatora z powodem. „Do kontroli” = samo oznaczenie w raporcie, bez komunikatu do kontrolera (P16). Decyzje zostają w raporcie.
 
 ### 7.4 Zachowania i reguły
 - Wzorzec dobiera system z biblioteki (P6, P11, P19 A): pusta naczepa tego samego typu; wybór towaru ogranicza ramki na zgodnym ładunku, ale nie wygasza miejsc z ładunkiem tam, gdzie wybór go nie obejmuje (Z5).
-- Wykrywanie i raport działają samodzielnie; zatwierdzanie/odrzucanie to krok po raporcie i nie wpływa na wynik wykrywania (Szef 11:21). Przebieg automatyczny i partiami = „nie wiem”.
+- Wykrywanie i raport działają samodzielnie; wykrywanie i zaznaczenia powstają samodzielnie; zatwierdzanie/odrzucanie to krok po wyniku wykrywania i nie wpływa na wynik wykrywania (Szef 11:21). Przebieg automatyczny i partiami = „nie wiem”.
 - Odrzucone miejsca **nie uczą** systemu (odrzucony pomysł 7: mogłyby ukryć skrytki, P5).
 - Język ekranu: polski. Praca bez internetu i chmury; pliki .bmp ~50 MB, przetwarzanie partiami i skalowalność (§3, §9).
 
@@ -60,7 +60,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 | Ekran | Zawartość | Udawane dane |
 |---|---|---|
 | E1 Wybór auta | dwa auta do wczytania | A „z dodatkiem”, B „czyste” |
-| E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc”; B: brak zaznaczeń, wzorzec W-PL-014 |
+| E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc” (**udawane dane pokazu**); B: brak zaznaczeń, wzorzec W-PL-014 |
 | E3 Powód odrzucenia | lista 4 powodów | element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne |
 | E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje | numer kontroli sztuczny |
 
@@ -92,7 +92,7 @@ Liczba aut dziennie (P14, założenie); progi Z1, Z2, Z5 — Programista po krzy
 UPROSZCZENIE: biblioteka wzorców — mały zbiór sztucznych naczep — zamiast zdjęć KAS — dorobienie: duże (dane KAS).
 UPROSZCZENIE: lista towarów — 6 grup + „nie wiem” — zamiast pełnej klasyfikacji — dorobienie: małe.
 UPROSZCZENIE: bez integracji z repozytorium RTG i urządzeniami — pole identyfikujące kontrolę w raporcie — zamiast integracji (§9) — dorobienie: duże.
-UPROSZCZENIE: logowanie i role operatora — bez logowania — zamiast kont — dorobienie: małe do średnie.
+UPROSZCZENIE: logowanie i role operatora — jedno stanowisko bez logowania — ok. 2 h dorobienia (zadanie nie wymaga; Szef 11:49)
 
 Na końcu jedna pozycja pominięta celowo: szczegółowa wersja PRD (rozwinięcie na życzenie).
 
