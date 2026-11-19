@@ -67,3 +67,4 @@ P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego sameg
 11:27 Szef: 1a zamknięte po R3 (brak braków); 1b /discover → Projektant (02-discover na końcowym 01 i P2–P19)
 11:27 Projektant: 1b — docs/pm/02-discover.md dokończony na końcowym 01 i P2–P19; kosmetyka R3 w 01
 11:28 Szef: 1b zameldowane (5a30b18, znacznik jest) → recenzja przejścia 1b R1 Analityk
+11:29 Analityk: recenzja 1b R1 — 5 braków (3 produkt: nr 1, 2, 3; 2 technika: nr 4, 5); lista w odpowiedzi do Szefa
