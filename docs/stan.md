@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:48 sobota
+# Stan (Szef) — 11:49 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -11,6 +11,7 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
 | 2 /write-prd docs/spec.md | Projektant | recenzja 1 (Analityk) |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
+| 6 nazwa + hasło (product-name, value-prop-statements) → docs/hacktribe.md | Prezenter | zlecone |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
 Otwarte: — (P22–P25 odpowiedziane w pokoju 11:42–11:43: wariant 3 + lista z boku, wybór towaru nad obrazami w linii, decyzja przy każdej pozycji, pasek „wzorzec niepewny”).
