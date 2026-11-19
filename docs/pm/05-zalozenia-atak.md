@@ -89,7 +89,7 @@ Roszczenia nośne: (1) system dobierze pustą naczepę właściwego typu; (2) 5 
 - **Steelman:** odrzucenie wymaga powodu; decyzje zostają w raporcie; odrzucone miejsca nie uczą systemu.
 - **Fails if:** przy kilku autach dziennie i kilku minutach na auto operator odrzuca masowo powodem „zwykły ładunek”, a raport z odrzuconą skrytką chroni formalnie wszystkich — zamiast pomagać znaleźć skrytkę.
 - **Evidence to get this week:** pokaz na dwóch autach (P18) — czy operator-tester z powodem „zwykły ładunek” odrzuci pozycję, która jest dodatkiem; czas ścieżki (KA4).
-- **Kill criterion:** > 1 z 5 prawdziwych dodatków w tekście testu odrzucony powodem „zwykły ładunek” bez oglądania obu obrazów (propozycja, mała próba).
+- **Kill criterion:** > 1 z 5 prawdziwych dodatków odrzucony powodem „zwykły ładunek” bez oglądania obu obrazów (propozycja, mała próba).
 - **Łagodzenie:** klik w pozycję pokazuje miejsce na obu obrazach zanim aktywuje się „odrzuć”; wysoka pewność wymaga drugiego kliknięcia; raport pokazuje pewność obok decyzji.
 
 ### Co jest dobrze uzasadnione
