@@ -18,9 +18,9 @@ https://github.com/PawelPisarek/hacknation-proba15
 
 Pusta naczepa obok badanej: system zaznacza do 5 miejsc, w których mogła zostać ukryta skrytka.
 
-## 5. Opis wstępny — 380 zn. (limit 500)
+## 5. Opis wstępny — 408 zn. (limit 500)
 
-Stoisz przy obrazie RTG i masz kilka minut na auto. Ekran pokazuje obok siebie pustą naczepę tego samego typu i badaną, a system podświetla do pięciu miejsc, które się różnią — najpewniejsze pierwsze. Przy każdym wybierasz „do kontroli” albo „odrzuć” z powodem, a decyzje trafiają do raportu. Ty decydujesz, system tylko pokazuje, gdzie spojrzeć drugi raz.
+Stoisz przy obrazie RTG i masz kilka minut na auto. Ekran pokazuje obok siebie pustą naczepę tego samego typu (albo najbliższej podobnej — wtedy z ostrzeżeniem) i badaną, a system podświetla do pięciu miejsc, które się różnią. Przy każdym wybierasz „do kontroli” albo „odrzuć” z powodem, a decyzje trafiają do raportu. Ty decydujesz, system tylko pokazuje, gdzie spojrzeć drugi raz.
 
 ---
 
@@ -36,7 +36,7 @@ Użytkownik: operator RTG Służby Celno-Skarbowej; ton: rzeczowy, po polsku, be
 | 4 | Czujka RTG | 10 | Krótka, kojarzy się z czuwaniem przy stanowisku; mówi „RTG”, ale nie mówi, co robi. |
 | 5 | Wzorzec Kontroli | 16 | Rzeczowa, urzędowa; mniej zapadająca w pamięć. |
 
-**Rekomendacja: Drugie Spojrzenie** — jedyna, która od razu mówi operatorowi, co zyskuje (nie ominie skrytki), i nie obiecuje, że system decyduje za niego. Zmiana względem szkicu z 11:18 („RTG Różnica”), bo tamta opisywała technikę, nie korzyść.
+**Rekomendacja: Drugie Spojrzenie** — jedyna, która od razu mówi operatorowi, po co jest (druga para oczu przy ocenie obrazu), i nie sugeruje, że system decyduje za niego. Zmiana względem szkicu z 11:18 („RTG Różnica”), bo tamta opisywała technikę, nie korzyść.
 
 ## Przekaz (skill value-prop-statements)
 
