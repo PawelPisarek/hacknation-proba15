@@ -78,6 +78,7 @@ function E2(){const w=S.w,m=widoczne(),pok=lPok(),dal=m.length-Math.min(5,m.leng
  ${pok.length?pok.map(x=>{const d=S.dec[x.id];return `<div class="poz ${x.id===S.wyb?'akt':''} ${d?(d.k?'zat':'odr'):''}" onclick="wybierz(${x.id})">
   <div class="g"><span>${x.id}. ${esc(x.gdzie)}</span><span class="ocena ${kolPew(x.ocena)}">${pct(x.ocena)}</span></div>
   ${x.podloga?`<div class="dopisek">typowe miejsce skrytki: podwójna podłoga</div>`:""}
+  ${x.granica&&(x.gasi_wnetrze||[]).includes(S.towar)?`<div class="dopisek">na granicy ładunku — nie wygaszone wyborem towaru</div>`:""}
   ${d?`<div class="dec ${d.k?'k':'o'}">${d.k?"✔ do kontroli":"✖ odrzucone: "+esc(d.powod)}</div>`:""}
   <div class="przyc">${d?`<button onclick="event.stopPropagation();cofnij(${x.id})">cofnij decyzję</button>`:`<button class="kontrola" onclick="event.stopPropagation();doKontroli(${x.id})">do kontroli</button><button onclick="event.stopPropagation();S.odrzuc=${x.id};rysuj()">odrzuć</button>`}</div></div>`}).join("")
   :`<div class="brak"><b>Brak zaznaczeń.</b><br>Użyty wzorzec: ${esc(w.wzorzec)} (pusta naczepa, typ ${esc(w.typ)}).</div>`}
