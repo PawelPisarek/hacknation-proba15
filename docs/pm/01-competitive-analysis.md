@@ -1,6 +1,6 @@
 # 01 — Analiza konkurencji i podejść (/competitive-analysis)
 
-**Data**: 2026-11-19 (sobota, start próby 15); poprawione po recenzji R1 (Analityk)
+**Data**: 2026-11-19 (sobota, start próby 15); poprawione po recenzjach R1–R2 (Analityk), R3 bez braków
 **Produkt**: wyszukiwarka anomalii na obrazach RTG naczep/ciężarówek (KAS) — porównanie badanego obrazu .bmp ze wzorcem, zaznaczenie różnic. Działa lokalnie (bez chmury), wynik z usługi na karcie OMENa (GTX 1050 4 GB).
 **Perspektywa porównania** (decyzja Szefa 11:22): funkcje i sposób porównania obrazów, nie cena ani rynek — to narzędzie dla KAS, nie produkt na rynek; konkurentów szukamy sami poza wymienionymi w zadaniu.
 **Źródła**: `docs/zadanie.md`, `docs/decyzje.md`, `docs/materialy.md` §6, wyszukiwanie w sieci 19.11 (linki na dole). Czego nie dało się potwierdzić — oznaczone „niezweryfikowane” lub „założenie”.
@@ -36,7 +36,7 @@ Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi *
 | Zaznaczenie miejsca na obrazie | tak | ? (niezweryfikowane) | tak | tak (mapa ciepła) | tak |
 | Bez chmury | tak | ? (niezweryfikowane) | tak | tak | tak |
 | Duże pliki ~50 MB, partie | tak (kafle) | ? (niezweryfikowane) | tak | tak (kafle) | tak (kafle) |
-| Zero zaznaczeń na czystych (zadanie §6: każde zaznaczenie = alarm FP) | cel — **zależne od P5**, patrz niżej | nieznane | słabo | dobrze wg publikacji, niezweryfikowane na RTG | jak B |
+| Zero zaznaczeń na czystych (zadanie §6: każde zaznaczenie = alarm FP) | cel — ustalone z zadania §6 (zero na czystych); limit 5 na auto to P8 | nieznane | słabo | dobrze wg publikacji, niezweryfikowane na RTG | jak B |
 | Wykryje nieznany dodatek | tak | tylko znane | tak | tak | tak |
 | Dobór wzorca z biblioteki (P6, P11; P19: A) | tak, z ostrzeżeniem „wzorzec niepewny” | ? | nie (wzorzec dany z góry; ACXIS ma bazę referencyjną) | pośrednio (norma z wielu czystych) | pośrednio |
 | Ocena pewności zaznaczeń, najpewniejsze pierwsze, limit 5 na auto (P8) | tak | ? | nie (A = surowa różnica, bez rankingu) | tak (wynik nietypowości) | tak (wynik nietypowości) |
@@ -44,7 +44,7 @@ Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi *
 | Wynik przypisany do miejsca i przedmiotu kontroli (§9 zadania; pole identyfikujące kontrolę w raporcie z auta) | tak (pole w raporcie, P10) | ? | nie (do dopisania) | nie (do dopisania) | nie (do dopisania) |
 | Skalowalność na większe zbiory (kafle, partie, równoległość) | cel (§3, §7) | ? | dobra (prosta) | średnia (pamięć rośnie z liczbą obrazów) | dobra (mały model; niezweryfikowane na GTX 1050) |
 
-## Fałszywe alarmy a małe skrytki (zależne od P5)
+## Fałszywe alarmy a małe skrytki (P5, P8)
 Zadanie §6 liczy każde zaznaczenie na czystym obrazie jako alarm fałszywy, a małe skrytki (≈0,1% pikseli wg Jaccard i in.) wymagają czułości. Rozstrzyga to Artur (P5, 11:21): przeoczony dodatek jest gorszy, zbędny alarm = minuta więcej przy aucie, zaznaczeń na auto „kilka” — górna granica 5 (P8). Ten plik nie ustala progu: cel zero zaznaczeń na czystych w teście, 5 to limit na auto; kompromis czułość ↔ FP raportujemy krzywą, próg ustalają ludzie.
 
 ## Wzorzec (P19, odpowiedź Artura 11:26)
