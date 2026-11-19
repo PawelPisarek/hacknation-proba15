@@ -1,11 +1,11 @@
-# Stan (Szef) — 12:09 sobota
+# Stan (Szef) — 12:17 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
 | zadanie | kto | status |
 |---|---|---|
 | 0 materiały zadania | Analityk | zamknięte |
-| 0P szkielet, generator, ocena, wynik bazowy H1/H2/H3 | Programista | linia bazowa 12:09 (H2 lepsza: FN 23/56, FP 20; załadowane bez wyboru towaru FP 197); dalej 06 C + sondy 
+| 0P szkielet, generator, ocena, wynik bazowy H1/H2/H3 | Programista | linia bazowa 12:09 (H2 lepsza: FN 23/56, FP 20; załadowane bez wyboru towaru FP 197); dalej 06 C + sondy |
 | 1a /competitive-analysis | Projektant | zamknięte (R3) |
 | 1b /discover | Projektant | zamknięte (778bb05) |
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
