@@ -347,7 +347,12 @@ def main():
     ap.add_argument("--roboczy", type=int, default=1800, help="szerokość robocza w pikselach")
     ap.add_argument("--k", type=int, default=5, help="min. rozmiar plamy (px roboczych)")
     ap.add_argument("--zapas", type=float, default=1.1, help="mnożnik progu z czystych")
+    ap.add_argument("--biblioteka", default=os.path.expanduser("~/dane/rtg/bib"),
+                    help="tryb partiami (katalog bez etykiety.json): biblioteka pustych wzorców")
     a = ap.parse_args()
+    if not os.path.exists(os.path.join(a.dane, "etykiety.json")):  # tryb partiami (§8): sam katalog obrazów
+        from rtg.silnik import partie
+        return partie(a.dane, a.biblioteka, a.wyjscie)
     if not torch.cuda.is_available():
         raise SystemExit("BRAK KARTY: torch.cuda.is_available() == False — nie liczę na procesorze")
     DEV = torch.device("cuda")

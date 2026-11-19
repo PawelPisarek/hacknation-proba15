@@ -1,0 +1,7 @@
+FROM node:20-alpine
+ARG SOURCE_COMMIT
+ENV SOURCE_COMMIT=${SOURCE_COMMIT}
+WORKDIR /app
+COPY app/ /app/
+EXPOSE 3000
+CMD ["node", "server.js"]

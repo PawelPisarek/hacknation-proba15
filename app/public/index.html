@@ -1,0 +1,120 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drugie Spojrzenie — MVP</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f1f3f5;color:#212529}
+header{background:#1c2b3a;color:#fff;padding:10px 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px}header a{color:#9ad;font-size:14px}main{padding:12px;max-width:1500px;margin:auto}
+button{font-size:15px;padding:9px 12px;border:1px solid #adb5bd;border-radius:6px;background:#fff;cursor:pointer;color:#212529}
+.auta{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.karta{background:#fff;border:1px solid #dee2e6;border-radius:8px;padding:14px}.karta h3{margin:0 0 6px}
+.towar{display:flex;gap:6px;overflow-x:auto;padding:4px 0 8px;align-items:center}.towar span{white-space:nowrap;font-weight:600;font-size:14px}
+.towar button{white-space:nowrap;font-size:14px;padding:7px 10px}.towar .akt{background:#1c2b3a;color:#fff;border-color:#1c2b3a}
+.niepewny{background:#fff3bf;border:1px solid #fcc419;padding:8px 12px;border-radius:6px;margin:6px 0;font-weight:600}
+.awaria{background:#ffe3e3;border:1px solid #ffa8a8;padding:8px 12px;border-radius:6px;margin:6px 0}
+.uklad{display:grid;grid-template-columns:1fr 360px;gap:12px}@media(max-width:900px){.uklad{grid-template-columns:1fr}}
+.obrazy{display:grid;grid-template-columns:1fr;gap:8px}
+.obrazy small{color:#495057}.rtg{width:100%;height:auto;display:block;background:#e9ecef;border:1px solid #ced4da;border-radius:4px}
+.lista{background:#fff;border:1px solid #dee2e6;border-radius:8px;padding:10px;max-height:calc(100vh - 140px);overflow:auto}.lista h3{margin:0 0 8px;font-size:16px}
+.poz{border:1px solid #dee2e6;border-radius:6px;padding:8px;margin-bottom:8px;cursor:pointer}.poz.akt{border:2px solid #e03131}
+.poz .g{display:flex;justify-content:space-between;gap:6px;font-weight:600}
+.dopisek{font-size:13px;background:#e7f5ff;color:#1864ab;padding:3px 6px;border-radius:4px;margin-top:4px;display:inline-block}
+.przyc{display:flex;gap:6px;margin-top:6px}.przyc button{flex:1;font-size:14px;padding:7px}
+.kontrola{background:#1c7ed6;color:#fff;border-color:#1c7ed6}.dec{font-size:13px;margin-top:4px;font-weight:600}
+.dec.k{color:#2b8a3e}.dec.o{color:#343a40}
+.ocena{padding:1px 6px;border-radius:4px}.ocena.wys{color:#fff;background:#e03131}.ocena.sre{color:#fff;background:#d9480f}.ocena.nis{color:#5c3c00;background:#ffd43b}
+.dalsze{border:1px solid #fcc419;cursor:pointer;background:#fff3bf;padding:6px 8px;border-radius:4px;font-weight:600;font-size:14px}
+.brak{background:#d3f9d8;border:1px solid #8ce99a;padding:14px;border-radius:6px}
+.okno{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;padding:12px}
+.okno .karta{max-width:420px;width:100%}.okno .karta button{display:block;width:100%;margin:6px 0;text-align:left}
+table{border-collapse:collapse;width:100%;background:#fff}td,th{border:1px solid #dee2e6;padding:6px 8px;text-align:left;font-size:14px}
+.poz.zat{border-color:#2f9e44;background:#ebfbee}.poz.odr{border-color:#868e96;background:#f1f3f5;color:#212529}.poz.akt.zat{border:2px solid #2f9e44}.poz.akt.odr{border:2px solid #495057}
+.wygaszone{font-size:14px;background:#f1f3f5;border:1px dashed #adb5bd;padding:5px 8px;border-radius:4px;margin-bottom:8px}.wygaszone small{color:#495057}
+button[disabled]{opacity:.5;cursor:not-allowed}.lista h3 .dalsze{font-size:13px;margin-left:6px}.stopka{font-size:12px;color:#495057;text-align:right;padding:8px}
+.brakuje{font-size:14px;color:#212529;margin-top:6px}.laduje{padding:40px;text-align:center;font-size:18px}
+</style></head><body><div id="app"></div><script>
+// MVP: wynik z usługi na karcie OMENa (/api/*). Ekrany wg makiety R3 + P40–P44. Udawanych danych tu nie ma;
+// tryb awaryjny pokazuje ZAPISANY prawdziwy wynik aut pokazu (public/zapis/), gdy usługa nie odpowiada (pre-mortem).
+const TOWARY=[["drobnica","drobnica na paletach"],["plyny","płyny w beczkach"],["sypkie","materiały sypkie"],["maszyny","maszyny"],["meble","meble/AGD"],["pusta","pusta naczepa"],["nie_wiem","nie wiem (zaznaczamy wszystko)"]];
+const POWODY=["element konstrukcji","zwykły ładunek","zakłócenie obrazu","inne"];
+const POKRYCIE=0.5; // P44 B: miejsce „zostaje”, gdy IoU konturu z wcześniejszym ≥ 0,5 (docs/decyzje.md)
+let S={ekran:"E1",auto:null,w:null,towar:"nie_wiem",wyb:null,dec:{},odrzuc:null,plikNazwa:null,awaryjny:false,laduje:null,blad:null,rozwin:false};
+let WERSJA="?",AUTA={A:{nazwa:"Auto A — z dodatkiem"},B:{nazwa:"Auto B — czyste"}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct=x=>Math.round(x*100)+"%";
+const kolPew=o=>o>=.8?"wys":o>=.5?"sre":"nis"; // P37
+const tnazwa=k=>TOWARY.find(t=>t[0]===k)[1];
+const M=()=>S.w?S.w.miejsca:[];
+const widoczne=(t=S.towar)=>M().filter(x=>!x.gasi.includes(t)).sort((p,q)=>q.ocena-p.ocena);
+const zgaszone=()=>M().filter(x=>x.gasi.includes(S.towar)); // P29, P34, P40 (gasi liczy usługa tylko we wnętrzu ładunku)
+const lPok=()=>S.rozwin?widoczne():widoczne().slice(0,5);
+function brakuje(){const v=widoczne();const b=v.filter(x=>!S.dec[x.id]);return {n:b.length,m:b.filter(x=>v.indexOf(x)>=5).length};}
+function iou(a,b){const ix=Math.max(0,Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x)),iy=Math.max(0,Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));const i=ix*iy;return i/(a.w*a.h+b.w*b.h-i);}
+function src(kind){if(!S.w)return"";if(S.awaryjny)return kind==="wz"?`zapis/wz_${S.w.typ}.png`:`zapis/${S.auto}.png`;return "api"+(kind==="wz"?S.w.wzorzec_png:S.w.podglad);}
+function svg(wzorzec){const [W,H]=S.w.rozmiar,fs=W/55,mn=W/110;
+ let s=`<svg viewBox="0 0 ${W} ${H}" class="rtg" xmlns="http://www.w3.org/2000/svg"><image href="${src(wzorzec?"wz":"b")}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="none"/>`;
+ lPok().forEach(m=>{const akt=m.id===S.wyb,d=S.dec[m.id];const k=d?(d.k?'#2f9e44':'#868e96'):(akt?'#e03131':'#f08c00');
+  const w=Math.max(m.w,mn),h=Math.max(m.h,mn),x=m.x+m.w/2-w/2,y=m.y+m.h/2-h/2;
+  s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${k}" stroke-width="${akt?4:2}" vector-effect="non-scaling-stroke" ${wzorzec?'stroke-dasharray="8 5"':''} onclick="wybierz(${m.id})" style="cursor:pointer"/>
+  <text x="${x}" y="${Math.max(fs,y-fs*.25)}" font-size="${fs}" font-weight="700" fill="${k}" stroke="#fff" stroke-width="${fs/10}" paint-order="stroke">${m.id}</text>`;});
+ return s+`</svg>`;}
+function naglowek(){const b=S.w&&S.ekran!=="E1"&&!brakuje().n;return `<header><b>Drugie Spojrzenie</b><span>porównanie RTG naczep · MVP</span>
+ <a href="#" onclick="idz('E1');return false">wybór auta</a>${b?`<a href="#" onclick="idz('E4');return false">raport z auta</a>`:""}</header>`;}
+function E1(){return `<main><h2>Wybierz auto</h2>${S.blad?`<div class="awaria">${esc(S.blad)}</div>`:""}<div class="auta">
+ ${["A","B"].map(k=>`<div class="karta"><h3>${AUTA[k].nazwa}</h3><div>${esc(AUTA[k].nr||"")} ${AUTA[k].typ?"· naczepa "+esc(AUTA[k].typ):""}</div>
+ <img class="rtg" src="zapis/${k}_e1.png" alt="podgląd auta ${k}"><p><button class="kontrola" onclick="analizujAuto('${k}')">Analizuj</button></p></div>`).join("")}
+ <div class="karta"><h3>Wczytaj własne zdjęcie</h3><p>Obraz RTG naczepy: .bmp, .png albo .jpg (do 50 MB). Wynik liczy karta graficzna OMENa.</p>
+ <input type="file" id="plik" accept=".bmp,.png,.jpg,.jpeg,image/bmp,image/png,image/jpeg" hidden><p><button class="kontrola" onclick="document.getElementById('plik').click()">Wczytaj własne zdjęcie</button></p></div></div></main>`;}
+function E2(){const w=S.w,m=widoczne(),pok=lPok(),dal=m.length-Math.min(5,m.length),zg=zgaszone(),b=brakuje();
+ if(!pok.find(x=>x.id===S.wyb)) S.wyb=pok.length?pok[0].id:null;
+ const nag=S.rozwin||!dal?`Zaznaczenia (${S.rozwin?m.length:Math.min(5,m.length)})`:`Zaznaczenia (5) i`; // P28, P41
+ return `<main>${S.awaryjny?`<div class="awaria">Tryb awaryjny: usługa na karcie OMENa nie odpowiada — pokazuję zapisany wynik z karty (${esc(w.zapisano||"")}).</div>`:""}
+ <div class="towar"><span>Zgłoszony towar:</span>${TOWARY.map(([k,n])=>`<button class="${S.towar===k?'akt':''}" onclick="ustawTowar('${k}')">${n}</button>`).join("")}</div>
+ ${w.niepewny?`<div class="niepewny">⚠ Wzorzec niepewny — w bibliotece brak naczepy tego typu, użyto najbliższej podobnej: ${esc(w.wzorzec)}.</div>`:""}
+ <div class="uklad"><div class="obrazy">
+  <div><b>Wzorzec</b> <small>${esc(w.wzorzec)} · pusta naczepa z biblioteki</small>${svg(true)}</div>
+  <div><b>Badane auto</b> <small>${esc(S.auto==="W"?S.plikNazwa:(AUTA[S.auto].nr||w.nazwa))} · różnica podświetlona na czerwono · analiza ${w.czas_s} s na karcie</small>${svg(false)}</div></div>
+ <div class="lista"><h3>${nag}${dal>0?` <button class="dalsze" onclick="S.rozwin=!S.rozwin;rysuj()">${S.rozwin?"▲ zwiń":`+${dal} dalszych miejsc ▼ rozwiń`}</button>`:""}</h3>
+ <div class="wygaszone">wygaszone: ${zg.length}${zg.length?` <small>(miejsca we wnętrzu ładunku zgodne z „${tnazwa(S.towar)}”: ${zg.map(x=>esc(x.gdzie)).join("; ")})</small>`:""}</div>
+ ${pok.length?pok.map(x=>{const d=S.dec[x.id];return `<div class="poz ${x.id===S.wyb?'akt':''} ${d?(d.k?'zat':'odr'):''}" onclick="wybierz(${x.id})">
+  <div class="g"><span>${x.id}. ${esc(x.gdzie)}</span><span class="ocena ${kolPew(x.ocena)}">${pct(x.ocena)}</span></div>
+  ${x.podloga?`<div class="dopisek">typowe miejsce skrytki: podwójna podłoga</div>`:""}
+  ${d?`<div class="dec ${d.k?'k':'o'}">${d.k?"✔ do kontroli":"✖ odrzucone: "+esc(d.powod)}</div>`:""}
+  <div class="przyc">${d?`<button onclick="event.stopPropagation();cofnij(${x.id})">cofnij decyzję</button>`:`<button class="kontrola" onclick="event.stopPropagation();doKontroli(${x.id})">do kontroli</button><button onclick="event.stopPropagation();S.odrzuc=${x.id};rysuj()">odrzuć</button>`}</div></div>`}).join("")
+  :`<div class="brak"><b>Brak zaznaczeń.</b><br>Użyty wzorzec: ${esc(w.wzorzec)} (pusta naczepa, typ ${esc(w.typ)}).</div>`}
+ <p>${b.n?`<button disabled>Raport z auta →</button><div class="brakuje">Brakuje decyzji: ${b.n}, w tym ${b.m} w dalszych miejscach ${b.m&&!S.rozwin?`<button class="dalsze" onclick="S.rozwin=true;rysuj()">rozwiń</button>`:""}</div>`:`<button onclick="idz('E4')">Raport z auta →</button>`}</p></div></div></main>${S.odrzuc?E3():""}`;}
+function E3(){return `<div class="okno" onclick="if(event.target===this){S.odrzuc=null;rysuj()}"><div class="karta"><h3>Powód odrzucenia — miejsce ${S.odrzuc}</h3>
+ ${POWODY.map(p=>`<button onclick="odrzuc('${p}')">${p}</button>`).join("")}<button onclick="S.odrzuc=null;rysuj()" style="text-align:center">anuluj</button></div></div>`;}
+function E4(){const w=S.w,m=widoczne(),nr={A:"123",B:"124",W:"125"}[S.auto];
+ return `<main><div class="karta"><h2>Raport z auta</h2><table>
+ <tr><th>Kontrola</th><td>KAS-DS/2026/11/000${nr} · przejście graniczne (sztuczne) · ${S.auto==="W"?"plik "+esc(S.plikNazwa):"naczepa "+esc(AUTA[S.auto].nr||w.nazwa)}</td></tr>
+ <tr><th>Zgłoszony towar</th><td>${tnazwa(S.towar)}</td></tr><tr><th>Wzorzec</th><td>${esc(w.wzorzec)} (typ ${esc(w.typ)})${w.niepewny?" — <b>wzorzec niepewny</b>":""}</td></tr>
+ <tr><th>Wygaszone wyborem ładunku</th><td>${zgaszone().length}</td></tr><tr><th>Zaznaczenia</th><td>${m.length?m.length:"brak zaznaczeń"}</td></tr>
+ <tr><th>Analiza</th><td>${w.czas_s} s na karcie OMENa${S.awaryjny?" (zapisany wynik — tryb awaryjny)":""}</td></tr></table>
+ ${m.length?`<h3>Zaznaczenia (${m.length}) i decyzje operatora</h3><table><tr><th>#</th><th>miejsce</th><th>ocena</th><th>decyzja</th></tr>
+ ${m.map(x=>{const d=S.dec[x.id];return `<tr><td>${x.id}</td><td>${esc(x.gdzie)}${x.podloga?" — typowe miejsce skrytki: podwójna podłoga":""}</td><td>${pct(x.ocena)}</td><td>${d?(d.k?"do kontroli":"odrzucone — "+esc(d.powod)):"bez decyzji"}</td></tr>`}).join("")}</table>`:""}
+ <p><button onclick="idz('E2')">← wróć do analizy</button> <button onclick="window.print()">Drukuj</button></p></div></main>`;}
+function rysuj(){if(S.ekran==="E4"&&brakuje().n) S.ekran="E2";
+ const tresc=S.laduje?`<main><div class="laduje">${esc(S.laduje)}</div></main>`:({E1,E2,E4}[S.ekran])();
+ document.getElementById("app").innerHTML=naglowek()+tresc+`<div class="stopka">MVP · wynik z karty OMENa${S.awaryjny?" (tryb awaryjny)":""} · wersja ${esc(WERSJA)}</div>`;
+ const f=document.getElementById("plik"); if(f) f.onchange=e=>{const f0=e.target.files[0];if(!f0)return;if(!/\.(bmp|png|jpe?g)$/i.test(f0.name)){alert("Obsługiwane: .bmp, .png, .jpg");return;}analizujPlik(f0);};
+ location.hash=S.ekran+(S.auto?"-"+S.auto:"");}
+function idz(e){S.ekran=e;S.odrzuc=null;rysuj();scrollTo(0,0);}
+function nowy(w,auto){S.w=w;S.auto=auto;S.towar="nie_wiem";S.dec={};S.rozwin=false;S.wyb=null;S.laduje=null;S.blad=null;idz("E2");} // decyzje od zera po zmianie auta
+async function analizujAuto(k){S.laduje="Analiza auta "+k+" na karcie OMENa…";S.awaryjny=false;rysuj();
+ try{const r=await fetch("api/analiza?auto="+k,{method:"POST"});if(!r.ok)throw new Error((await r.json()).blad);nowy(await r.json(),k);}
+ catch(e){try{const r=await fetch("zapis/"+k+".json");if(!r.ok)throw 0;S.awaryjny=true;nowy(await r.json(),k);}catch(_){S.laduje=null;S.blad="Usługa nie odpowiada i brak zapisanego wyniku: "+e.message;idz("E1");}}}
+async function analizujPlik(f0){S.laduje=`Wysyłam ${f0.name} (${(f0.size/1e6).toFixed(1)} MB) i liczę na karcie OMENa…`;S.awaryjny=false;rysuj();
+ try{const r=await fetch("api/analiza?nazwa="+encodeURIComponent(f0.name),{method:"POST",body:f0,headers:{"Content-Type":"application/octet-stream"}});
+  const j=await r.json();if(!r.ok)throw new Error(j.blad);S.plikNazwa=f0.name;nowy(j,"W");}
+ catch(e){S.laduje=null;S.blad="Nie udało się przeanalizować pliku: "+e.message+" (własne zdjęcie wymaga działającej usługi na karcie)";idz("E1");}}
+function ustawTowar(k){ // P44 B: decyzje przy miejscach, które zostają (kontur pokrywa się, IoU ≥ POKRYCIE), przechodzą; reszta odpada
+ const stare=widoczne().filter(x=>S.dec[x.id]).map(x=>[x,S.dec[x.id]]);S.towar=k;const nowe={};
+ widoczne().forEach(x=>{const z=stare.find(([o])=>iou(o,x)>=POKRYCIE);if(z)nowe[x.id]=z[1];});S.dec=nowe;rysuj();}
+function wybierz(id){S.wyb=id;rysuj();}
+function doKontroli(id){S.dec[id]={k:true};S.wyb=id;rysuj();}
+function odrzuc(p){S.dec[S.odrzuc]={k:false,powod:p};S.odrzuc=null;rysuj();}
+function cofnij(id){delete S.dec[id];S.wyb=id;rysuj();} // P32
+fetch("api/wersja").then(r=>r.json()).then(j=>{WERSJA=j.sha;rysuj();}).catch(()=>{});
+fetch("zapis/auta.json").then(r=>r.json()).then(j=>{for(const k in j)AUTA[k]={...AUTA[k],...j[k]};rysuj();}).catch(()=>{});
+rysuj();
+</script></body></html>
