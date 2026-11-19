@@ -89,3 +89,7 @@ P21 11:34 odpowiedź (Artur w pokoju): zawsze najwyżej 5 zaznaczeń, najpewniej
 11:40 Programista: warianty https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/1/ https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/2/ https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/3/ (curl 200×3; udawane dane: auto A z dodatkiem — 7 miejsc, 5 + „+2 dalszych miejsc”; auto B czyste — „brak zaznaczeń” z wzorcem W-PL-014)
 11:40 Szef: warianty https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/1/ https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/2/ https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/3/
 P22 11:41 Artur: który wariant ekranu — 1) jeden obraz na cały ekran, 2) najpierw lista zaznaczeń, 3) porównanie obok siebie (makiety: .../makieta/warianty/1/, /2/, /3/)? Rekomendacja: 3 — czeka
+P22 11:42 odpowiedź (Artur w pokoju): wariant 3 (porównanie obok siebie) + z wariantu 2 lista zaznaczeń z boku (najpewniejsze pierwsze); klik w pozycję pokazuje miejsce na obu obrazach
+P23 11:42 Artur: gdzie na ekranie wybór rodzaju towaru — nad obrazami przed analizą czy w oknie na starcie? — czeka
+P24 11:42 Artur: przyciski „do kontroli”/„odrzuć” przy każdej pozycji listy czy jedna para pod obrazami dla wybranej? — czeka
+P25 11:42 Artur: wzorzec niepewny — pasek ostrzeżenia nad obrazami czy znaczek przy nazwie wzorca? — czeka
