@@ -1,4 +1,4 @@
-# Stan (Szef) — 12:17 sobota
+# Stan (Szef) — 12:18 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
@@ -12,8 +12,8 @@ Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 M
 | 2 /write-prd docs/spec.md | Projektant | zamknięte (odbiorca R2 czyste; P27 w E1, KA11) |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zamknięte (kosmetyka + README wypchnięte) |
-| 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; sondy 1–3 zlecone (OMEN) |
-| 4 scenariusze testów (06) / historyjki (07) | Analityk / Projektant | zamknięte; braki skryptu oceny (06 C) → Programista |
+| 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; generator „biblioteka” gotowy, sondy 1–3 w toku (sondy.sh, OMEN) |
+| 4 scenariusze testów (06) / historyjki (07) | Analityk / Projektant | zamknięte; 06 C w rtg/ocena.py (12:17) |
 | 5 makieta R1 wg speca (gh-pages) | Programista | zlecone (po 0P część C) |
 | README: tabela „Użyte narzędzia” | Prezenter | zamknięte (biblioteki makiety i MVP uzupełni Programista) |
 
