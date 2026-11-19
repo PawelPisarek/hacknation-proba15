@@ -65,11 +65,11 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 | E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje | numer kontroli sztuczny |
 
 ### 7.6 Kryteria akceptacji (z eksperymentów i ryzyk 02)
-- **KA1 (Z1, najryzykowniejsze):** trafność doboru wzorca zmierzona na zbiorze testowym i podana; przy złym typie widoczne „wzorzec niepewny”; próg po krzywej.
+- **KA1 (Z1, najryzykowniejsze):** trafność doboru wzorca (trafny dobór = ten sam typ naczepy; sprawdzany także na zbiorze z jedną grupą naczep wyjętą z biblioteki — wtedy pasek „wzorzec niepewny”) zmierzona na zbiorze testowym i podana; przy złym typie widoczne „wzorzec niepewny”; próg po krzywej.
 - **KA2 (Z2):** FN przy limicie 5 podane obok FP, także przy „nie wiem”; FN liczone na pełnej liście i na pierwszej piątce osobno.
 - **KA3 (Z3):** 0 zaznaczeń na czystych w dwóch wariantach: (a) pusta naczepa bez wyboru towaru, (b) załadowana z prawidłowym wyborem. Krzywa próg → FP/FN osobno.
 - **KA4 (Z4):** ścieżka od wyboru towaru do raportu ≤ 2 min.
-- **KA5 (Z5):** dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają.
+- **KA5 (Z5):** dane z 6 rodzajami ładunku; wybór towaru = wzorzec z tym ładunkiem, „nie wiem” = pusta naczepa; dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają.
 - **KA6 (Z6):** < 1 min na obraz ~50 MB na karcie OMENa.
 - **KA7 (Z7):** podejścia B (PatchCore) i C (EfficientAD) mieszczą się w 4 GB; inaczej podejście A + mniejszy model.
 - **KA8 (Z8):** FN na trudniejszym wariancie rośnie najwyżej o 10 pp, FP na czystych zostaje 0 („strojenie” = progi na łatwym wariancie; „nauka” = model z czystych, §5).
@@ -87,7 +87,8 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 Liczba aut dziennie (P14, założenie); progi Z1, Z2, Z5 — Programista po krzywej z przebiegu bazowego.
 
 ## 8. Release
-**MVP (demo):** E1–E4 z udawanymi danymi, dwa auta, 6 grup + „nie wiem”, ≤ 5 zaznaczeń + licznik, decyzje i raport.
+**MVP (demo):** E1–E4; wynik pod linkiem bierze usługa na karcie OMENa (ustalenie Pawła ze startu), a udawane dane są tylko w makiecie. Dwa auta pokazu, 6 grup + „nie wiem”, ≤ 5 zaznaczeń + licznik, decyzje i raport.
+**Tryb partiami do oceny (zadanie §6):** wejście — katalog plików .bmp; wyjście — na obraz lista ramek z pewnością (JSON) oraz obraz z zaznaczeniem; komenda `python -m rtg.wykryj --dane <katalog>`; towar „nie wiem” (nic nie wygaszane, nadal ≤ 5 + licznik).
 **Poza MVP:** integracja z repozytorium RTG i urządzeniami (pole identyfikujące kontrolę zamiast), uczenie na odrzuceniach, pełna klasyfikacja towarów, realne dane KAS.
 
 UPROSZCZENIE: biblioteka wzorców — mały zbiór sztucznych naczep — zamiast zdjęć KAS — dorobienie: duże (dane KAS).
