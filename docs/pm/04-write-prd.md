@@ -39,16 +39,16 @@ Jeden segment: operator RTG (Służba Celno-Skarbowa) przy stanowisku na granicy
 6. Raport z auta (E4) powstaje po decyzjach operatora i je zawiera (P7, P10). Auto B: „brak zaznaczeń” + użyty wzorzec (P17).
 
 ### 7.2 Ekran główny (wariant 3 + lista z wariantu 2; makieta: https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/3/)
-- **Linia nad obrazami:** wybór rodzaju towaru: drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa, „nie wiem” (zaznaczamy wszystko) (P20, P23). Bez wyboru = „nie wiem”.
+- **Linia nad obrazami:** wybór rodzaju towaru: drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa, „nie wiem” (zaznaczamy wszystko) (P20, P23). Bez wyboru = „nie wiem”. Każdy rodzaj towaru wygasza swoje typowe miejsca, a ekran pokazuje „wygaszone: N” (P29).
 - **Pasek „wzorzec niepewny”** nad obrazami, widoczny, gdy brak naczepy tego typu i użyto najbliższej podobnej (P11, P25).
 - **Dwa obrazy obok siebie** (jeden monitor, podział ekranu): wzorzec (nazwa, np. W-PL-014) i badany; różnica podświetlona; zaznaczone miejsce widać na obu.
-- **Lista zaznaczeń z boku:** do 5, najpewniejsze pierwsze, z oceną pewności (P8). Gdy było więcej: „+N dalszych miejsc” (licznik, nie zaznaczenie) (P21) — także przy „nie wiem”.
-- **Przy każdej pozycji:** „do kontroli” / „odrzuć”; odrzucenie wymaga powodu: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P9).
+- **Lista zaznaczeń z boku:** do 5, najpewniejsze pierwsze, z oceną pewności (P8). Gdy było więcej: „+N dalszych miejsc” (licznik, nie zaznaczenie) (P21) — także przy „nie wiem”. Nagłówek listy: „Zaznaczenia (5) i +2 dalszych miejsc” (P28).
+- **Przy każdej pozycji:** „do kontroli” / „odrzuć”; odrzucenie wymaga powodu: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P9). Po decyzji kontur zmienia kolor (zatwierdzone zielony, odrzucone szary) i jest „cofnij decyzję” (P32).
 - **Brak zaznaczeń:** komunikat „brak zaznaczeń” i pokazany użyty wzorzec (P17).
 - **Podpowiedź przy podwójnej podłodze** — tylko ta część pomysłu „typowe miejsca” (P3, moment b). Pokazanie (P26): krótki dopisek „typowe miejsce skrytki: podwójna podłoga” przy pozycji listy zaznaczeń leżącej w podłodze, bez osobnego okna. Kryterium: na pokazie na aucie z dodatkiem w podłodze dopisek widać przy właściwej pozycji.
 
 ### 7.3 Raport z auta (P10, P16, §9)
-Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty wzorzec (+ „wzorzec niepewny”), zaznaczenia z oceną, decyzje operatora z powodem. „Do kontroli” = samo oznaczenie w raporcie, bez komunikatu do kontrolera (P16). Decyzje zostają w raporcie.
+Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty wzorzec (+ „wzorzec niepewny”), zaznaczenia z oceną, decyzje operatora z powodem. „Do kontroli” = samo oznaczenie w raporcie, bez komunikatu do kontrolera (P16). Decyzje zostają w raporcie. Raport jest dostępny dopiero, gdy każde miejsce ma decyzję (P30).
 
 ### 7.4 Zachowania i reguły
 - Wzorzec dobiera system z biblioteki (P6, P11, P19 A): pusta naczepa tego samego typu; wybór towaru ogranicza ramki na zgodnym ładunku, ale nie wygasza miejsc z ładunkiem tam, gdzie wybór go nie obejmuje (Z5).
@@ -62,7 +62,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 | E1 Wybór auta | dwa auta pokazu + przycisk „wczytaj własne zdjęcie” (P27) | A „z dodatkiem”, B „czyste” |
 | E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc” (**udawane dane pokazu**), jedna pozycja w podłodze z dopiskiem „typowe miejsce skrytki: podwójna podłoga” (P26); B: brak zaznaczeń, wzorzec W-PL-014 |
 | E3 Powód odrzucenia | lista 4 powodów | element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne |
-| E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje | numer kontroli sztuczny |
+| E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje (dostępny po decyzjach przy każdym miejscu, P30) | numer kontroli sztuczny |
 
 ### 7.6 Kryteria akceptacji (z eksperymentów i ryzyk 02)
 - **KA1 (Z1, najryzykowniejsze):** trafność doboru wzorca (trafny dobór = ten sam typ naczepy; sprawdzany także na zbiorze z jedną grupą naczep wyjętą z biblioteki — wtedy pasek „wzorzec niepewny”) zmierzona na zbiorze testowym i podana; przy złym typie widoczne „wzorzec niepewny”; próg po krzywej.
@@ -75,6 +75,10 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 - **KA8 (Z8):** FN na trudniejszym wariancie rośnie najwyżej o 10 pp, FP na czystych zostaje 0 („strojenie” = progi na łatwym wariancie; „nauka” = model z czystych, §5).
 - **KA9 (P21):** na ekranie zawsze ≤ 5 zaznaczeń + „+N dalszych miejsc”.
 - **KA10 (P26):** na aucie z dodatkiem w podłodze właściwa pozycja listy ma dopisek „typowe miejsce skrytki: podwójna podłoga”, bez osobnego okna.
+- **KA12 (P28):** nagłówek listy brzmi „Zaznaczenia (5) i +2 dalszych miejsc”, nie „Zaznaczenia (7)”.
+- **KA13 (P29):** wybór rodzaju towaru wygasza jego typowe miejsca i ekran pokazuje „wygaszone: N”.
+- **KA14 (P30):** raport z auta jest niedostępny, dopóki jakiekolwiek miejsce nie ma decyzji.
+- **KA15 (P32):** po decyzji kontur zmienia kolor (zielony lub szary), a „cofnij decyzję” przywraca pozycję.
 - **KA11 (P27, P31):** własny plik .bmp, .png lub .jpg wczytany przyciskiem „wczytaj własne zdjęcie” daje wynik z tymi samymi zasadami: ≤ 5 zaznaczeń + „+N dalszych miejsc”, wzorzec dobrany sam (z paskiem „wzorzec niepewny”, gdy trzeba).
 
 ### 7.7 Ryzyka
