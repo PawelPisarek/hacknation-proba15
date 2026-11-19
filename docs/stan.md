@@ -11,7 +11,7 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
 | 2 /write-prd docs/spec.md | Projektant | R1: 3 braki — poprawka (1, 3), brak 2 → P26 |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
-| 6 nazwa + hasło (product-name, value-prop-statements) → docs/hacktribe.md | Prezenter | zlecone |
+| 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zameldowane, nazwa „Drugie Spojrzenie”; recenzja 1 (Analityk) |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
 Otwarte: P26 (Artur, 11:49 — wygląd podpowiedzi przy podwójnej podłodze).
