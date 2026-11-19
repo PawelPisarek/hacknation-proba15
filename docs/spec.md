@@ -30,29 +30,32 @@ Jeden segment: operator RTG (Służba Celno-Skarbowa) przy stanowisku na granicy
 
 ## 7. Solution
 
-### 7.1 Ścieżka główna (demo ≤ 2 min, ustalenie Szefa; dwa auta, P18)
+### 7.1 Ścieżka główna (demo ≤ 2 min w pełni na aucie A — P45 A; auto B i własne zdjęcie jako krótkie ujęcia poza 2 min; dwa auta pokazu, P18)
 1. Wybór auta (A: z dodatkiem, 7 miejsc → 5 widocznych + „+2 dalszych miejsc” do rozwinięcia — **udawane dane pokazu**; B: czyste) albo wczytanie własnego zdjęcia (przycisk „wczytaj własne zdjęcie”, P27).
 2. Operator wybiera rodzaj zgłoszonego towaru (P19, P20, P23) — 6 grup + „nie wiem”.
 3. Wynik: wzorzec i badany obraz obok siebie z podświetloną różnicą (P15, P22), z boku lista zaznaczeń.
 4. Klik w pozycję listy pokazuje miejsce na obu obrazach (P22).
 5. Przy każdej pozycji „do kontroli” albo „odrzuć” (powód z listy) (P7, P24).
-6. „+2 dalszych miejsc” operator może rozwinąć i też zdecydować (P35). Raport z auta (E4) powstaje po decyzjach przy wszystkich miejscach, także rozwiniętych, i je zawiera (P7, P10, P35). Auto B: „brak zaznaczeń” + użyty wzorzec (P17).
+6. „+2 dalszych miejsc” operator może rozwinąć i też zdecydować (P35). Raport z auta (E4) powstaje po decyzjach przy wszystkich miejscach, także rozwiniętych, i je zawiera (P7, P10, P35). Auto B (krótkie ujęcie poza 2 min): „brak zaznaczeń” + użyty wzorzec (P17). W 2 min mieści się auto A od wyboru towaru do raportu (P45 A).
 
 ### 7.2 Ekran główny (wariant 3 + lista z wariantu 2; makieta: https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/3/)
-- **Linia nad obrazami:** wybór rodzaju towaru: drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa, „nie wiem” (zaznaczamy wszystko) (P20, P23). Bez wyboru = „nie wiem”. Każdy rodzaj towaru **oprócz „pusta naczepa”** wygasza swoje typowe miejsca, a ekran pokazuje „wygaszone: N” (P29). **Pusta naczepa nic nie wygasza** — miejsca w podłodze i ścianach zostają na liście (P34).
+- **Linia nad obrazami:** wybór rodzaju towaru: drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa, „nie wiem” (zaznaczamy wszystko) (P20, P23). Bez wyboru = „nie wiem”. Każdy z 5 rodzajów ładunku (drobnica, płyny, sypkie, maszyny, meble/AGD) wygasza swoje typowe miejsca, **ale tylko wnętrze ładunku — nigdy dachu, podłogi ani ściany przedniej** (P40 A), a ekran pokazuje „wygaszone: N” (P29). **„Pusta naczepa” i „nie wiem” nic nie wygaszają** (N = 0) — miejsca w podłodze i ścianach zostają na liście (P34).
 - **Pasek „wzorzec niepewny”** nad obrazami, widoczny, gdy brak naczepy tego typu i użyto najbliższej podobnej (P11, P25).
 - **Dwa obrazy obok siebie** (jeden monitor, podział ekranu): wzorzec (nazwa, np. W-PL-014) i badany; różnica podświetlona; zaznaczone miejsce widać na obu.
 - **Lista zaznaczeń z boku:** do 5, najpewniejsze pierwsze, z oceną pewności (P8). Gdy było więcej: „+N dalszych miejsc” (P21) — także przy „nie wiem”. To przycisk **rozwijający** resztę listy: operator może je obejrzeć i zdecydować przy każdym (P35). Licznik „+N dalszych miejsc” jest tylko raz, przy nagłówku, nie pod listą (P36). Nagłówek zwiniętej listy: „Zaznaczenia (5) i +2 dalszych miejsc” (P28); nagłówek po rozwinięciu: „Zaznaczenia (7)” (P41 A); ta sama zasada w raporcie.
 - **Kolory (P37):** pewność w skali (wysoka czerwona, średnia pomarańczowa, niska żółta); napis decyzji przy pozycji w kolorze decyzji (zatwierdzone zielony, odrzucone szary). Progi w makiecie R3: ≥80% / 50–79% / <50%; przycisk „do kontroli” w neutralnym niebieskim, czerwień tylko dla wysokiej pewności, odrzucone pozycje z wyraźniejszym tekstem (P43 A).
 - **Przy każdej pozycji:** „do kontroli” / „odrzuć”; odrzucenie wymaga powodu: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P9). Po decyzji kontur zmienia kolor (zatwierdzone zielony, odrzucone szary) i jest „cofnij decyzję” (P32).
+- **Przycisk „Raport z auta”:** dopóki jakiekolwiek miejsce (także w zwiniętych „dalszych miejscach”) nie ma decyzji, jest wyszarzony, a obok stoi komunikat „Brakuje decyzji: N, w tym M w dalszych miejscach” z przyciskiem „rozwiń” (P42 A; np. 6 i 2). Po decyzji przy wszystkich przycisk jest aktywny (P30).
+- **Zmiana towaru po decyzjach (P44 B):** linia towaru działa także po decyzjach. Po zmianie lista liczy się od nowa; decyzje przy miejscach, które zostają, zachowujemy (miejsce „zostaje” = to samo miejsce: jego kontur pokrywa się z wcześniejszym i jest na liście po zmianie — decyzja przechodzi), miejsca nowe są bez decyzji, a decyzje przy miejscach, które zniknęły z listy, odpadają. Bez pytania o skasowanie.
 - **Brak zaznaczeń:** komunikat „brak zaznaczeń” i pokazany użyty wzorzec (P17).
 - **Podpowiedź przy podwójnej podłodze** — tylko ta część pomysłu „typowe miejsca” (P3, moment b). Pokazanie (P26): krótki dopisek „typowe miejsce skrytki: podwójna podłoga” przy pozycji listy zaznaczeń leżącej w podłodze, bez osobnego okna. Kryterium: na pokazie na aucie z dodatkiem w podłodze dopisek widać przy właściwej pozycji.
 
 ### 7.3 Raport z auta (P10, P16, §9)
-Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty wzorzec (+ „wzorzec niepewny”), zaznaczenia z oceną, decyzje operatora z powodem oraz wiersz „wygaszone wyborem ładunku: N” (P38; przy pustej naczepie i „nie wiem” N = 0). „Do kontroli” = samo oznaczenie w raporcie, bez komunikatu do kontrolera (P16). Decyzje zostają w raporcie. Raport jest dostępny dopiero, gdy każde miejsce — także w rozwiniętych „dalszych miejscach” — ma decyzję (P30, P35).
+Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty wzorzec (+ „wzorzec niepewny”), zaznaczenia z oceną, decyzje operatora z powodem oraz wiersz „wygaszone wyborem ładunku: N” (P38; przy pustej naczepie i „nie wiem” N = 0). „Do kontroli” = samo oznaczenie w raporcie, bez komunikatu do kontrolera (P16). Decyzje zostają w raporcie. Raport jest dostępny dopiero, gdy każde miejsce — także w rozwiniętych „dalszych miejscach” — ma decyzję (P30, P35); do tego czasu przycisk jest wyszarzony z komunikatem „Brakuje decyzji: N, w tym M w dalszych miejscach” i przyciskiem „rozwiń” (P42 A). Nagłówek listy zaznaczeń w raporcie auta A: „Zaznaczenia (7)” — wszystkie 7 pozycji z decyzjami, bez „+N dalszych miejsc” (P41 A). Raport liczy się z aktualnych decyzji; po zmianie towaru (P44 B) zawiera decyzje przy miejscach, które zostały, a nowe miejsca muszą dostać decyzję przed raportem.
 
 ### 7.4 Zachowania i reguły
-- Wzorzec dobiera system z biblioteki (P6, P11, P19 A): pusta naczepa tego samego typu; wybór towaru ogranicza ramki na zgodnym ładunku, ale nie wygasza miejsc z ładunkiem tam, gdzie wybór go nie obejmuje (Z5); pusta naczepa nic nie wygasza (P34).
+- Wzorzec dobiera system z biblioteki (P6, P11, P19 A): pusta naczepa tego samego typu; wybór towaru ogranicza ramki na zgodnym ładunku, ale nie wygasza miejsc z ładunkiem tam, gdzie wybór go nie obejmuje (Z5); pusta naczepa i „nie wiem” nic nie wygaszają (P34); wygaszanie dotyczy tylko wnętrza ładunku, nie dachu, podłogi ani ściany przedniej (P40 A).
+- Zmiana towaru po decyzjach: decyzje przy tych samych miejscach (kontur pokrywa się z wcześniejszym) zostają, nowe miejsca są bez decyzji, decyzje przy miejscach, które zniknęły z listy, odpadają (P44 B).
 - Wykrywanie i zaznaczenia powstają samodzielnie; zatwierdzanie/odrzucanie to krok po wyniku wykrywania i nie wpływa na wynik wykrywania (Szef 11:21). Raport z auta (E4) tworzy się po decyzjach operatora i je zawiera (Szef 11:49). Przebieg automatyczny i partiami = „nie wiem”.
 - Odrzucone miejsca **nie uczą** systemu (odrzucony pomysł 7: mogłyby ukryć skrytki, P5).
 - Język ekranu: polski. Praca bez internetu i chmury; pliki .bmp ~50 MB, przetwarzanie partiami i skalowalność (§3, §9).
@@ -60,16 +63,16 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 ### 7.5 Opis makiety dla Programisty (ekrany i udawane dane)
 | Ekran | Zawartość | Udawane dane |
 |---|---|---|
-| E1 Wybór auta | dwa auta pokazu + przycisk „wczytaj własne zdjęcie” (P27) | A „z dodatkiem”, B „czyste” |
-| E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc” rozwijane (**udawane dane pokazu**), jedna pozycja w podłodze z dopiskiem „typowe miejsce skrytki: podwójna podłoga” (P26); B: brak zaznaczeń, wzorzec W-PL-014 |
+| E1 Wybór auta | dwa auta pokazu (w 2 min tylko A, P45) + przycisk „wczytaj własne zdjęcie” (P27) | A „z dodatkiem”, B „czyste” |
+| E2 Analiza (główny) | linia towaru (wygaszanie tylko wnętrza ładunku, P40; „pusta naczepa” i „nie wiem”: wygaszone 0), pasek niepewności, 2 obrazy, lista (nagłówek „Zaznaczenia (5) i +2 dalszych miejsc”, po rozwinięciu „Zaznaczenia (7)”), przyciski; przycisk raportu wyszarzony z komunikatem „Brakuje decyzji: N, w tym M w dalszych miejscach” + „rozwiń” (P42); „do kontroli” niebieski (P43); zmiana towaru zachowuje decyzje przy tych samych miejscach (P44) | A: 7 miejsc → 5 + „+2 dalszych miejsc” rozwijane (**udawane dane pokazu**), jedna pozycja w podłodze z dopiskiem „typowe miejsce skrytki: podwójna podłoga” (P26); B: brak zaznaczeń, wzorzec W-PL-014 |
 | E3 Powód odrzucenia | lista 4 powodów | element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne |
-| E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje, wiersz „wygaszone wyborem ładunku: N” (P38) (dostępny po decyzjach przy każdym miejscu, także rozwiniętych, P30, P35) | numer kontroli sztuczny; auto A: tabela decyzji 7 miejsc |
+| E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje, wiersz „wygaszone wyborem ładunku: N” (P38) (dostępny po decyzjach przy każdym miejscu, także rozwiniętych, P30, P35) | numer kontroli sztuczny; auto A: tabela decyzji 7 miejsc, nagłówek „Zaznaczenia (7)” (P41) |
 
 ### 7.6 Kryteria akceptacji (z eksperymentów i ryzyk 02)
 - **KA1 (Z1, najryzykowniejsze):** trafność doboru wzorca (trafny dobór = ten sam typ naczepy; sprawdzany także na zbiorze z jedną grupą naczep wyjętą z biblioteki — wtedy pasek „wzorzec niepewny”) zmierzona na zbiorze testowym i podana; przy złym typie widoczne „wzorzec niepewny”; próg po krzywej.
 - **KA2 (Z2):** FN przy limicie 5 podane obok FP, także przy „nie wiem”; FN liczone na pełnej liście i na pierwszej piątce osobno.
 - **KA3 (Z3):** 0 zaznaczeń na czystych w dwóch wariantach: (a) pusta naczepa bez wyboru towaru, (b) załadowana z prawidłowym wyborem. Krzywa próg → FP/FN osobno.
-- **KA4 (Z4):** ścieżka od wyboru towaru do raportu ≤ 2 min.
+- **KA4 (Z4, P45 A):** ścieżka od wyboru towaru do raportu na aucie A ≤ 2 min; auto B i własne zdjęcie to osobne krótkie ujęcia poza tym limitem.
 - **KA5 (Z5):** dane z 6 rodzajami ładunku; wybór towaru = wzorzec z tym ładunkiem, „nie wiem” = pusta naczepa; dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają.
 - **KA6 (Z6):** < 1 min na obraz ~50 MB na karcie OMENa.
 - **KA7 (Z7):** podejścia B (PatchCore) i C (EfficientAD) mieszczą się w 4 GB; inaczej podejście A + mniejszy model.
@@ -79,7 +82,8 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 - **KA12 (P28, P36):** nagłówek zwiniętej listy brzmi „Zaznaczenia (5) i +2 dalszych miejsc”, nie „Zaznaczenia (7)”; licznik „dalszych miejsc” jest tylko raz. Po rozwinięciu nagłówek „Zaznaczenia (7)” (P41 A).
 - **KA16 (P34–P38):** pusta naczepa nic nie wygasza; „+N dalszych miejsc” (tylko przy nagłówku) rozwija się i każde miejsce dostaje decyzję przed raportem; kolory pewności: wysoka czerwona, średnia pomarańczowa, niska żółta, napis decyzji w kolorze decyzji; raport ma wiersz „wygaszone wyborem ładunku: N”.
 - **KA13 (P29, P34):** wybór rodzaju towaru (poza „pusta naczepa” i „nie wiem”) wygasza jego typowe miejsca i ekran pokazuje „wygaszone: N”; „pusta naczepa” i „nie wiem” nic nie wygaszają (N = 0). Wygaszane jest tylko wnętrze ładunku, nie dach, podłoga ani ściana przednia (P40 A).
-- **KA17 (P40–P45):** wygaszanie nie obejmuje dachu, podłogi ani ściany przedniej; po rozwinięciu nagłówek „Zaznaczenia (7)”; zablokowany raport pokazuje „Brakuje decyzji: N, w tym M w dalszych miejscach” z przyciskiem „rozwiń”; zmiana towaru zachowuje decyzje przy miejscach, które zostają (P44 B); demo 2 min tylko na aucie A.
+- **KA18 (P41, P43):** raport auta A ma nagłówek „Zaznaczenia (7)” z 7 pozycjami; przycisk „do kontroli” jest niebieski, czerwień tylko przy wysokiej pewności (≥ 80%), tekst odrzuconych pozycji jest czytelny (wyraźniejszy kontrast).
+- **KA17 (P40–P45):** wygaszanie nie obejmuje dachu, podłogi ani ściany przedniej; po rozwinięciu nagłówek „Zaznaczenia (7)”; zablokowany raport pokazuje „Brakuje decyzji: N, w tym M w dalszych miejscach” z przyciskiem „rozwiń”; zmiana towaru zachowuje decyzje przy tych samych miejscach (kontur pokrywa się z wcześniejszym), nowe miejsca są bez decyzji (P44 B); demo 2 min tylko na aucie A.
 - **KA14 (P30):** raport z auta jest niedostępny, dopóki jakiekolwiek miejsce nie ma decyzji.
 - **KA15 (P32):** po decyzji kontur zmienia kolor (zielony lub szary), a „cofnij decyzję” przywraca pozycję.
 - **KA11 (P27, P31):** własny plik .bmp, .png lub .jpg wczytany przyciskiem „wczytaj własne zdjęcie” daje wynik z tymi samymi zasadami: ≤ 5 zaznaczeń + „+N dalszych miejsc”, wzorzec dobrany sam (z paskiem „wzorzec niepewny”, gdy trzeba).
@@ -94,7 +98,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 ### 7.8 Założenia i pytania otwarte
 Liczba aut dziennie (P14, założenie); progi Z1, Z2, Z5 — Programista po krzywej z przebiegu bazowego.
 
-**Rozstrzygnięte (Artur, krytyk R3, wersja nocna):** P40 A wygaszanie tylko wnętrza ładunku; P41 A nagłówek „Zaznaczenia (7)” po rozwinięciu; P42 A blokada raportu z komunikatem „Brakuje decyzji: N, w tym M w dalszych miejscach” i przyciskiem „rozwiń”; P43 A kolory (niebieski „do kontroli”, czerwień tylko dla wysokiej pewności); **P44 B** zmiana towaru zachowuje decyzje przy miejscach, które zostają (bez pytania o skasowanie; decyzje przy miejscach, które znikną, odpadają, a raport liczy się od nowa); P45 A pokaz 2 min w pełni na aucie A, auto B i własne zdjęcie jako krótkie ujęcia poza 2 min; P46 nic nie wyrzucamy.
+**Rozstrzygnięte (Artur, krytyk R3, wersja nocna):** P40 A wygaszanie tylko wnętrza ładunku; P41 A nagłówek „Zaznaczenia (7)” po rozwinięciu; P42 A blokada raportu z komunikatem „Brakuje decyzji: N, w tym M w dalszych miejscach” i przyciskiem „rozwiń”; P43 A kolory (niebieski „do kontroli”, czerwień tylko dla wysokiej pewności); **P44 B** zmiana towaru zachowuje decyzje przy miejscach, które zostają (bez pytania o skasowanie; decyzje przy miejscach, które znikną, odpadają, a raport liczy się z aktualnych decyzji, reguła w 7.2–7.4); P45 A pokaz 2 min w pełni na aucie A, auto B i własne zdjęcie jako krótkie ujęcia poza 2 min; P46 nic nie wyrzucamy.
 
 ## 8. Release
 **MVP (demo):** E1–E4; wynik pod linkiem bierze usługa na karcie OMENa (ustalenie Pawła ze startu), a udawane dane są tylko w makiecie. Dwa auta pokazu, 6 grup + „nie wiem”, ≤ 5 zaznaczeń + licznik, decyzje i raport.
