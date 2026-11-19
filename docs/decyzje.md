@@ -118,3 +118,4 @@ P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce
 11:55 Projektant: docs/pm/07-historyjki.md — 10 historyjek H1–H10 z odwołaniami do KA1–KA10
 11:56 Szef: recenzja odbiorcy R1 — brak 1a (MVP liczy naprawdę): rozstrzygnięte ustaleniem Pawła ze startu — MVP pod linkiem bierze wynik z usługi na karcie OMENa, dane udawane tylko w makiecie; braki 2–4 (technika, wynikają z zadania) wg rekomendacji Programisty; poprawia Projektant w docs/spec.md, potem R2 odbiorcy
 P27 11:56 Artur: czy operator może wczytać własne zdjęcie naczepy, czy pokazujemy tylko dwa przygotowane auta? (rekomendacja: dwa auta do pokazu + przycisk „wczytaj własne zdjęcie”) — czeka
+11:56 Analityk: krok 4a — docs/pm/06-scenariusze-testow.md (A1–A11 ekrany, B1–B8 ocena, 10 braków skryptu → Programista)
