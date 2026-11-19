@@ -118,7 +118,7 @@ def projekt_grupy(rng, typ):
     return p
 
 
-def rysuj_naczepe(pl, p, rng_obrazu, jitter_palet):
+def rysuj_naczepe(pl, p, rng_obrazu, jitter_palet, z_towarem=True):
     """Konstrukcja + towar. Zwraca listę prostokątów palet w pikselach (do dodatków w towarze)."""
     sc = p["sciana"]
     pl.prost(0.0, 0.10, 1.0, 0.105, 0.10)                       # dach
@@ -150,6 +150,8 @@ def rysuj_naczepe(pl, p, rng_obrazu, jitter_palet):
         pl.kolo(os_u, 0.875, 0.09, 0.9, r_wew=0.04, val_wew=1.5)
     # towar
     palety = []
+    if not z_towarem:
+        return palety
     for i, pal in enumerate(p["towar"]):
         du = jitter_palet[i]
         u0, u1 = pal["u0"] + du, pal["u1"] + du
@@ -218,13 +220,13 @@ def dodaj(pl, p, rodzaj, rng, palety, kontrast):
     return [int(math.floor(x0)), int(math.floor(y0)), int(math.ceil(x1 - x0)), int(math.ceil(y1 - y0))]
 
 
-def obraz(w, h, p, rng, dodatki_rodzaje, kontrast):
+def obraz(w, h, p, rng, dodatki_rodzaje, kontrast, z_towarem=True):
     s = w / PELNY_W
     geo = {"x0": 0.08 * w, "y0": 0.0, "L": 0.84 * w, "Hh": 0.97 * h,
            "sx": rng.uniform(0.985, 1.015), "dx": rng.normal(0, 0.004 * w), "dy": rng.normal(0, 0.003 * h)}
     pl = Plotno(w, h, geo)
     jit = rng.normal(0, 0.0015, size=len(p["towar"]))
-    palety = rysuj_naczepe(pl, p, rng, jit)
+    palety = rysuj_naczepe(pl, p, rng, jit, z_towarem)
     ramki = []
     for r in dodatki_rodzaje:
         ramki.append({"rodzaj": r, "ramka": dodaj(pl, p, r, rng, palety, kontrast)})
@@ -255,6 +257,9 @@ def main():
     ap.add_argument("--bity", type=int, choices=(8, 24), default=8)
     ap.add_argument("--kontrast", type=float, default=0.35, help="tłumienie dodatku (mniej = trudniej)")
     ap.add_argument("--ziarno", type=int, default=15)
+    ap.add_argument("--wariant", choices=("ta_sama", "pusta"), default="ta_sama",
+                    help="ta_sama: wzorzec z tym samym towarem; pusta (P19): nauka = pusta naczepa, "
+                         "badane w 2/3 załadowane zgłoszonym towarem (towar_zgloszony w etykietach)")
     a = ap.parse_args()
 
     w, h = int(round(PELNY_W * a.skala)), int(round(PELNY_H * a.skala))
@@ -272,18 +277,23 @@ def main():
         for i, rola in enumerate(role):
             rng = np.random.default_rng([seed_g, i])
             rodzaje = []
+            z_towarem = True
+            if a.wariant == "pusta":
+                z_towarem = rola != "nauka" and (i - a.nauka) % 3 != 0
             if rola == "dodatki":
                 n = int(rng.integers(1, 3))
-                rodzaje = [str(x) for x in rng.choice(RODZAJE_DODATKOW, size=n, replace=False)]
-            pix, ramki, geo, _ = obraz(w, h, p, rng, rodzaje, a.kontrast)
+                mozliwe = [r for r in RODZAJE_DODATKOW if z_towarem or r != "w_towarze"]
+                rodzaje = [str(x) for x in rng.choice(mozliwe, size=n, replace=False)]
+            pix, ramki, geo, _ = obraz(w, h, p, rng, rodzaje, a.kontrast, z_towarem)
             nazwa = f"g{g:03d}_{typ}_{i:02d}_{rola}.bmp"
             zapisz_bmp(pix, os.path.join(kat, nazwa), a.bity)
             if wzorzec is None:
                 wzorzec = nazwa
             wpisy.append({"plik": nazwa, "grupa": f"g{g:03d}", "typ": typ, "rola": rola,
-                          "wzorzec": wzorzec, "dodatki": ramki, "geometria": geo})
+                          "wzorzec": wzorzec, "dodatki": ramki, "geometria": geo,
+                          "towar_zgloszony": p["rodzaj_towaru"] if z_towarem else "pusta"})
     meta = {"szer": w, "wys": h, "bity": a.bity, "skala": a.skala, "kontrast": a.kontrast,
-            "ziarno": a.ziarno, "obrazy": wpisy}
+            "ziarno": a.ziarno, "wariant": a.wariant, "obrazy": wpisy}
     with open(os.path.join(a.wyjscie, "etykiety.json"), "w") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     mb = os.path.getsize(os.path.join(kat, wpisy[0]["plik"])) / 1e6

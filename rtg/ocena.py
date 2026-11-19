@@ -30,6 +30,7 @@ def ocen(meta, wyniki):
     fp = fn = fp_dod = n_dod = n_czyst = czyste_z_alarmem = 0
     czasy, brak = [], []
     rodzaje_fn = {}
+    fp_zal = {}
     for o in meta["obrazy"]:
         if o["rola"] == "nauka":
             continue
@@ -42,6 +43,8 @@ def ocen(meta, wyniki):
         if o["rola"] == "czysty":
             n_czyst += 1
             fp += len(r)
+            t = o.get("towar_zgloszony", "pusta") != "pusta"
+            fp_zal[t] = fp_zal.get(t, 0) + len(r)
             czyste_z_alarmem += bool(r)
         else:
             for d in o["dodatki"]:
@@ -53,11 +56,13 @@ def ocen(meta, wyniki):
     return {"metoda": wyniki.get("metoda", "?"), "FP": fp, "czyste": n_czyst, "czyste_z_alarmem": czyste_z_alarmem,
             "FN": fn, "dodatki": n_dod, "FP_dod": fp_dod, "FN_rodzaje": rodzaje_fn,
             "czas_sr_s": round(statistics.mean(czasy), 3) if czasy else None,
-            "czas_max_s": round(max(czasy), 3) if czasy else None, "brak_wyniku": len(brak)}
+            "czas_max_s": round(max(czasy), 3) if czasy else None, "brak_wyniku": len(brak),
+            "FP_pusta": fp_zal.get(False, 0), "FP_zaladowana": fp_zal.get(True, 0)}
 
 
 def linia(w):
     return (f"{w['metoda']}: FP={w['FP']} (czyste z alarmem {w['czyste_z_alarmem']}/{w['czyste']}) "
+            f"[pusta {w['FP_pusta']} / załadowana {w['FP_zaladowana']}] "
             f"FN={w['FN']}/{w['dodatki']} FP_dod={w['FP_dod']} czas/obraz śr={w['czas_sr_s']} s max={w['czas_max_s']} s"
             + (f" BRAK WYNIKU={w['brak_wyniku']}" if w["brak_wyniku"] else "")
             + (f" FN wg rodzaju={w['FN_rodzaje']}" if w["FN_rodzaje"] else ""))
