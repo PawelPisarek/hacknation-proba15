@@ -244,3 +244,4 @@ P47 15:22 odpowiedź: A — najwyżej 7 miejsc na auto (5 widocznych + 2 dalsze)
 15:23 Projektant: spec wg P47 (limit 7 miejsc na auto, pierwszeństwo podłogi i ściany przy kabinie w 7.2/7.4/KA19; 15 miejsc usunięte z 7.1, 7.2, 7.3, 7.5, KA9, KA12, KA17, KA18, 7.8)
 15:27 Szef: materiały i lista odbioru zgodne z limitem 7 (sprawdzone); O36 dla KA19 → Analityk
 15:28 Analityk: O36 (KA19) — docs/pm/12-odbior-mvp.md (3 sprawdzenia: limit 7 także WŁ, podłoga/ściana przy kabinie pierwsze, dodatek w podłodze A przy każdym towarze)
+15:28 Szef: O36 dołączony do odbioru o 05:00 (a, c w skrypcie odbior.sh; b ręcznie); komendę dopasowuje Programista
