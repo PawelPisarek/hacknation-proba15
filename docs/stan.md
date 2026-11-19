@@ -1,4 +1,4 @@
-# Stan (Szef) — 12:47 sobota
+# Stan (Szef) — 12:51 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
@@ -14,7 +14,7 @@ Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 M
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zamknięte (kosmetyka + README wypchnięte) |
 | 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; generator „biblioteka” gotowy, sondy 1–3 w toku (sondy.sh, OMEN) |
 | 4 scenariusze testów (06) / historyjki (07) | Analityk / Projektant | zamknięte; 06 C w rtg/ocena.py (12:17) |
-| 5 makieta R1 wg speca (gh-pages) | Programista | zlecone (po 0P część C) |
+| 5 makieta R1 wg speca (gh-pages) | Programista / Analityk | R1 gotowa 12:49 (zrzut E2); krytyk R1 zlecony |
 | README: tabela „Użyte narzędzia” | Prezenter | zamknięte (biblioteki makiety i MVP uzupełni Programista) |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); dwa auta pokazu + „wczytaj własne zdjęcie” (P27); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
