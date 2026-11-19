@@ -28,3 +28,4 @@ P9 11:23 Artur: jakie powody odrzucenia na liście (np. element konstrukcji, ła
 P10 11:23 Artur: czy zatwierdzone „do kontroli” i odrzucone miejsca zostają zapisane w raporcie z auta? — czeka
 P11 11:23 Artur: skąd system bierze wzorzec — z biblioteki czystych naczep tego samego typu? — czeka
 11:21 Szef: P7 a „bez interwencji człowieka” — bez sprzeczności: wykrywanie i raport działają samodzielnie; zatwierdzanie/odrzucanie przez operatora to krok po raporcie i nie wpływa na wynik wykrywania.
+11:22 Szef: 1a R1 — 5 braków → Projektant poprawia cały plik; brak 4 (perspektywa, kto szuka konkurentów) rozstrzygam: z zadania — porównanie funkcji i sposobu działania, nie cena/rynek; konkurentów szukamy sami poza wymienionymi
