@@ -96,3 +96,4 @@ P25 11:42 Artur: wzorzec niepewny — pasek ostrzeżenia nad obrazami czy znacze
 P23 11:43 odpowiedź (Artur w pokoju): wybór rodzaju towaru nad obrazami, w jednej linii
 P24 11:43 odpowiedź (Artur w pokoju): „do kontroli”/„odrzuć” przy każdej pozycji listy (wynika z P7)
 P25 11:43 odpowiedź (Artur w pokoju): „wzorzec niepewny” jako pasek nad obrazami
+11:47 Szef: (c) zamknięte (P22–P25) → /write-prd docs/spec.md zlecone Projektantowi; kamień ~11:45 przekroczony
