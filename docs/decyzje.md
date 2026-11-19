@@ -239,3 +239,4 @@ UPROSZCZENIE: wybór towaru liczony na ekranie z listy „gasi” zwróconej prz
 15:20 Projektant: spec — auto A wg prawdziwego wyniku (15 miejsc = 5 + „+10 dalszych”; liczby jako wynik z zapisu MVP, nagłówki „Zaznaczenia (N)”); zakres i reguły bez zmian
 P47 15:21 Artur: ile miejsc wolno zaznaczyć na jedno auto (A: najwyżej 7 = 5 widocznych + 2 dalsze; B: do 15 = 5 + "+10")? Artur nie zgodził się, by braki ze zrzutów szły bez niego (auto A ma 15, P5 mówi: kilka) — czeka
 15:22 Szef: cofnięte przez Szefa — rozstrzygnięcie 15:20 pkt 1 (15 miejsc auta A jako prawdziwy wynik bez Artura) i zmiana speca 15:20 Projektanta; liczba miejsc na auto czeka na P47 (Artur); Programista przygotowuje limit jako parametr, poprawki 2–7 bez zmian
+P47 15:22 odpowiedź: A — najwyżej 7 miejsc na auto (5 widocznych + 2 dalsze); miejsca w podłodze i ścianie przy kabinie mają pierwszeństwo przed resztą przy wyborze tych 7 (Artur w pokoju)
