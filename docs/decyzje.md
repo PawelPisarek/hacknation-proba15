@@ -241,3 +241,4 @@ P47 15:21 Artur: ile miejsc wolno zaznaczyć na jedno auto (A: najwyżej 7 = 5 w
 15:22 Szef: cofnięte przez Szefa — moje rozstrzygnięcie z 15:20 o liczbie miejsc auta pokazu oraz zmiana speca Projektanta z 15:20; liczba miejsc czeka na pytanie do Artura; Programista przygotowuje limit jako parametr, pozostałe poprawki bez zmian
 P47 15:22 odpowiedź: A — najwyżej 7 miejsc na auto (5 widocznych + 2 dalsze); miejsca w podłodze i ścianie przy kabinie mają pierwszeństwo przed resztą przy wyborze tych 7 (Artur w pokoju)
 15:22 Szef: odpowiedź Artura (najwyżej 7 miejsc, pierwszeństwo podłogi i ściany przy kabinie) → Programista (limit 7 + kolejność) i Projektant (spec)
+15:23 Projektant: spec wg P47 (limit 7 miejsc na auto, pierwszeństwo podłogi i ściany przy kabinie w 7.2/7.4/KA19; 15 miejsc usunięte z 7.1, 7.2, 7.3, 7.5, KA9, KA12, KA17, KA18, 7.8)
