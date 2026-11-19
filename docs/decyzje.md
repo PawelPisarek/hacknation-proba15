@@ -158,3 +158,9 @@ P37 13:04 Artur: kolory — pewność w skali (wysoka czerwona, średnia pomara�
 P38 13:04 Artur: w raporcie z auta wiersz „wygaszone wyborem ładunku: N” zostaje (A) czy znika (B)? rekomendacja A — czeka
 P39 13:04 Artur: co z ekranu makiety wyrzucić (runda 2)? rekomendacja: nic — czeka
 13:04 Projektant: spec uzupełniony o P28–P32 (7.2, E4, KA12–KA15), nagłówek P1–P33; pytania 34–39 w pokoju
+P34 13:05 odpowiedź (Artur w pokoju): A — pusta naczepa nic nie wygasza, miejsca w podłodze i ścianach zostają na liście (z P5 i P19)
+P35 13:05 odpowiedź (Artur w pokoju): A — „+N dalszych miejsc” można rozwinąć i zdecydować; raport dopiero po decyzjach przy wszystkich
+P36 13:05 odpowiedź (Artur w pokoju): A — licznik „+N dalszych miejsc” tylko raz, przy nagłówku
+P37 13:05 odpowiedź (Artur w pokoju): A — pewność w skali (wysoka czerwona, średnia pomarańczowa, niska żółta), napis przy pozycji w kolorze decyzji
+P38 13:05 odpowiedź (Artur w pokoju): A — w raporcie zostaje wiersz „wygaszone wyborem ładunku: N”
+P39 13:05 odpowiedź (Artur w pokoju): nic z ekranu nie wyrzucać
