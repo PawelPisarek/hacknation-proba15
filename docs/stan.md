@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:54 sobota
+# Stan (Szef) — 11:55 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -12,7 +12,8 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 2 /write-prd docs/spec.md | Projektant | pętla zamknięta; recenzja odbiorcy (Programista) zlecona |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zamknięte (kosmetyka + README wypchnięte) |
-| 3 założenia + atak na spec → docs/pm/05 | Analityk | w toku |
+| 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; sondy 1–3 zlecone (OMEN) |
+| 4 scenariusze testów (06) / historyjki (07) | Analityk / Projektant | zlecone |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
 Otwarte: —

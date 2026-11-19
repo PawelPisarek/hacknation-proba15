@@ -112,3 +112,5 @@ P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce
 11:52 Projektant: spec z P26 — 7.2, E2 (auto A, pozycja w podłodze z dopiskiem), KA10, nagłówek P1–P26
 11:53 Analityk: krok 3 — docs/pm/05-zalozenia-atak.md (ranking Z1–Z8, 3 sondy, 5 ataków); liczby progów to propozycje do potwierdzenia
 11:54 Szef: krok 2 /write-prd — pętla przejścia zamknięta (R2 czyste, P26 w specu: 7.2, E2, KA10); recenzja odbiorcy → Programista
+11:55 Szef: krok 3 — 05-zalozenia-atak.md przyjęty (znaczniki ok); sondy 1–3 → Programista (OMEN, po linii bazowej); propozycja z ataku 3 czeka na wynik sondy 2, dopiero wtedy ewentualne pytanie do Artura
+11:55 Szef: krok 4 zlecony — test-scenarios → Analityk (docs/pm/06), historyjki → Projektant (docs/pm/07)
