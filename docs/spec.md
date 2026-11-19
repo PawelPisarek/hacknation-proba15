@@ -2,7 +2,7 @@
 
 **Author**: Projektant (zespół Hackathon) — z ustaleń Artura (produkt) i Pawła (technika)
 **Date**: 2026-11-19
-**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P25)
+**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P26)
 
 ## 1. Summary
 Narzędzie dla operatora RTG KAS: system sam porównuje obraz badanej naczepy z obrazem wzorcowej, pustej naczepy tego samego typu i zaznacza do 5 miejsc podejrzanych (najpewniejsze pierwsze). Operator na jednym ekranie z podziałem (wzorzec obok badanego) zatwierdza „do kontroli” albo odrzuca z powodem. Wynik trafia do raportu z auta. Dane: sztuczne obrazy .bmp (zdjęć KAS nie mamy); wynik z usługi na karcie OMENa (GTX 1050 4 GB).
@@ -60,7 +60,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 | Ekran | Zawartość | Udawane dane |
 |---|---|---|
 | E1 Wybór auta | dwa auta do wczytania | A „z dodatkiem”, B „czyste” |
-| E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc” (**udawane dane pokazu**); B: brak zaznaczeń, wzorzec W-PL-014 |
+| E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc” (**udawane dane pokazu**), jedna pozycja w podłodze z dopiskiem „typowe miejsce skrytki: podwójna podłoga” (P26); B: brak zaznaczeń, wzorzec W-PL-014 |
 | E3 Powód odrzucenia | lista 4 powodów | element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne |
 | E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje | numer kontroli sztuczny |
 
@@ -74,6 +74,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 - **KA7 (Z7):** podejścia B (PatchCore) i C (EfficientAD) mieszczą się w 4 GB; inaczej podejście A + mniejszy model.
 - **KA8 (Z8):** FN na trudniejszym wariancie rośnie najwyżej o 10 pp, FP na czystych zostaje 0 („strojenie” = progi na łatwym wariancie; „nauka” = model z czystych, §5).
 - **KA9 (P21):** na ekranie zawsze ≤ 5 zaznaczeń + „+N dalszych miejsc”.
+- **KA10 (P26):** na aucie z dodatkiem w podłodze właściwa pozycja listy ma dopisek „typowe miejsce skrytki: podwójna podłoga”, bez osobnego okna.
 
 ### 7.7 Ryzyka
 - Limit 5 może ukryć skrytkę poza piątką — łagodzi „+N dalszych miejsc”.
