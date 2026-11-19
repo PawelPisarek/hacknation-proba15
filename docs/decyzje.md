@@ -14,3 +14,4 @@ P4 11:19 Artur: co użytkownik ma zyskać najbardziej — mniej przeoczonych skr
 P5 11:19 Artur: co gorsze — alarm na czystej naczepie czy przeoczony dodatek? — czeka
 P6 11:19 Artur: wzorzec do każdego obrazu wskazuje użytkownik czy system dobiera go sam? — czeka
 P7 11:19 Artur: po alarmie użytkownik zatwierdza/odrzuca miejsca czy tylko czyta raport? — czeka
+11:20 Szef: 1a — znacznik przeplywy-pm jest; recenzja przejścia R1 → Analityk
