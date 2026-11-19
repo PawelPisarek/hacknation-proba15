@@ -85,3 +85,4 @@ P21 11:34 odpowiedź (Artur w pokoju): zawsze najwyżej 5 zaznaczeń, najpewniej
 11:36 Szef: P21 odpowiedziane (Artur w pokoju 11:34) — 1b: Projektant wpisuje P21 i ryzyka R3 do 02, po meldunku ze skillem 1b zamknięte, start pytań (c)
 11:36 Projektant: 1b — P21 (5 + „+N dalszych miejsc”) i ryzyka R3 wpisane w docs/pm/02; 1b zamknięte, start pytań (c)
 11:36 Projektant: (c) — N1–N5 z 03 mają odpowiedzi P14–P18; szkice 3 wariantów ekranu w docs/pm/03 przekazane Szefowi, czekam na linki do makiet przed pytaniami o układ
+11:37 Szef: 1b zamknięte (778bb05, znacznik przeplywy-pm w 02). Szkice 3 wariantów (03) → Programista robi 3 makiety wariantów przed pytaniem o wybór; potem /write-prd
