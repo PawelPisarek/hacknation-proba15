@@ -17,7 +17,7 @@ Kontekst: **nowy produkt** (narzędzie dla KAS), odkrywanie ma ustawić decyzję
 Co wchodzi do MVP i demo (jedno auto czyste + jedno z dodatkiem, P18, główna ścieżka do 2 min) oraz co sprawdzamy eksperymentem przed zaufaniem wynikowi.
 
 ## W MVP wprost z P19
-Wybór zgłoszonego towaru z listy (plus „pusta naczepa”) jest w MVP, bo wynika z odpowiedzi Artura P19 — nie z założenia Z5. Bez wybranego towaru zaznaczamy wszystko (P19); ten przypadek nie wchodzi do oceny czystych obrazów.
+Wybór zgłoszonego towaru z listy (plus „pusta naczepa”) jest w MVP, bo wynika z odpowiedzi Artura P19 — nie z założenia Z5. Bez wybranego towaru (albo przy „nie wiem”) nie wygaszamy niczego (P19). Wariant „pusta naczepa bez wyboru” **wchodzi do oceny czystych** z celem 0 zaznaczeń (Z3a, decyzja Szefa 11:32); do oceny czystych nie wchodzi tylko załadowana naczepa bez wyboru towaru.
 
 ## Pomysły (krok 2) i wybór Artura (moment (b), 11:25)
 Wybrane:
@@ -35,11 +35,11 @@ Najryzykowniejsze: **Z1 dobór wzorca**.
 
 | # | Założenie | Kategoria | Eksperyment | Kryterium |
 |---|---|---|---|---|
-| Z1 | System znajdzie właściwy wzorzec w bibliotece (**najryzykowniejsze**) | wykonalność | Na zbiorze testowym: dla każdego badanego obrazu sprawdzić, czy wybrany wzorzec to ten sam typ naczepy | trafność doboru zmierzona i podana; przy złym typie widoczne „wzorzec niepewny” | (próg poda Programista po krzywej z przebiegu bazowego) |
-| Z2 | Do 5 zaznaczeń wystarcza na złapanie dodatków | wartość | Policzyć FN przy limicie 5 | FN na zbiorze testowym podane obok FP | (próg poda Programista po krzywej z przebiegu bazowego) |
-| Z3 | Czyste naczepy dostają 0 zaznaczeń (zadanie §6) | wykonalność | Dwa warianty: (a) **pusta naczepa bez wyboru towaru** — pusty wzorzec kontra pusty badany; (b) **załadowana naczepa z prawidłowym wyborem towaru**. Przebieg automatyczny i partiami odbywa się bez operatora, więc obowiązuje „nie wiem” (nic nie jest wygaszane). Czyste obrazy z oceny wg §6 to puste naczepy (§3) | w obu wariantach 0 zaznaczeń; krzywa próg → FP/FN raportowana osobno |
+| Z1 | System znajdzie właściwy wzorzec w bibliotece (**najryzykowniejsze**) | wykonalność | Na zbiorze testowym: dla każdego badanego obrazu sprawdzić, czy wybrany wzorzec to ten sam typ naczepy | trafność doboru zmierzona i podana; przy złym typie widoczne „wzorzec niepewny”; próg poda Programista po krzywej z przebiegu bazowego |
+| Z2 | Do 5 zaznaczeń wystarcza na złapanie dodatków | wartość | Policzyć FN przy limicie 5 | FN na zbiorze testowym podane obok FP; próg poda Programista po krzywej z przebiegu bazowego |
+| Z3 | Czyste naczepy dostają 0 zaznaczeń (zadanie §6). Przebieg automatyczny i partiami odbywa się bez operatora, więc obowiązuje „nie wiem” (nic nie jest wygaszane); czyste obrazy z oceny wg §6 to puste naczepy (§3) | wykonalność | Dwa warianty: (a) **pusta naczepa bez wyboru towaru** — pusty wzorzec kontra pusty badany; (b) **załadowana naczepa z prawidłowym wyborem towaru** | w obu wariantach 0 zaznaczeń; krzywa próg → FP/FN raportowana osobno |
 | Z4 | Operator zdąży ocenić zaznaczenia w kilka minut (P2) | użyteczność | Demo: przejście 1 auta od wyboru towaru do raportu | główna ścieżka w demo ≤ 2 min (ustalenie Szefa) |
-| Z5 | Wybór zgłoszonego towaru z listy ogranicza zbędne ramki na zgodnym ładunku, nie ukrywając skrytek | wartość / ryzyko | Para: ten sam ładunek z i bez dodatku; porównać ramki przy wyborze towaru i bez wyboru | dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają | (próg poda Programista po krzywej z przebiegu bazowego) |
+| Z5 | Wybór zgłoszonego towaru z listy ogranicza zbędne ramki na zgodnym ładunku, nie ukrywając skrytek | wartość / ryzyko | Para: ten sam ładunek z i bez dodatku; porównać ramki przy wyborze towaru i bez wyboru | dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają; próg poda Programista po krzywej z przebiegu bazowego |
 | Z6 | Czas analizy jednego obrazu ~50 MB mieści się w limicie (zadanie §7) | wykonalność | Pomiar na karcie OMENa: od wczytania .bmp do raportu | < 1 min na obraz (cel z zapasem ≤ 30 s) |
 | Z7 | Podejścia B (PatchCore) i C (EfficientAD) mieszczą się w 4 GB pamięci karty | wykonalność | Przebieg na kaflach na GTX 1050, pomiar szczytu pamięci | mieści się w 4 GB; inaczej zostaje podejście A + mniejszy model |
 | Z8 | Wynik na danych sztucznych z zakłóceniami (szum, przesunięcie) przenosi się na trudniejszy wariant zbioru | wiarygodność | „Strojenie” = dobór progów i parametrów na łatwym wariancie; „nauka” = model z obrazów czystych (§5). Stroić na łatwym, ocenić FP/FN na trudniejszym | FN na trudniejszym wariancie rośnie najwyżej o 10 punktów procentowych, a FP na czystych zostaje 0 |
