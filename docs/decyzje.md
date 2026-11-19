@@ -81,3 +81,4 @@ P20 11:31 odpowiedź (Artur w pokoju): tak — 6 grup (drobnica na paletach, pł
 11:33 Szef: 1b R3 — 2 braki → po 3 rundach pytam Artura (P21, przez Projektanta). Brak 1 (sprzeczność sekcji P19 z Z3a) rozstrzygnięty o 11:32: wariant „pusta bez wyboru” wchodzi do oceny czystych — Projektant poprawia sekcję P19. Brak 2 → P21.
 P21 11:33 Artur: gdy towar „nie wiem” (albo nie wybrany), pokazujemy też najwyżej 5 zaznaczeń, najpewniejsze pierwsze — czy wszystkie? Rekomendacja: zawsze najwyżej 5; „wszystko” znaczy tylko, że nie pomijamy ładunku; resztę braków zapisujemy jako ryzyka w specu i idziemy dalej — czeka
 11:34 Projektant: 1b R3 pkt 1 — sekcja „W MVP wprost z P19” i Z3 poprawione w 02 (pusta bez wyboru wchodzi do oceny czystych), kosmetyka tabeli; P21 zadane Arturowi w pokoju (linia P21 z 11:33, ntfy już poszło)
+P21 11:34 odpowiedź (Artur w pokoju): zawsze najwyżej 5 zaznaczeń, najpewniejsze pierwsze; gdy system wie, że było więcej, pokazuje „+N dalszych miejsc”
