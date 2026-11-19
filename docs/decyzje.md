@@ -206,3 +206,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:08 Projektant: spec po recenzji R1 (docs/pm/11): P40 w 7.2/7.4/7.5, P42 komunikat w 7.2/7.3/7.5, P44 B reguła „to samo miejsce” w 7.2/7.3/7.4, P45 A w 7.1 i KA4, P43/P41 w KA18 i 7.3
 14:08 Prezenter: slajdy/demo po R1 (10 braków; P40 A, P45 A jako ustalone; FP/FN liczbami z 05-sondy; auto B bez obietnicy zera)
 14:09 Analityk: recenzja speca R2, 0 braków (docs/pm/11-recenzja-spec-P34-P46.md, sekcja R2): brak braków zmieniających zakres lub kryteria
+14:08 Szef: spec po recenzji R1 odebrany (KA18 nowe) → recenzja R2 (Analityk)
