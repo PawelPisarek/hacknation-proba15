@@ -125,3 +125,4 @@ P27 11:57 odpowiedź (Artur w pokoju): tak — dwa auta do pokazu + przycisk „
 11:57 Programista: recenzja odbiorcy speca R2 — brak braków zmieniających zakres lub kryteria (P27 z 11:57 — „wczytaj własne zdjęcie” w E1 — do dopisania w specu, nie brak R2)
 11:58 Szef: recenzja odbiorcy R2 czysta — krok 2 zamknięty; P27 → E1 dopisuje Projektant; krok 5 makieta R1 wg speca (wariant 3 + lista) → Programista przed MVP
 11:58 Projektant: spec z P27 — E1 (przycisk „wczytaj własne zdjęcie”), KA11, nagłówek P1–P27; historyjka H1b w 07
+12:07 Szef: README „Użyte narzędzia” przyjęte; przeplywy-pm zostaje jako skill zespołu (poza pm-skills)
