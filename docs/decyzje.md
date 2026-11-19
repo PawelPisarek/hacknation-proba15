@@ -185,3 +185,4 @@ P44 14:03 Artur: zmiana towaru po decyzjach — pytamy „zmiana skasuje decyzje
 P45 14:03 Artur: pokaz 2 min — w pełni tylko auto A, a auto B i własne zdjęcie jako krótkie ujęcia poza 2 min (A) czy skrócone auto A + auto B + własne zdjęcie w 2 min (B)? rekomendacja A (opis w docs/demo.md) — czeka
 P46 14:03 Artur: co z ekranu makiety wyrzucić (runda 3, odpowiedzi idą do wersji nocnej)? rekomendacja: nic — czeka
 14:03 Projektant: pytania P40–P46 (braki 1, 3, 4, 5, 6 krytyka R3 + pokaz 2 min + co wyrzucić) w pokoju Produkt
+14:03 Analityk: pre-mortem MVP (docs/pm/09-pre-mortem.md): 10 przyczyn; BLOK: usługa OMEN/preempcja, FP na czystych, wygaszanie gasi dodatki, upload własnego pliku, wdrożenie, zakres A1–A11
