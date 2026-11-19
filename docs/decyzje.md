@@ -121,3 +121,4 @@ P27 11:56 Artur: czy operator może wczytać własne zdjęcie naczepy, czy pokaz
 11:56 Analityk: krok 4a — docs/pm/06-scenariusze-testow.md (A1–A11 ekrany, B1–B8 ocena, 10 braków skryptu → Programista)
 11:56 Szef: krok 4 — 06-scenariusze-testow.md i 07-historyjki.md przyjęte (znaczniki ok); 06 część C (braki skryptu oceny) → Programista przed kodem MVP; ekrany (część A) testuje Programista testem przeglądarkowym makiety/MVP; progi „propozycja” (dobór ≥ 90%, FN@5 − FN@pełna ≤ 5 pp) przyjęte jako robocze do pomiaru
 P27 11:57 odpowiedź (Artur w pokoju): tak — dwa auta do pokazu + przycisk „wczytaj własne zdjęcie”
+11:57 Szef: spec po odbiorcy R1 (4 poprawki w §8, KA1, KA5) → recenzja odbiorcy R2 (Programista); P27 czeka na Artura
