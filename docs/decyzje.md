@@ -15,3 +15,10 @@ P5 11:19 Artur: co gorsze — alarm na czystej naczepie czy przeoczony dodatek? 
 P6 11:19 Artur: wzorzec do każdego obrazu wskazuje użytkownik czy system dobiera go sam? — czeka
 P7 11:19 Artur: po alarmie użytkownik zatwierdza/odrzuca miejsca czy tylko czyta raport? — czeka
 11:20 Szef: 1a — znacznik przeplywy-pm jest; recenzja przejścia R1 → Analityk
+P2 11:21 odpowiedź (Artur w pokoju): operator przy stanowisku, w trakcie kontroli, ma kilka minut na auto
+P3 11:21 odpowiedź (Artur w pokoju): tak — najczęściej podwójna podłoga albo ściana przy kabinie
+P4 11:21 odpowiedź (Artur w pokoju): mniej przeoczonych skrytek
+P5 11:21 odpowiedź (Artur w pokoju): przeoczony dodatek gorszy; zbędny alarm = minuta więcej przy aucie; zaznaczeń na auto kilka, nie kilkadziesiąt
+P6 11:21 odpowiedź (Artur w pokoju): system dobiera wzorzec sam (operator zwykle nie ma czystego zdjęcia tej samej naczepy) — inaczej niż rekomendacja
+P7 11:21 odpowiedź (Artur w pokoju): operator zatwierdza („do kontroli”) albo odrzuca jednym kliknięciem; przy odrzuceniu powód z listy — inaczej niż rekomendacja
+11:21 Projektant: P7 zmienia zakres (ekran zatwierdzania, lista powodów) — wygrywa odpowiedź Artura; do Szefa: sprzeczność z „bez udziału człowieka” w zadaniu do rozstrzygnięcia przy P8+ jeśli zajdzie potrzeba
