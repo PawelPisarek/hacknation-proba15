@@ -43,3 +43,5 @@ P13 11:25 Artur: co w wybranych pomysłach zmienić i czy któryś z odrzuconych
 11:23 Programista: ocena (rtg/ocena.py) wg rozdz. 6 — czysty: każda ramka = FP; dodatki: dodatek bez trafienia = FN; trafienie = część wspólna ≥ 30% pola dodatku lub ramki; ramki obok dodatków liczone osobno (FP_dod). Czas/obraz = od wczytania do ramek (bez budowy modelu grupy).
 11:23 Programista: przebieg bazowy na karcie OMENa sprawdza naraz: H1 „różnica po wyrównaniu do jednego wzorca” daje FP=0 na czystych przy FN ≤ 30%? H2 „model nauczony na 4 czystych (średnia+rozrzut piksela)” daje mniej FN niż H1 przy FP=0? H3 czas/obraz ~50 MB < 60 s na GTX 1050?
 11:23 Szef: 1a R2 → Analityk; docs/pm/02-discover.md powstał przed zamknięciem 1a — wersja robocza, recenzja 1b dopiero po zamknięciu 1a
+P12 11:24 odpowiedź (Artur w pokoju): według funkcji dla operatora (zgodne z decyzją Szefa 11:22)
+P13 11:24 odpowiedź (Artur w pokoju): nic więcej do zmiany — wybór z 11:25 zostaje (3 tylko podwójna podłoga, 7 odrzucony)
