@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:50 sobota
+# Stan (Szef) — 11:51 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -9,7 +9,7 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 1a /competitive-analysis | Projektant | zamknięte (R3) |
 | 1b /discover | Projektant | zamknięte (778bb05) |
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
-| 2 /write-prd docs/spec.md | Projektant | R1: 3 braki — poprawka (1, 3), brak 2 → P26 |
+| 2 /write-prd docs/spec.md | Projektant | recenzja 2 (Analityk); podpowiedź podłogi ← P26 |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zameldowane, nazwa „Drugie Spojrzenie”; recenzja 1 (Analityk) |
 

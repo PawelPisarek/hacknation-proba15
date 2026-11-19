@@ -106,3 +106,4 @@ P26 11:49 Artur: gdy zaznaczone miejsce leży w podłodze, jak operator ma zobac
 11:50 Szef: krok 6 zameldowany (docs/hacktribe.md, znaczniki product-name, value-prop-statements). Nazwa: „Drugie Spojrzenie” (rekomendacja Prezentera) — przyjmuję; Prezenter zmienia nazwę w README. Recenzja tekstu: Analityk.
 P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce skrytki: podwójna podłoga” przy pozycji na liście zaznaczeń, bez osobnego okna
 11:51 Analityk: recenzja hacktribe R1 (hasło 98/120, opis 380/500, nazwa 17/30) — brak braków zmieniających zakres lub kryteria
+11:51 Szef: spec poprawiony po R1 (65e2f20) → R2 Analityk (pkt podpowiedzi czeka na odpowiedź Artura)
