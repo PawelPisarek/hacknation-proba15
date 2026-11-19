@@ -29,3 +29,11 @@ P10 11:23 Artur: czy zatwierdzone „do kontroli” i odrzucone miejsca zostają
 P11 11:23 Artur: skąd system bierze wzorzec — z biblioteki czystych naczep tego samego typu? — czeka
 11:21 Szef: P7 a „bez interwencji człowieka” — bez sprzeczności: wykrywanie i raport działają samodzielnie; zatwierdzanie/odrzucanie przez operatora to krok po raporcie i nie wpływa na wynik wykrywania.
 11:22 Szef: 1a R1 — 5 braków → Projektant poprawia cały plik; brak 4 (perspektywa, kto szuka konkurentów) rozstrzygam: z zadania — porównanie funkcji i sposobu działania, nie cena/rynek; konkurentów szukamy sami poza wymienionymi
+P8 11:25 odpowiedź (Artur w pokoju): do 5 zaznaczeń na auto, najpewniejsze pierwsze
+P9 11:25 odpowiedź (Artur w pokoju): lista powodów: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne
+P10 11:25 odpowiedź (Artur w pokoju): tak, decyzje operatora zostają w raporcie z auta
+P11 11:25 odpowiedź (Artur w pokoju): tak, z biblioteki; gdy brak tego typu — najbliższa podobna z ostrzeżeniem „wzorzec niepewny”
+11:25 Artur w pokoju (moment b): wybrane pomysły 1 dobór wzorca, 2 zaznaczenia z oceną pewności, 4 zatwierdź/odrzuć z powodem, 5 widok obok siebie, 6 raport z auta; 3 tylko podpowiedź przy podwójnej podłodze; 7 odrzucony (odrzucone miejsca mogłyby ukryć prawdziwe skrytki — P5); najryzykowniejsze założenie: dobór wzorca
+11:25 Projektant: z zadania §6 (Analityk, R1 pkt 2) — na czystym obrazie nie wolno zaznaczyć żadnych miejsc, każdy alarm to FP; ustalone, nie pytanie. Z P5 „kilka zaznaczeń” = górna granica P8 (5), nie cel na czystym aucie
+P12 11:25 Artur: perspektywa przeglądu rynku — porównujemy wg funkcji dla operatora czy wg ceny/wejścia na rynek? — czeka
+P13 11:25 Artur: co w wybranych pomysłach zmienić i czy któryś z odrzuconych (3 poza podwójną podłogą, 7) warto wziąć w części? — czeka
