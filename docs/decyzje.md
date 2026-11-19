@@ -84,3 +84,4 @@ P21 11:33 Artur: gdy towar „nie wiem” (albo nie wybrany), pokazujemy też na
 P21 11:34 odpowiedź (Artur w pokoju): zawsze najwyżej 5 zaznaczeń, najpewniejsze pierwsze; gdy system wie, że było więcej, pokazuje „+N dalszych miejsc”
 11:36 Szef: P21 odpowiedziane (Artur w pokoju 11:34) — 1b: Projektant wpisuje P21 i ryzyka R3 do 02, po meldunku ze skillem 1b zamknięte, start pytań (c)
 11:36 Projektant: 1b — P21 (5 + „+N dalszych miejsc”) i ryzyka R3 wpisane w docs/pm/02; 1b zamknięte, start pytań (c)
+11:36 Projektant: (c) — N1–N5 z 03 mają odpowiedzi P14–P18; szkice 3 wariantów ekranu w docs/pm/03 przekazane Szefowi, czekam na linki do makiet przed pytaniami o układ
