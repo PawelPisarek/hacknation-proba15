@@ -63,3 +63,4 @@ P18 11:26 odpowiedź (Artur w pokoju): dwa auta (czyste + z dodatkiem)
 P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego samego typu; operator przed analizą wybiera rodzaj zgłoszonego towaru z listy (plus „pusta naczepa”), by zgodny ładunek nie dostawał ramek; bez wyboru zaznaczamy wszystko (P5)
 11:26 Analityk: recenzja 1a R3 — brak braków zmieniających zakres lub kryteria (wzorzec zależny od P19, nie brak)
 11:26 Szef: P19 (A) → Programista: generator i ocena także w wariancie pusta naczepa vs załadowana; Projektant: 03-przed-prd i pytania (c) wstrzymane do zamknięcia 1b
+11:26 Projektant: P19 (A: pusta naczepa + wybór zgłoszonego towaru z listy) wpisane w docs/pm/01 i 02; docs/pm/03 nie meldowany, nowych pytań (c) nie zadaję do zamknięcia 1b (zlecenie Szefa)

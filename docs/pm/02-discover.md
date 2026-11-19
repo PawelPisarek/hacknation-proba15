@@ -14,6 +14,8 @@ Oparte na: `01-competitive-analysis.md`, `docs/decyzje.md` (P2–P11, moment (b)
 3. **Zatwierdź / odrzuć jednym kliknięciem** — „do kontroli” albo odrzucenie z powodem z listy: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P7, P9).
 4. **Widok obok siebie** — wzorzec i badany obraz, różnica podświetlona.
 5. **Raport z auta** — jedna strona z zaznaczeniami i decyzjami operatora (P10).
+
+**Uzupełnienie P19 (Artur w pokoju 11:26):** wzorzec = pusta naczepa tego samego typu (wariant A). Operator przed analizą wybiera z listy rodzaj zgłoszonego towaru (plus „pusta naczepa”), by zgodny ładunek nie dostawał ramek; bez wyboru zaznaczamy wszystko (P5). Dotyczy pomysłu 1 (dobór wzorca) i najryzykowniejszego założenia Z1.
 6. **Podpowiedź przy podwójnej podłodze** — tylko ta (część pomysłu „typowe miejsca”).
 
 Odrzucone: uczenie na odrzuceniach (odrzucone miejsca mogłyby ukryć prawdziwe skrytki — P5); pozostała część „typowych miejsc”.

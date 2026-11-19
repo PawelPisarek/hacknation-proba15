@@ -38,7 +38,7 @@ Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi *
 | Duże pliki ~50 MB, partie | tak (kafle) | ? (niezweryfikowane) | tak | tak (kafle) | tak (kafle) |
 | Zero zaznaczeń na czystych (zadanie §6: każde zaznaczenie = alarm FP) | cel — **zależne od P5**, patrz niżej | nieznane | słabo | dobrze wg publikacji, niezweryfikowane na RTG | jak B |
 | Wykryje nieznany dodatek | tak | tylko znane | tak | tak | tak |
-| Dobór wzorca z biblioteki (P6, P11; zależne od P19) | tak, z ostrzeżeniem „wzorzec niepewny” | ? | nie (wzorzec dany z góry; ACXIS ma bazę referencyjną) | pośrednio (norma z wielu czystych) | pośrednio |
+| Dobór wzorca z biblioteki (P6, P11; P19: A) | tak, z ostrzeżeniem „wzorzec niepewny” | ? | nie (wzorzec dany z góry; ACXIS ma bazę referencyjną) | pośrednio (norma z wielu czystych) | pośrednio |
 | Ocena pewności zaznaczeń, najpewniejsze pierwsze, limit 5 na auto (P8) | tak | ? | nie (A = surowa różnica, bez rankingu) | tak (wynik nietypowości) | tak (wynik nietypowości) |
 | Decyzja operatora „do kontroli”/odrzuć z powodem, zapisana w raporcie (P7, P9, P10) | tak | ? | nie | nie | nie |
 | Wynik przypisany do miejsca i przedmiotu kontroli (§9 zadania; pole identyfikujące kontrolę w raporcie z auta) | tak (pole w raporcie, P10) | ? | nie (do dopisania) | nie (do dopisania) | nie (do dopisania) |
@@ -47,8 +47,8 @@ Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi *
 ## Fałszywe alarmy a małe skrytki (zależne od P5)
 Zadanie §6 liczy każde zaznaczenie na czystym obrazie jako alarm fałszywy, a małe skrytki (≈0,1% pikseli wg Jaccard i in.) wymagają czułości. Rozstrzyga to Artur (P5, 11:21): przeoczony dodatek jest gorszy, zbędny alarm = minuta więcej przy aucie, zaznaczeń na auto „kilka” — górna granica 5 (P8). Ten plik nie ustala progu: cel zero zaznaczeń na czystych w teście, 5 to limit na auto; kompromis czułość ↔ FP raportujemy krzywą, próg ustalają ludzie.
 
-## Wzorzec — zależne od P19
-Co jest wzorcem: A) obraz pustej naczepy tego samego typu (ładunek zgłoszony operator oznacza sam) czy B) obraz naczepy tego typu z podobnym ładunkiem — pytanie P19 do Artura. Do odpowiedzi: zależne od P19. „Wzorzec niepewny” operator widzi, gdy w bibliotece nie ma naczepy tego typu i system bierze najbliższą podobną (P11).
+## Wzorzec (P19, odpowiedź Artura 11:26)
+A — wzorzec to obraz pustej naczepy tego samego typu. Operator przed analizą wybiera z listy rodzaj zgłoszonego towaru (plus „pusta naczepa”), by zgodny ładunek nie dostawał ramek; bez wyboru zaznaczamy wszystko (P5). „Wzorzec niepewny” operator widzi, gdy w bibliotece nie ma naczepy tego typu i system bierze najbliższą podobną (P11).
 
 ## Okazje do wyróżnienia (po uwzględnieniu prior art)
 1. **Automatyczny dobór wzorca z biblioteki** (P6, P11) — operator zwykle nie ma czystego zdjęcia tej samej naczepy; baza referencyjna z ACXIS to bliski odpowiednik, nasza działa lokalnie dla KAS i ostrzega „wzorzec niepewny”.
