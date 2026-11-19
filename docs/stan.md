@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:28 sobota
+# Stan (Szef) — 11:30 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -7,7 +7,7 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 0 materiały zadania | Analityk | zamknięte |
 | 0P szkielet, generator, ocena, wynik bazowy H1/H2/H3 | Programista | w toku (kod wypchnięty 1399331, czekam na linię FP/FN) |
 | 1a /competitive-analysis | Projektant | zamknięte (R3) |
-| 1b /discover | Projektant | recenzja 1 (Analityk) |
+| 1b /discover | Projektant | poprawka po R1 (5 braków; P20 lista towarów → Artur) |
 | przesłuchanie Artura | Projektant | P2–P15, P19 odpowiedziane; (c) wstrzymane do zamknięcia 1b |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 
