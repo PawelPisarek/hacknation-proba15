@@ -20,3 +20,16 @@ Liczby w `docs/slajdy.md` slajdy 6–7 zgadzają się z `05-sondy.md` (sprawdzon
 5. **[technika]** Krok 8: „Wzorzec W-PL-014 (pusta naczepa, plandeka 13,6 m)” w ujęciu auta B — „13,6 m” bez źródła w `spec.md` (jest tylko „W-PL-014”); „wygaszone: N” w kroku 3 ustalić, czy dotyczy wnętrza ładunku (P40) i czy auto A tak pokaże.
 
 <!-- skill: brak (recenzja przejścia, bez skilla pm) -->
+
+---
+
+# R2 (Analityk) — 14:12
+
+Sprawdzone: 10 braków z R1 względem `docs/slajdy.md` i `docs/demo.md` po poprawce 14:08; całość względem `docs/spec.md` (R2 zamknięty), P40–P46 i `docs/pm/05-sondy.md`. Liczby slajdów 5–7 przeliczone z 05 (m.in. 200 × 1,10 s ≈ 3,7 min, oznaczone jako wyliczenie).
+
+brak braków zmieniających zakres lub kryteria
+
+Uwagi **technika** (nie zmieniają zakresu ani kryteriów; do poprawki przy okazji, bez kolejnej pętli):
+- `demo.md` „Przed nagraniem”: „plik zdjęcia do kroku 8” — krok 8 to raport; plik dotyczy ujęcia „Własne zdjęcie”.
+- `slajdy.md` slajd 5: „bez konwersji (zadanie §3)” — zadanie §3 tego nie mówi (wymienia „kompresję”, partie); obsługa .png/.jpg w makiecie jest ustaleniem P27.
+- FP „82 / 125” w slajdzie 7 i demo bez mianownika (ile czystych obrazów) — `05-sondy.md` go nie podaje; do dopisania w 05 przez Programistę.

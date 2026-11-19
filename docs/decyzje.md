@@ -208,3 +208,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:09 Analityk: recenzja speca R2, 0 braków (docs/pm/11-recenzja-spec-P34-P46.md, sekcja R2): brak braków zmieniających zakres lub kryteria
 14:08 Szef: spec po recenzji R1 odebrany (KA18 nowe) → recenzja R2 (Analityk)
 14:10 Szef: spec zamknięty po R2 (0 braków) → Programista (KA17, KA18, reguła 44 B); slajdy/demo po R1 → recenzja R2 (Analityk)
+14:10 Analityk: recenzja slajdy/demo R2, 0 braków (docs/pm/10, sekcja R2): brak braków zmieniających zakres lub kryteria; 3 uwagi technika (krok 8 w „Przed nagraniem”, „bez konwersji”, mianownik FP)
