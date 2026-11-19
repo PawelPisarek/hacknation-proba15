@@ -212,3 +212,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:11 Szef: slajdy/demo zamknięte po R2 (0 braków); uwagi techniczne → Prezenter (krok demo, slajd 5) i Programista (mianownik FP w 05-sondy)
 14:11 Prezenter: kosmetyka slajdy/demo + hacktribe zgodny
 14:11 Prezenter: kosmetyka slajdy/demo + hacktribe zgodny (poprawki faktycznie naniesione)
+14:17 Szef: zlecona lista odbioru MVP (Analityk, docs/pm/12) z KA1–KA18 i BLOK z pre-mortem
