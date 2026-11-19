@@ -28,6 +28,17 @@ TOWARY = ("drobnica", "plyny", "sypkie", "maszyny", "meble")
 WNETRZE_U = (0.035, 0.975)   # bez ściany przedniej (u < 0.03) i tylnych drzwi
 WNETRZE_V = (0.14, 0.655)    # bez dachu (v < 0.13) i podłogi (v ≥ 0.66)
 PODLOGA_V = (0.655, 0.775)
+# granica wnętrza (Szef 14:5x, priorytet Artura: mniej przeoczeń): miejsce, którego ramka wychodzi poza wnętrze zwężone
+# o margines (pas przy dachu, podłodze, ścianie przedniej, drzwiach), NIE jest wygaszane wyborem towaru (zostaje z dopiskiem)
+MARGINES_U = float(os.environ.get("RTG_MARGINES_U", 0.03))
+MARGINES_V = float(os.environ.get("RTG_MARGINES_V", 0.05))
+
+
+def w_srodku(uv, mu=None, mv=None):
+    mu = MARGINES_U if mu is None else mu
+    mv = MARGINES_V if mv is None else mv
+    u0, u1, v0, v1 = uv
+    return u0 >= WNETRZE_U[0] + mu and u1 <= WNETRZE_U[1] - mu and v0 >= WNETRZE_V[0] + mv and v1 <= WNETRZE_V[1] - mv
 
 
 def _uv(geo, x, y):
@@ -160,10 +171,15 @@ class Silnik:
         for i, (x, y, bw, bh, rr) in enumerate(r):
             k0x, k0y = x // W.KOMORKA, y // W.KOMORKA
             k1x, k1y = (x + bw - 1) // W.KOMORKA + 1, (y + bh - 1) // W.KOMORKA + 1
-            gasi = [t for t, z in zg.items() if float(z[k0y:k1y, k0x:k1x].float().mean()) >= 0.5]
+            gasi_wn = [t for t, z in zg.items() if float(z[k0y:k1y, k0x:k1x].float().mean()) >= 0.5]
+            ua, va = _uv(self.geo[typ], x, y)
+            ub, vb = _uv(self.geo[typ], x + bw, y + bh)
+            uv = [round(min(ua, ub), 4), round(max(ua, ub), 4), round(va, 4), round(vb, 4)]
+            gasi = gasi_wn if w_srodku(uv) else []
             opis, podloga = gdzie(self.geo[typ], x, y, bw, bh)
             miejsca.append({"x": round(x * sx), "y": round(y * sy), "w": round(bw * sx), "h": round(bh * sy),
-                            "ocena": pewnosc(rr), "punktacja": rr, "gdzie": opis, "podloga": podloga, "gasi": gasi})
+                            "ocena": pewnosc(rr), "punktacja": rr, "gdzie": opis, "podloga": podloga, "gasi": gasi,
+                            "gasi_wnetrze": gasi_wn, "uv": uv, "granica": bool(gasi_wn) and not gasi})
         miejsca.sort(key=lambda q: -q["ocena"])
         for i, q in enumerate(miejsca):
             q["id"] = i + 1
