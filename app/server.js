@@ -21,7 +21,7 @@ function doOmena(req, res, sciezka) {
   if (n > MAX) return wyslij(res, 413, { blad: "plik większy niż 120 MB" });
   const u = new URL(OMEN + sciezka);
   const p = http.request(u, { method: req.method, headers: { "Content-Type": req.headers["content-type"] || "application/octet-stream", ...(n ? { "Content-Length": n } : {}) }, timeout: 150000 }, (r) => {
-    res.writeHead(r.statusCode, { "Content-Type": r.headers["content-type"] || "application/octet-stream", "Cache-Control": "no-store" });
+    res.writeHead(r.statusCode, { "Content-Type": r.headers["content-type"] || "application/octet-stream", "Cache-Control": r.statusCode === 200 && /^\/(podglad|wzorzec)\//.test(sciezka) ? "private, max-age=3600" : "no-store" });
     r.pipe(res);
   });
   p.on("timeout", () => p.destroy(new Error("czas minął")));

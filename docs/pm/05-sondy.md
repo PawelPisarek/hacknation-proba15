@@ -10,8 +10,8 @@ H1 = różnica z jednym wzorcem, H2 = nauka (średnia/odchylenie). „nie wiem�
 |---|---|---|---|---|
 | 1 | dobór wzorca = właściwy typ ≥ 90% | 100% (n=90) | 100% (n=90) | potwierdzona (łatwy) |
 | 1 | „niepewny” dla typu spoza biblioteki | 100% spoza (n=18), 0% w bibliotece | to samo | potwierdzona |
-| 1 | FP = 0 na czystych pustych | **82** | **125** | obalona |
-| 2 | FP = 0 na załadowanych z wyborem towaru | **165** | **173** | obalona |
+| 1 | FP = 0 na czystych pustych | **82** ramki na 12 czystych pustych obrazach | **125** ramek na 12 czystych pustych obrazach | obalona |
+| 2 | FP = 0 na załadowanych z wyborem towaru | **165** ramek na 24 czystych załadowanych | **173** na 24 | obalona |
 | 2 | wybór towaru obniża FP (nie wiem → zgł.) | 382 → 247 (−35%) | 443 → 298 (−33%) | potwierdzona |
 | 2 | wybór towaru nie gasi dodatków (Z5) | gasi **20/62** dodatków w strefie towaru (głównie dach, ściana przednia) | gasi **23/70** | obalona |
 | 2 | FN@5 − FN pełna ≤ 5 pp | nie wiem: 66,1−43,1 = **23 pp**; zgł.: 64,2−61,5 = 2,7 pp | nie wiem: 60,6−37,6 = **23 pp**; zgł.: 2,8 pp | obalona przy „nie wiem” |
@@ -25,6 +25,8 @@ H1 = różnica z jednym wzorcem, H2 = nauka (średnia/odchylenie). „nie wiem�
 Krzywa próg → FP/FN (łatwy, nie wiem): zapas 1,0→3,0 obniża FP H1 499→305 i H2 490→302, ale FP na czystych pustych nie spada do 0
 (H1 29, H2 47 przy 3,0), a FN H1 rośnie 43→61%. Samym progiem FP = 0 nie da się osiągnąć — fałszywe alarmy są w miejscach
 konstrukcji/ładunku, nie w szumie. Pełny rozmiar 50 MB (3 grupy): FP na pustych 0, FN 0/4 (nie wiem), wybór towaru gasi 4/4 (H1).
+
+Mianownik: zbiór ma 36 czystych obrazów — 12 pustych (11 typów z biblioteki + 1 skrzyniowa spoza) i 24 załadowane; oba przebiegi (H1, H2) liczone na tych samych 36. FP to liczba ramek (na jednym obrazie może być kilka); czystych obrazów z co najmniej jednym alarmem — patrz `czyste_z_alarmem` w wyjściu `rtg.ocena`.
 
 **Wnioski dla MVP:** (1) dobór wzorca i flaga „niepewny” działają — zostają; (2) próg nie wystarcza: potrzebne lepsze wyrównanie
 (rozciągnięcie lokalne / siatka) zanim FP na pustych spadnie do 0; (3) wygaszanie wyborem towaru musi być ograniczone do wnętrza

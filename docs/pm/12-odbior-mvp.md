@@ -2,7 +2,9 @@
 
 Źródła: `docs/spec.md` (KA1–KA18, §7.1–7.4), `docs/pm/09-pre-mortem.md` (działania BLOK #1, #2, #3, #5, #6, #7), `docs/pm/06-scenariusze-testow.md` (A1–A11), `app/server.js` (trasy `/api/wersja`, `/api/*` → usługa). Nie testowane — MVP w budowie. Liczb progów nie wpisuję (spec: poda Programista po krzywej).
 
-Skróty: **A** = auto z dodatkiem (7 miejsc → 5 + „+2 dalszych miejsc”), **B** = auto czyste, **WŁ** = własne zdjęcie (przycisk „wczytaj własne zdjęcie”), **AW** = tryb awaryjny (usługa nie odpowiada → zapisany wynik aut pokazu). „curl” = sprawdzenie z terminala; kod HTTP ma wejść do meldunku. Adres: `S=https://ksefbot.pl`.
+Skróty: **A** = auto z dodatkiem (7 miejsc → 5 + „+2 dalszych miejsc”), **B** = auto czyste, **WŁ** = własne zdjęcie (przycisk „wczytaj własne zdjęcie”), **AW** = tryb awaryjny (usługa nie odpowiada → zapisany wynik aut pokazu). „curl” = sprawdzenie z terminala; kod HTTP ma wejść do meldunku. Adres: `S=https://hacknation.ksefbot.pl` (poprawka komendy, Programista: aplikacja stoi pod tą domeną).
+
+**Poprawki komend (Programista, kryteria bez zmian):** pola JSON jak w liście: `zrodlo` („karta OMENa”; w trybie awaryjnym ekran ustawia „zapis (tryb awaryjny)”), `miejsca`, `podloga`, `gasi` (lista towarów, które wygaszają miejsce — wygaszenie liczy ekran), `niepewny`, `wzorzec`, `czas_s`, `pamiec_karty_MB`. Prawdziwe auto A ma **15** miejsc, nie 7 jak w makiecie: O10 „Zaznaczenia (5) i +10 dalszych miejsc”, O12 „Zaznaczenia (15)”, O21 „Brakuje decyzji: 15, w tym 10 w dalszych miejscach” (przed decyzją). O13/O14/O16 z JSON: `q.podloga && !q.gasi.includes(towar)`. O5/O32 z terminala wymagają zatrzymania usługi — w skrypcie ekranów tryb awaryjny symuluje odpowiedź 502. Skrypty: `skrypty/odbior.sh` (curl), `app/test/ekrany.mjs` (ekrany), `skrypty/odbior_omen.sh` + `skrypty/ocena_partii.py` (O34–O35 na karcie).
 
 ## Część 1 — wdrożenie i usługa (BLOK #1, #6)
 

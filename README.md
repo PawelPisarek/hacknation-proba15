@@ -4,7 +4,7 @@ Narzędzie dla operatorów RTG na granicy: porównuje obraz naczepy ze wzorcem c
 
 **Dla kogo:** operatorzy RTG Służby Celno-Skarbowej (zadanie KAS „Automatyczna wyszukiwarka anomalii”). Treść zadania: [docs/zadanie.md](docs/zadanie.md).
 
-**Linki:** makieta — [pawelpisarek.github.io/hacknation-proba15/makieta/](https://pawelpisarek.github.io/hacknation-proba15/makieta/) · wersja na ksefbot.pl — _(do uzupełnienia)_ · opis dla HackTribe: [docs/hacktribe.md](docs/hacktribe.md)
+**Linki:** makieta — [pawelpisarek.github.io/hacknation-proba15/makieta/](https://pawelpisarek.github.io/hacknation-proba15/makieta/) · MVP — [hacknation.ksefbot.pl](https://hacknation.ksefbot.pl/) · opis dla HackTribe: [docs/hacktribe.md](docs/hacktribe.md)
 
 ## Jak uruchomić
 
@@ -22,6 +22,23 @@ python -m rtg.raport --dane dane/bib --wyniki wyniki/bib/nauka_zgloszony.json --
 ```
 
 Makieta: statyczna strona `makieta/index.html` (bez budowania, udawane dane), otwierana wprost w przeglądarce.
+
+**MVP (ekrany E1–E4 na prawdziwym wyniku z karty):**
+
+```sh
+# 1. usługa analizy na komputerze z kartą (biblioteka pustych wzorców = katalog z etykiety.json i obrazy/)
+python -m rtg.usluga --biblioteka dane/bib --port 8770 --bezczynnosc 90
+# 2. aplikacja (node ≥ 18, bez zależności); OMEN_URL = adres usługi z punktu 1
+OMEN_URL=http://<komputer-z-karta>:8770 node app/server.js          # http://localhost:3000/
+#    albo kontener: docker build -t rtg . && docker run -p 3000:3000 -e OMEN_URL=… rtg
+# tryb partiami (§8 zadania): każdy obraz z katalogu → JSON z ramkami i pewnością + PNG z zaznaczeniem
+python -m rtg.wykryj --dane <katalog z .bmp/.png/.jpg> --biblioteka dane/bib --wyjscie wyniki/partie
+# odbiór: z terminala (docs/pm/12, O1–O33) i ekrany w przeglądarce (A1–A11, KA17, KA18)
+S=https://hacknation.ksefbot.pl DUZY=plik50MB.bmp sh skrypty/odbior.sh
+BASE=https://hacknation.ksefbot.pl/ WLASNY=plik.png ZRZUTY=docs/zrzuty node app/test/ekrany.mjs   # playwright-core + chromium
+```
+
+Gdy usługa nie odpowiada, aplikacja pokazuje zapisany prawdziwy wynik aut pokazu (`app/public/zapis/`) z paskiem „Tryb awaryjny”.
 
 ## Jak oceniamy
 

@@ -17,7 +17,7 @@ const kontekst = await przegl.newContext({ viewport: { width: 1500, height: 950 
 const s = await kontekst.newPage();
 const zadania = [];
 s.on("request", (r) => zadania.push(r.url()));
-const zrzut = async (n) => { if (ZR) await s.screenshot({ path: `${ZR}/mvp-${n}.png`, fullPage: true }); };
+const zrzut = async (n) => { if (ZR) await s.waitForLoadState("networkidle"), await s.screenshot({ path: `${ZR}/mvp-${n}.png`, fullPage: true }); };
 const poz = () => s.$$eval(".poz", (e) => e.map((x) => ({ t: x.querySelector(".g span").textContent, kl: x.className, dop: !!x.querySelector(".dopisek"), cala: x.textContent })));
 const tekst = () => s.textContent("#app");
 const auto = async (k) => { await s.goto(BASE); await s.click(`text=Auto ${k}`); await s.locator(".karta", { hasText: `Auto ${k}` }).locator("button").click(); await s.waitForSelector(".towar"); };
@@ -47,11 +47,12 @@ ok("A2 różnica podświetlona (podgląd z karty)", (await s.$$eval("svg image",
 const nag = await s.textContent(".lista h3");
 const wszystkie = Number((await s.evaluate(() => S.w.miejsca.length)));
 ok("A3/KA12 nagłówek zwinięty „Zaznaczenia (5) i +N dalszych miejsc”", /^Zaznaczenia \(5\) i \+\d+ dalszych miejsc/.test(nag.trim()), nag.trim());
-ok("P36 licznik +N tylko raz", (await s.$$("text=/dalszych miejsc/")).length === 1);
+ok("P36 licznik +N tylko raz", ((await s.innerText("#app")).match(/\+\d+ dalszych miejsc/g) || []).length === 1);
 for (const [k] of [["drobnica"], ["plyny"], ["sypkie"], ["maszyny"], ["meble"], ["pusta"], ["nie_wiem"]]) {
   await s.click(`.towar button[onclick*="'${k}'"]`);
   const n = (await poz()).length;
   ok(`A3 ≤ 5 pozycji (${k})`, n <= 5, `${n}`);
+  await zrzut(`E2-A-towar-${k}`); // pre-mortem #7: zrzut po każdym z 7 wyborów
 }
 await s.click(".dalsze");
 const nag2 = await s.textContent(".lista h3");
@@ -114,11 +115,14 @@ ok("P32 kontur zatwierdzonego zielony", (await s.$$eval("svg rect", (r) => r.map
 
 // --- P44 B / KA17: zmiana towaru zachowuje decyzje przy miejscach, które zostają
 const decPrzed = await s.evaluate(() => ({ ...S.dec }));
-await s.click(`.towar button[onclick*="'maszyny'"]`);
+await s.click(`.towar button[onclick*="'plyny'"]`);
 const po = await s.evaluate(() => ({ dec: { ...S.dec }, wid: widoczne().map((x) => x.id), zg: zgaszone().map((x) => x.gdzie) }));
 const zostaly = Object.keys(decPrzed).filter((id) => po.wid.includes(Number(id)));
 ok("P44 decyzje przy miejscach, które zostały, zachowane", zostaly.every((id) => JSON.stringify(po.dec[id]) === JSON.stringify(decPrzed[id])), `zostały ${zostaly.length}/${Object.keys(decPrzed).length}`);
 ok("P44 decyzje przy wygaszonych odpadają", Object.keys(po.dec).every((id) => po.wid.includes(Number(id))));
+ok("P44 część decyzji zostaje (płyny)", zostaly.length > 0);
+await s.click(`.towar button[onclick*="'maszyny'"]`);
+po.zg = await s.evaluate(() => zgaszone().map((x) => x.gdzie));
 ok("P40/KA17 wygaszanie bez dachu, podłogi i ściany przedniej", po.zg.length > 0 && po.zg.every((g) => !/^(dach|podłoga|ściana przednia)/.test(g)), `wygaszone ${po.zg.length}: ${[...new Set(po.zg)].join("; ")}`);
 const wyg = await s.textContent(".wygaszone");
 ok("P29/KA13 „wygaszone: N”", /wygaszone: [1-9]/.test(wyg), wyg.split("(")[0].trim());
@@ -128,12 +132,13 @@ ok("P34 pusta naczepa nic nie wygasza", (await s.textContent(".wygaszone")).trim
 await s.click(`.towar button[onclick*="'maszyny'"]`);
 
 // --- decyzje przy wszystkich → E4 (A8, KA14, P38)
+await s.click(".poz:not(.zat):not(.odr) >> text=odrzuć"); await s.click(".okno >> text=zwykły ładunek");
 for (;;) { const b = await s.$(".poz:not(.zat):not(.odr) .kontrola"); if (!b) { const r = await s.$(".brakuje .dalsze"); if (r) { await r.click(); continue; } break; } await b.click(); }
 await s.click("text=Raport z auta →");
 const czas = (Date.now() - t0) / 1000;
 const e4 = await tekst();
 ok("A1/KA4 ścieżka do raportu ≤ 2 min", czas <= 120, `${czas.toFixed(1)} s (automat)`);
-ok("A8 raport: kontrola, wzorzec, ocena, decyzje z powodem", ["Kontrola", "Wzorzec", "%", "odrzucone — element konstrukcji", "do kontroli"].every((x) => e4.includes(x)));
+ok("A8 raport: kontrola, wzorzec, ocena, decyzje z powodem", ["Kontrola", "Wzorzec", "%", "zwykły ładunek", "do kontroli"].every((x) => e4.includes(x)));
 ok("P38 wiersz „Wygaszone wyborem ładunku”", /Wygaszone wyborem ładunku\s*\d+/.test(e4));
 ok("P41 raport: nagłówek z pełną liczbą, bez „dalszych miejsc”", /Zaznaczenia \(\d+\) i decyzje/.test(e4) && !e4.includes("dalszych miejsc"));
 await zrzut("E4-A");
