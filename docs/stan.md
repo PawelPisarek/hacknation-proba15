@@ -1,4 +1,4 @@
-# Stan (Szef) — 13:37 sobota
+# Stan (Szef) — 13:41 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
@@ -12,11 +12,11 @@ Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 M
 | 2 /write-prd docs/spec.md | Projektant | zamknięte (odbiorca R2 czyste; P27 w E1, KA11) |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zamknięte (kosmetyka + README wypchnięte) |
-| 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; sondy 1–3 przerwane (limit Claude 100%, reset 14:00) na „OMEN jest wolny. Puszczam sondy.” |
+| 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; sondy 1–3 wznowione 13:40 na OMENie (#@Szef · work, potem MVP 01) |
 | 4 scenariusze testów (06) / historyjki (07) | Analityk / Projektant | zamknięte; 06 C w rtg/ocena.py (12:17) |
-| 5 makieta wg speca (gh-pages) | Programista / Analityk | R1 7/10; R2 8/10; R3 odebrana 13:33 (9 zrzutów, HTTP 200); krytyk R3 (Analityk) czeka na reset 14:00 + przegląd Pawła (02) |
+| 5 makieta wg speca (gh-pages) | Programista / Analityk | R1 7/10; R2 8/10; R3 odebrana 13:33 (9 zrzutów, HTTP 200); krytyk R3 (Analityk — blokada nowych zleceń w tej sesji) + przegląd Pawła (02) |
 | README: tabela „Użyte narzędzia” | Prezenter | zamknięte (biblioteki makiety i MVP uzupełni Programista) |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); dwa auta pokazu + „wczytaj własne zdjęcie” (P27); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta (raport po wszystkich decyzjach, P30); każdy ładunek wygasza swoje miejsca, „wygaszone: N” (P29); zdjęcie .bmp/.png/.jpg (P31); kolor konturu po decyzji + cofnij (P32); pusta naczepa nic nie wygasza (P34); dalsze miejsca do rozwinięcia i decyzji (P35); skala kolorów pewności (P37).
-Otwarte: — (limit 5h Claude 100% do 14:00; automatyczny powrót 14:01)
+Otwarte: — (limit Claude odnowiony: 1%; blokada otwierania nowych zleceń w tej sesji Szefa)
 Lista Artura na noc: P2–P38 z makiety → MVP (docs/zadania/01-mvp-z-makiety.md), materiały do stanu faktycznego (Prezenter), pre-mortem (Analityk).
