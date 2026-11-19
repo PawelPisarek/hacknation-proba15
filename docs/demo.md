@@ -30,8 +30,8 @@ Rozstrzygnięte (Artur w pokoju, 14:05): **P45 A** — w pełni tylko auto A w 2
 
 ### Auto B — czyste (≈ 10 s)
 - E1 → **Auto B — czyste** → „Analizuj”.
-- Na ekranie makiety: wzorzec W-PL-014 i obrazy bez podświetleń — **to udawany wynik**. Pomiar na czystych pustych naczepach (`docs/pm/05-sondy.md`, sonda 1) dał **82 fałszywe alarmy (różnica) i 125 (nauka)**; cel „FP = 0” nie został osiągnięty. W MVP czyste auto może więc dostać zaznaczenia.
-- Mówimy: „To czyste auto. W makiecie wynik jest udawany; w pomiarze na sztucznych danych fałszywych alarmów na czystych naczepach mamy wciąż 82 i 125 — to nasz główny punkt do poprawy.”
+- Na ekranie makiety: wzorzec W-PL-014 i obrazy bez podświetleń — **to udawany wynik**. Pomiar na czystych pustych naczepach (`docs/pm/05-sondy.md`, sonda 1) dał **82 fałszywe alarmy (różnica) i 125 (nauka)** — liczone w ramkach, na 12 czystych pustych obrazach (na jednym obrazie może być kilka); cel „FP = 0” nie został osiągnięty. W MVP czyste auto może więc dostać zaznaczenia.
+- Mówimy: „To czyste auto. W makiecie wynik jest udawany; w pomiarze na sztucznych danych fałszywych alarmów na czystych naczepach mamy wciąż 82 i 125 ramek na 12 czystych obrazach — to nasz główny punkt do poprawy.”
 
 ### Własne zdjęcie (≈ 15 s)
 - E1 → **Wczytaj własne zdjęcie** → plik .bmp / .png / .jpg.
@@ -40,7 +40,7 @@ Rozstrzygnięte (Artur w pokoju, 14:05): **P45 A** — w pełni tylko auto A w 2
 
 ## Czego nie obiecujemy
 - Skuteczności na prawdziwych RTG KAS (dane sztuczne).
-- Zera fałszywych alarmów: pomiary (`docs/pm/05-sondy.md`) dają FP na czystych 82 / 125 i FN pełną 43,1% / 37,6% (towar „nie wiem”). Liczby w nagraniu tylko z tego pliku, jako dane syntetyczne.
+- Zera fałszywych alarmów: pomiary (`docs/pm/05-sondy.md`) dają FP na czystych pustych 82 / 125 ramek (12 obrazów) i FN pełną 43,1% / 37,6% (towar „nie wiem”). Liczby w nagraniu tylko z tego pliku, jako dane syntetyczne.
 
 ## Do uzupełnienia po MVP
 - Link do wersji na ksefbot.pl; czasy kroków zmierzone na działającej usłudze (OMEN, cel ≤ 30 s na obraz — ewentualny czas oczekiwania wpisać jako osobny krok).

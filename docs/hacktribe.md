@@ -1,6 +1,6 @@
 # HackTribe — pola formularza (do wklejenia przez człowieka)
 
-Źródła: docs/spec.md (problem, użytkownik, ekran), docs/decyzje.md. Dane w projekcie są sztuczne; liczb skuteczności nie podajemy w opisie (pomiary na danych syntetycznych: docs/pm/05-sondy.md — FP na pustych 82/125, nie zero; wariant łatwy). Zgodne ze slajdami R2 i P40–P46 (14:05): wygaszanie tylko wnętrza ładunku, decyzje zachowane przy zmianie towaru.
+Źródła: docs/spec.md (problem, użytkownik, ekran), docs/decyzje.md. Dane w projekcie są sztuczne; liczb skuteczności nie podajemy w opisie (pomiary na danych syntetycznych: docs/pm/05-sondy.md — FP na pustych 82/125 ramek na 12 czystych pustych obrazach, nie zero; na 24 czystych załadowanych 165/173 ramek; wariant łatwy). Zgodne ze slajdami R2 i P40–P46 (14:05): wygaszanie tylko wnętrza ładunku, decyzje zachowane przy zmianie towaru.
 
 ## 1. Nazwa projektu — 17 zn. (limit 30)
 

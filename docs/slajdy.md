@@ -61,8 +61,8 @@ Dane syntetyczne, 36 grup, karta GTX 1050 (`docs/pm/05-sondy.md`):
 ## 7. Wyniki mierzone — FP i FN (słabe strony)
 
 Metoda różnicy (H1) / nauki (H2), wariant łatwy, towar „nie wiem” / zgłoszony:
-- FP na czystych pustych: **82 / 125** — cel 0 **obalony**; sam próg nie wystarcza.
-- FP na załadowanych z wyborem towaru: **165 / 173** — cel 0 obalony. Wybór towaru obniża FP o ok. 35% / 33% (382 → 247, 443 → 298), ale to wciąż setki.
+- FP na czystych pustych: **82 / 125** ramek (na 12 czystych pustych obrazach; jeden obraz może dać kilka ramek) — cel 0 **obalony**; sam próg nie wystarcza.
+- FP na załadowanych z wyborem towaru: **165 / 173** ramek (na 24 czystych załadowanych obrazach) — cel 0 obalony. Wybór towaru obniża FP o ok. 35% / 33% (382 → 247, 443 → 298), ale to wciąż setki.
 - FN pełna: „nie wiem” **43,1% / 37,6%**, zgłoszony **61,5% / 58,7%**; wybór towaru gasi 20/62 i 23/70 dodatków (wg 05, głównie dach i ściana przednia).
 - Trudny wariant: dobór wzorca 80%, FN rośnie o 26,6 / 29,4 pp (zgł.) i 38,6 / 37,6 pp („nie wiem”).
 - Wynik MVP na usłudze: **do uzupełnienia**.

@@ -215,3 +215,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:17 Szef: zlecona lista odbioru MVP (Analityk, docs/pm/12) z KA1–KA18 i BLOK z pre-mortem
 14:18 Analityk: lista odbioru MVP (35 pozycji) — docs/pm/12-odbior-mvp.md
 14:57 Szef: mianownik FP w 05-sondy (12 pustych / 24 załadowanych czystych) → Prezenter dopisuje w slajdach, demo, hacktribe
+14:57 Prezenter: mianownik FP w slajdach/demo/hacktribe
