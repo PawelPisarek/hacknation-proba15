@@ -1,0 +1,100 @@
+## Product Requirements Document: Wyszukiwarka anomalii na obrazach RTG naczep (KAS)
+
+**Author**: Projektant (zespół Hackathon) — z ustaleń Artura (produkt) i Pawła (technika)
+**Date**: 2026-11-19
+**Status**: Draft (wejście: docs/pm/01–03, docs/decyzje.md P1–P25)
+
+## 1. Summary
+Narzędzie dla operatora RTG KAS: system sam porównuje obraz badanej naczepy z obrazem wzorcowej, pustej naczepy tego samego typu i zaznacza do 5 miejsc podejrzanych (najpewniejsze pierwsze). Operator na jednym ekranie z podziałem (wzorzec obok badanego) zatwierdza „do kontroli” albo odrzuca z powodem. Wynik trafia do raportu z auta. Dane: sztuczne obrazy .bmp (zdjęć KAS nie mamy); wynik z usługi na karcie OMENa (GTX 1050 4 GB).
+
+## 2. Contacts
+Artur — kształt produktu (pokój Produkt); Paweł — technika, wygląd, użyteczność; zespół: Szef, Projektant, Analityk, Programista, Prezenter.
+
+## 3. Background
+- Zadanie KAS (docs/zadanie.md): operatorzy przeoczają małe skrytki (najczęściej podwójna podłoga lub ściana przy kabinie) wśród detali konstrukcji; obecne narzędzie (papierosy) ich nie łapie (P3).
+- Porównanie ze wzorcem to znany prior art (ACXIS, patenty); wyróżnia nas dobór wzorca, ocena pewności z limitem 5 i decyzja operatora z powodem w raporcie (01).
+- Perspektywa: funkcje dla operatora, nie cena ani rynek (P12, decyzja Szefa 11:22).
+- Dane sztuczne nie dowodzą skuteczności na RTG z KAS — mówimy to wprost w materiałach (README, slajdy, pokaz).
+
+## 4. Objective
+- **Cel użytkownika:** mniej przeoczonych skrytek (P4). Przeoczony dodatek jest gorszy niż zbędny alarm — minuta więcej przy aucie (P5).
+- **Metryki (zadanie §6):** FP = każde zaznaczenie na czystym obrazie (cel **0**); FN = pominięty dodatek; trafienie = część wspólna ≥ 30% pola dodatku lub ramki (ocena Programisty); czas < 1 min na obraz ~50 MB (cel ≤ 30 s).
+- **Liczby progów** (zgodność doboru wzorca, FN przy limicie 5, wpływ wyboru towaru) poda Programista po krzywej z przebiegu bazowego — do tego czasu bez liczb (założenie).
+- Operator ma kilka minut na auto (P2); liczby aut nie znamy, zakładamy kilkadziesiąt dziennie (P14, **założenie**).
+
+## 5. Market Segment(s)
+Jeden segment: operator RTG (Służba Celno-Skarbowa) przy stanowisku na granicy zewnętrznej UE, w trakcie kontroli (P2). Wtórnie: kontroler fizyczny, który czyta raport (P16).
+
+## 6. Value Proposition(s)
+- **Kto:** operator RTG. **Dlaczego:** musi znaleźć małą skrytkę w gąszczu konstrukcji w kilka minut. **Co dziś:** ocena „na oko” + narzędzie tylko na papierosy. **Jak:** system zaznacza do 5 różnic względem pustej naczepy tego samego typu, najpewniejsze pierwsze. **Co potem:** mniej przeoczonych skrytek, decyzje i powody w raporcie. **Alternatywy:** ACXIS i patenty na porównanie ze wzorcem (dostawcy: dane „?” niezweryfikowane), ocena ręczna.
+
+## 7. Solution
+
+### 7.1 Ścieżka główna (demo ≤ 2 min, ustalenie Szefa; dwa auta, P18)
+1. Wybór auta (A: z dodatkiem, 7 miejsc → 5 + „+2 dalszych miejsc”; B: czyste).
+2. Operator wybiera rodzaj zgłoszonego towaru (P19, P20, P23) — 6 grup + „nie wiem”.
+3. Wynik: wzorzec i badany obraz obok siebie z podświetloną różnicą (P15, P22), z boku lista zaznaczeń.
+4. Klik w pozycję listy pokazuje miejsce na obu obrazach (P22).
+5. Przy każdej pozycji „do kontroli” albo „odrzuć” (powód z listy) (P7, P24).
+6. Raport z auta. Auto B: „brak zaznaczeń” + użyty wzorzec (P17).
+
+### 7.2 Ekran główny (wariant 3 + lista z wariantu 2; makieta: https://pawelpisarek.github.io/hacknation-proba15/makieta/warianty/3/)
+- **Linia nad obrazami:** wybór rodzaju towaru: drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa, „nie wiem” (zaznaczamy wszystko) (P20, P23). Bez wyboru = „nie wiem”.
+- **Pasek „wzorzec niepewny”** nad obrazami, widoczny, gdy brak naczepy tego typu i użyto najbliższej podobnej (P11, P25).
+- **Dwa obrazy obok siebie** (jeden monitor, podział ekranu): wzorzec (nazwa, np. W-PL-014) i badany; różnica podświetlona; zaznaczone miejsce widać na obu.
+- **Lista zaznaczeń z boku:** do 5, najpewniejsze pierwsze, z oceną pewności (P8). Gdy było więcej: „+N dalszych miejsc” (licznik, nie zaznaczenie) (P21) — także przy „nie wiem”.
+- **Przy każdej pozycji:** „do kontroli” / „odrzuć”; odrzucenie wymaga powodu: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P9).
+- **Brak zaznaczeń:** komunikat „brak zaznaczeń” i pokazany użyty wzorzec (P17).
+- **Podpowiedź przy podwójnej podłodze** — tylko ta część pomysłu „typowe miejsca” (P3, moment b).
+
+### 7.3 Raport z auta (P10, P16, §9)
+Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty wzorzec (+ „wzorzec niepewny”), zaznaczenia z oceną, decyzje operatora z powodem. „Do kontroli” = samo oznaczenie w raporcie, bez komunikatu do kontrolera (P16). Decyzje zostają w raporcie.
+
+### 7.4 Zachowania i reguły
+- Wzorzec dobiera system z biblioteki (P6, P11, P19 A): pusta naczepa tego samego typu; wybór towaru ogranicza ramki na zgodnym ładunku, ale nie wygasza miejsc z ładunkiem tam, gdzie wybór go nie obejmuje (Z5).
+- Wykrywanie i raport działają samodzielnie; zatwierdzanie/odrzucanie to krok po raporcie i nie wpływa na wynik wykrywania (Szef 11:21). Przebieg automatyczny i partiami = „nie wiem”.
+- Odrzucone miejsca **nie uczą** systemu (odrzucony pomysł 7: mogłyby ukryć skrytki, P5).
+- Język ekranu: polski. Praca bez internetu i chmury; pliki .bmp ~50 MB, przetwarzanie partiami i skalowalność (§3, §9).
+
+### 7.5 Opis makiety dla Programisty (ekrany i udawane dane)
+| Ekran | Zawartość | Udawane dane |
+|---|---|---|
+| E1 Wybór auta | dwa auta do wczytania | A „z dodatkiem”, B „czyste” |
+| E2 Analiza (główny) | linia towaru, pasek niepewności, 2 obrazy, lista, przyciski | A: 7 miejsc → 5 + „+2 dalszych miejsc”; B: brak zaznaczeń, wzorzec W-PL-014 |
+| E3 Powód odrzucenia | lista 4 powodów | element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne |
+| E4 Raport z auta | identyfikator kontroli, wzorzec, zaznaczenia, decyzje | numer kontroli sztuczny |
+
+### 7.6 Kryteria akceptacji (z eksperymentów i ryzyk 02)
+- **KA1 (Z1, najryzykowniejsze):** trafność doboru wzorca zmierzona na zbiorze testowym i podana; przy złym typie widoczne „wzorzec niepewny”; próg po krzywej.
+- **KA2 (Z2):** FN przy limicie 5 podane obok FP, także przy „nie wiem”; FN liczone na pełnej liście i na pierwszej piątce osobno.
+- **KA3 (Z3):** 0 zaznaczeń na czystych w dwóch wariantach: (a) pusta naczepa bez wyboru towaru, (b) załadowana z prawidłowym wyborem. Krzywa próg → FP/FN osobno.
+- **KA4 (Z4):** ścieżka od wyboru towaru do raportu ≤ 2 min.
+- **KA5 (Z5):** dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają.
+- **KA6 (Z6):** < 1 min na obraz ~50 MB na karcie OMENa.
+- **KA7 (Z7):** podejścia B (PatchCore) i C (EfficientAD) mieszczą się w 4 GB; inaczej podejście A + mniejszy model.
+- **KA8 (Z8):** FN na trudniejszym wariancie rośnie najwyżej o 10 pp, FP na czystych zostaje 0 („strojenie” = progi na łatwym wariancie; „nauka” = model z czystych, §5).
+- **KA9 (P21):** na ekranie zawsze ≤ 5 zaznaczeń + „+N dalszych miejsc”.
+
+### 7.7 Ryzyka
+- Limit 5 może ukryć skrytkę poza piątką — łagodzi „+N dalszych miejsc”.
+- Ocena organizatora może podać załadowane czyste naczepy — bez wyboru towaru pojawią się FP.
+- Różne rozumienie „wszystko” — reguła: 5 + licznik.
+- Dane sztuczne ≠ RTG KAS; podejście E (sieć na parze) tylko na zbiorze sztucznym.
+- Zgodność wzorca zależy od biblioteki (mały zbiór sztuczny).
+
+### 7.8 Założenia i pytania otwarte
+Liczba aut dziennie (P14, założenie); progi Z1, Z2, Z5 — Programista po krzywej z przebiegu bazowego.
+
+## 8. Release
+**MVP (demo):** E1–E4 z udawanymi danymi, dwa auta, 6 grup + „nie wiem”, ≤ 5 zaznaczeń + licznik, decyzje i raport.
+**Poza MVP:** integracja z repozytorium RTG i urządzeniami (pole identyfikujące kontrolę zamiast), uczenie na odrzuceniach, pełna klasyfikacja towarów, realne dane KAS.
+
+UPROSZCZENIE: biblioteka wzorców — mały zbiór sztucznych naczep — zamiast zdjęć KAS — dorobienie: duże (dane KAS).
+UPROSZCZENIE: lista towarów — 6 grup + „nie wiem” — zamiast pełnej klasyfikacji — dorobienie: małe.
+UPROSZCZENIE: bez integracji z repozytorium RTG i urządzeniami — pole identyfikujące kontrolę w raporcie — zamiast integracji (§9) — dorobienie: duże.
+UPROSZCZENIE: logowanie i role operatora — bez logowania — zamiast kont — dorobienie: małe do średnie.
+
+Na końcu jedna pozycja pominięta celowo: szczegółowa wersja PRD (rozwinięcie na życzenie).
+
+<!-- skill: przeplywy-pm -->
+<!-- skill: create-prd -->
