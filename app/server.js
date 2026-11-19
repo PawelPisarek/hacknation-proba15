@@ -25,7 +25,7 @@ function doOmena(req, res, sciezka) {
     r.pipe(res);
   });
   p.on("timeout", () => p.destroy(new Error("czas minął")));
-  p.on("error", (e) => { if (!res.headersSent) wyslij(res, 503, { blad: "usługa na karcie OMENa nie odpowiada: " + e.message, awaryjny: true }); else res.end(); });
+  p.on("error", (e) => { if (!res.headersSent) wyslij(res, 503, { blad: "usługa na karcie OMENa nie odpowiada: " + String(e.code || e.message).replace(/\d+\.\d+\.\d+\.\d+(:\d+)?/g, "(sieć lokalna)"), awaryjny: true }); else res.end(); });
   req.pipe(p);
 }
 
