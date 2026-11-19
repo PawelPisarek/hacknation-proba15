@@ -174,3 +174,4 @@ P39 13:05 odpowiedź (Artur w pokoju): nic z ekranu nie wyrzucać
 13:46 Szef: odebrano wyniki sond 1–3 (docs/pm/05-sondy.md); dopisano 3 wnioski do docs/zadania/01-mvp-z-makiety.md (wyrównanie lokalne, wygaszanie bez dachu/podłogi/ściany przedniej, krótkie wznawialne kroki na OMENie) oraz zapisano niezgodność dla fazy 2 w docs/zadania/03-kryterium-skutecznosc-fp-fn.md; cały zespół stoi od 13:44 przez brak możliwości zlecania nowych zadań w obecnej sesji Szefa (alarm do Pawła)
 14:01 Szef: zlecenia ruszyły — krytyk R3 (Analityk), MVP wg 01-mvp (Programista), docs/demo.md DRAFT (Prezenter); Projektant czeka na braki R3
 14:01 Prezenter: demo.md DRAFT
+14:02 Analityk: krytyk R3 7/10, 7 braków (docs/pm/08-krytyk-makiety-R3.md); produktowe: 1 wygaszanie podłogi (wbrew sondom), 3 liczba po rozwinięciu, 4 blokada raportu „bez decyzji: 6”, 5 kolory, 6 zmiana towaru po decyzjach; technika: 2 spec bez P34–P38 poza KA16, 7 brak zrzutu „pusta naczepa”
