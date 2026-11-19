@@ -9,3 +9,11 @@ Względem: odpowiedzi Artura P34–P46 w `docs/decyzje.md`. P34–P38 są w 7.2/
 5. **[technika] P41 i P43 nie wchodzą do kryteriów w pełni.** P43 (przycisk „do kontroli” niebieski, czerwień tylko dla wysokiej pewności, wyraźniejszy tekst odrzuconych) jest w 7.2, ale w żadnym KA; KA17 (tytuł P40–P45) go nie ma, a KA16 opisuje tylko stare kolory. P41 „ta sama zasada w raporcie” — 7.3 nie mówi, jaki nagłówek/liczba w raporcie auta A (7 pozycji).
 
 <!-- skill: przesluchanie-hackathon -->
+
+## R2 (docs/spec.md, 81c158f, względem P34–P46 i wpisu Szefa 14:08 o 44 B)
+
+Sprawdzone punkty R1: 1 (P40 w 7.2, 7.4, 7.5; „nie wiem” obok „pusta naczepa” w 7.2), 2 (P42 w 7.2, 7.3, 7.5, KA17), 3 (P44 B z regułą „to samo miejsce” — kontur pokrywa się — w 7.2, 7.3, 7.4, KA17, zgodna z wpisem Szefa 14:08), 4 (P45 A w 7.1, KA4, KA17, 7.5 E1), 5 (P41 w 7.3, 7.5 E4, KA12; P43 w KA18). Sprzeczności między 7.1–7.5, KA4/KA13/KA16/KA17/KA18 i 7.8 nie znalazłem.
+
+brak braków zmieniających zakres lub kryteria
+
+Uwaga techniczna (nie brak): „kontur pokrywa się” (P44 B) i „wyraźniejszy kontrast” (KA18) nie mają progu — próg ustala Programista w MVP, bez zmiany tego, co widzi użytkownik.
