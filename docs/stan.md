@@ -1,4 +1,4 @@
-# Stan (Szef) — 11:40 sobota
+# Stan (Szef) — 11:41 sobota
 
 Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
 
@@ -13,5 +13,5 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta.
-Otwarte: —
+Otwarte: P22 (Artur, wybór wariantu ekranu; rekomendacja Projektanta: wariant 3).
 Lista Artura na noc: —
