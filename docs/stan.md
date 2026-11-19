@@ -1,4 +1,4 @@
-# Stan (Szef) — 14:19 sobota
+# Stan (Szef) — 14:27 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
@@ -19,5 +19,5 @@ Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 M
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); dwa auta pokazu + „wczytaj własne zdjęcie” (P27); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta (raport po wszystkich decyzjach, P30); każdy ładunek wygasza swoje miejsca, „wygaszone: N” (P29); zdjęcie .bmp/.png/.jpg (P31); kolor konturu po decyzji + cofnij (P32); pusta naczepa nic nie wygasza (P34); dalsze miejsca do rozwinięcia i decyzji (P35); skala kolorów pewności (P37).
 Otwarte: — (P40–P46 odpowiedziane 14:04–14:05)
-W toku: MVP (14:16 usługa, Dockerfile, zapis aut A/B — tryb awaryjny) + KA17/KA18 + mianownik FP (Programista); lista odbioru MVP zamknięta (docs/pm/12, O1–O35 → Programista 05:00); spec, slajdy/demo, hacktribe zgodne (zamknięte)
+W toku: MVP (14:16 usługa + zapis A/B; 14:20 ekran, serwer, test ekranów) + KA17/KA18 + mianownik FP (Programista); lista odbioru MVP zamknięta (docs/pm/12, O1–O35 → Programista 05:00); spec, slajdy/demo, hacktribe zgodne (zamknięte)
 Lista Artura na noc: P2–P38 z makiety + wnioski z sond → MVP (01-mvp-z-makiety.md), materiały do stanu faktycznego (Prezenter), pre-mortem (Analityk).
