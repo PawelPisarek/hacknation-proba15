@@ -186,3 +186,4 @@ P45 14:03 Artur: pokaz 2 min — w pełni tylko auto A, a auto B i własne zdję
 P46 14:03 Artur: co z ekranu makiety wyrzucić (runda 3, odpowiedzi idą do wersji nocnej)? rekomendacja: nic — czeka
 14:03 Projektant: pytania P40–P46 (braki 1, 3, 4, 5, 6 krytyka R3 + pokaz 2 min + co wyrzucić) w pokoju Produkt
 14:03 Analityk: pre-mortem MVP (docs/pm/09-pre-mortem.md): 10 przyczyn; BLOK: usługa OMEN/preempcja, FP na czystych, wygaszanie gasi dodatki, upload własnego pliku, wdrożenie, zakres A1–A11
+14:04 Projektant: spec zgodny z P34–P38 (7.2 pusta naczepa, +N rozwijane i raz, 7.3/E4 wiersz „wygaszone wyborem ładunku”, KA9/KA12/KA13), P40–P46 jako otwarte w 7.8
