@@ -16,7 +16,7 @@ function wyslij(res, kod, obj) {
 }
 
 function doOmena(req, res, sciezka) {
-  if (!OMEN) return wyslij(res, 502, { blad: "brak OMEN_URL — usługa na karcie nieustawiona", awaryjny: true });
+  if (!OMEN) return wyslij(res, 503, { blad: "brak OMEN_URL — usługa na karcie nieustawiona", awaryjny: true });
   const n = Number(req.headers["content-length"] || 0);
   if (n > MAX) return wyslij(res, 413, { blad: "plik większy niż 120 MB" });
   const u = new URL(OMEN + sciezka);
@@ -25,7 +25,7 @@ function doOmena(req, res, sciezka) {
     r.pipe(res);
   });
   p.on("timeout", () => p.destroy(new Error("czas minął")));
-  p.on("error", (e) => { if (!res.headersSent) wyslij(res, 502, { blad: "usługa na karcie OMENa nie odpowiada: " + e.message, awaryjny: true }); else res.end(); });
+  p.on("error", (e) => { if (!res.headersSent) wyslij(res, 503, { blad: "usługa na karcie OMENa nie odpowiada: " + e.message, awaryjny: true }); else res.end(); });
   req.pipe(p);
 }
 

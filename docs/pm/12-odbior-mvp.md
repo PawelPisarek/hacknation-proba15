@@ -14,7 +14,7 @@ Skróty: **A** = auto z dodatkiem (7 miejsc → 5 + „+2 dalszych miejsc”), *
 | O2 | Wynik z usługi, nie udawany (#6) | A → wynik | w odpowiedzi `zrodlo` ≠ makieta (usługa na karcie); czas „s na karcie OMENa” widoczny w E2 | `curl -s -X POST "$S/api/analiza?auto=A" -w "\n%{http_code}\n"` → 200, JSON z `wzorzec`, `miejsca`, `czas_s` |
 | O3 | Usługa odpowiada na B | B → wynik | `miejsca` puste, `wzorzec` podany | `curl -s -X POST "$S/api/analiza?auto=B" -w "\n%{http_code}\n"` → 200, `miejsca: []` |
 | O4 | Praca bez internetu (zadanie §3, A10) | odłącz sieć zewnętrzną, wykonaj O5–O12 | działa tak samo, brak żądań do chmury (zakładka sieci: tylko ksefbot.pl/lokalnie); język polski | DevTools → Network: 0 żądań na obce domeny |
-| O5 | Tryb awaryjny (#1) | zatrzymaj usługę na OMENie (lub zła `OMEN_URL`), kliknij A | czerwony/żółty pasek „Tryb awaryjny: usługa na karcie OMENa nie odpowiada — pokazuję zapisany wynik…”; wynik A i B z zapisu, cały przebieg do raportu działa; pasek z datą zapisu | `curl -s -X POST "$S/api/analiza?auto=A" -w "\n%{http_code}\n"` → 502 z `awaryjny: true` (ekran i tak pokazuje zapis) |
+| O5 | Tryb awaryjny (#1) | zatrzymaj usługę na OMENie (lub zła `OMEN_URL`), kliknij A | czerwony/żółty pasek „Tryb awaryjny: usługa na karcie OMENa nie odpowiada — pokazuję zapisany wynik…”; wynik A i B z zapisu, cały przebieg do raportu działa; pasek z datą zapisu | `curl -s -X POST "$S/api/analiza?auto=A" -w "\n%{http_code}\n"` → 503 z `awaryjny: true` (poprawka komendy: 502 zasłania Cloudflare) (ekran i tak pokazuje zapis) |
 | O6 | Usługa wraca po awarii | po O5 uruchom usługę, odśwież, kliknij A | brak paska awaryjnego, wynik na żywo | jak O2 → 200 |
 
 ## Część 2 — ścieżka główna (auto A; limit 2 min od wyboru towaru do raportu, KA4/P45 A)

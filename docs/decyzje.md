@@ -216,3 +216,17 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:18 Analityk: lista odbioru MVP (35 pozycji) — docs/pm/12-odbior-mvp.md
 14:57 Szef: mianownik FP w 05-sondy (12 pustych / 24 załadowanych czystych) → Prezenter dopisuje w slajdach, demo, hacktribe
 14:57 Prezenter: mianownik FP w slajdach/demo/hacktribe
+14:56 Programista: MVP etap 1 wczytanie zdjęcia — auta A/B z biblioteki i własny plik .bmp/.png/.jpg do 120 MB przez publiczny adres (50 MB: 45,6 s, w tym 0,5 s karty; reszta to przesył)
+14:56 Programista: MVP etap 2 dobór wzorca — NCC pasa podłoga–rama–koła, „niepewny” przy NCC < 0,9235 (próg z sond); A W-chlodnia, B W-plandeka pewne, skrzyniowa .png/.jpg W-kontener niepewny (NCC 0,70)
+14:56 Programista: MVP etap 3 zaznaczenia — silnik H2 „nauka” na karcie OMENa, 0,2–0,7 s/obraz 1825×575, 1,1 s/obraz 50 MB, karta ≤ 239 MB; ≤ 5 na liście + „+N dalszych miejsc”
+14:56 Programista: MVP etap 4 decyzje — do kontroli / odrzuć z 4 powodami / cofnij; raport zablokowany do decyzji przy wszystkich (P42 A)
+14:56 Programista: MVP etap 5 raport E4 — kontrola, wzorzec (+ niepewny), wygaszone wyborem ładunku, Zaznaczenia (N) z decyzjami
+14:56 Programista: próg P44 B „kontur pokrywa się” = część wspólna ≥ 0,5 mniejszego z dwóch pól (ta sama miara co trafienie w rtg.ocena, wyższy próg, żeby przesunięty kontur nie przenosił decyzji); w MVP ta sama analiza, więc miejsca są identyczne i decyzja przechodzi 1:1
+14:56 Programista: próg KA18 „wyraźniejszy kontrast” = ≥ 7:1 (WCAG AAA) dla tekstu odrzuconej pozycji; zmierzone 10,3:1 (napis decyzji) i 13,9:1 (tekst); „do kontroli” #1c7ed6 niebieski; czerwień tylko ≥ 80%
+14:56 Programista: pewność na ekranie = 1 − 0,7 / (punktacja / próg) — na progu 30%, przy 2× progu 65%, ≥ 80% od 3,5× progu; kolory ≥ 80 czerwony, 50–79 pomarańczowy, < 50 żółty (P37)
+14:56 Programista: P40 A strefa wnętrza ładunku = u 0,035–0,975, v 0,14–0,655 długości/wysokości naczepy we wzorcu (pod dachem, nad podłogą, za ścianą przednią); miejsce wygaszane, gdy ≥ 50% jego komórek ma ładunek zgodny z towarem
+14:56 Programista: test podłogi auta A po 6 towarach + „nie wiem”: dodatek w podwójnej podłodze trafiony i nigdy nie wygaszony (3 pozycje „podłoga” z dopiskiem) — OK 7/7; uwaga: przy „nie wiem” jest na 12./15. miejscu, widoczny po „rozwiń”, przy „maszyny” na 1. miejscu
+14:56 Programista: O35 silnik MVP na zbiorze sond (36 czystych, 109 dodatków): nie wiem FP 493 (142 na 12 pustych, 22/36 czystych z alarmem), FN 37,6%, FN@5 60,6%; zgłoszony FP 326 (142 / 184), FN 59,6%, FN@5 62,4%; wybór towaru gasi 24/68 trafionych dodatków (w tym 7 w podłodze i 5 w dachu — miejsca na granicy wnętrza)
+UPROSZCZENIE: usługa na karcie kończy się po 90 min bez żądań — start ręczny skrypty/usluga_start.sh przed pokazem (OMEN_HOST w zmiennej) — 0,5 h na stałą usługę z autostartem
+UPROSZCZENIE: tryb awaryjny tylko dla aut A i B (zapisany prawdziwy wynik); własne zdjęcie bez usługi → komunikat — nie do zrobienia bez karty
+UPROSZCZENIE: wybór towaru liczony na ekranie z listy „gasi” zwróconej przez kartę (bez ponownej analizy) — wynik ten sam, zmiana towaru natychmiast
