@@ -51,3 +51,4 @@ P15 11:24 Artur: jeden monitor czy wzorzec i badany obok siebie? — czeka
 P16 11:24 Artur: po „do kontroli” samo oznaczenie w raporcie czy komunikat dla kontrolera? — czeka
 P17 11:24 Artur: co operator widzi, gdy nic nie zaznaczono? — czeka
 P18 11:24 Artur: pokaz na jednym aucie czy na dwóch (czyste + z dodatkiem)? — czeka
+11:25 Szef: 1a R2 — 5 braków → Projektant poprawia; brak 2 (jaki wzorzec: pusta naczepa vs z podobnym ładunkiem) → pytanie do Artura przez Projektanta; R3 = ostatnia runda
