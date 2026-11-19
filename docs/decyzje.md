@@ -175,3 +175,5 @@ P39 13:05 odpowiedź (Artur w pokoju): nic z ekranu nie wyrzucać
 14:01 Szef: zlecenia ruszyły — krytyk R3 (Analityk), MVP wg 01-mvp (Programista), docs/demo.md DRAFT (Prezenter); Projektant czeka na braki R3
 14:01 Prezenter: demo.md DRAFT
 14:02 Analityk: krytyk R3 7/10, 7 braków (docs/pm/08-krytyk-makiety-R3.md); produktowe: 1 wygaszanie podłogi (wbrew sondom), 3 liczba po rozwinięciu, 4 blokada raportu „bez decyzji: 6”, 5 kolory, 6 zmiana towaru po decyzjach; technika: 2 spec bez P34–P38 poza KA16, 7 brak zrzutu „pusta naczepa”
+14:03 Szef: krytyk R3 7/10 (7 braków) — runda 3 z 3, makieta zamknięta; braki 1,3,4,5,6 + kształt pokazu 2 min → Projektant pyta Artura (odpowiedzi do MVP); brak 2 → Projektant poprawia spec; brak 7 (zrzuty pusta naczepa i pozostałe towary) → do MVP (01-mvp)
+14:03 Szef: demo.md DRAFT przyjęty (e438880); wariant pokazu czeka na odpowiedź Artura

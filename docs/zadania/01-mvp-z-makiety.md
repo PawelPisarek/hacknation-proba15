@@ -39,3 +39,4 @@
 2. Każda pozycja z listy P2–P38 powyżej działa w aplikacji MVP — potwierdzone zrzutami ekranu (w tym stan z wybranym ładunkiem, rozwinięte „+N”, czyste auto B w E2/E4, własny plik w E2/E4) albo automatycznym testem przeglądarkowym pokrywającym A1–A11.
 3. Meldunek zawiera linię wyniku uruchomienia: kod HTTP wdrożenia, wynik testów ekranów A1–A11, wynik oceny B1–B8 (FP, FN@5, FN pełna, czas/obraz, pamięć karty).
 4. Wpis w `docs/decyzje.md` z godziną z `date +%H:%M` (bez łączenia numeru P ze słowem „czeka”).
+- Brak 7 z krytyka R3: zrzuty ekranu dla „pusta naczepa” oraz płynów, sypkich, maszyn i mebli w MVP.

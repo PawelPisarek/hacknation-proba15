@@ -1,4 +1,4 @@
-# Stan (Szef) — 14:01 sobota
+# Stan (Szef) — 14:03 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
@@ -14,10 +14,10 @@ Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 M
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zamknięte (kosmetyka + README wypchnięte) |
 | 3 założenia + atak (05) + sondy | Analityk + Programista | zamknięte (05-sondy.md 13:44; H7 bez pomiaru przez preempcję; wnioski wpisane do 01-mvp i 03-kryterium) |
 | 4 scenariusze testów (06) / historyjki (07) | Analityk / Projektant | zamknięte; 06 C w rtg/ocena.py (12:17) |
-| 5 makieta wg speca (gh-pages) | Programista / Analityk | R1 7/10; R2 8/10; R3 odebrana 13:33; krytyk R3 zlecony 14:01 (Analityk) + przegląd Pawła (02) |
+| 5 makieta wg speca (gh-pages) | Programista / Analityk | zamknięte po 3 rundach (R1 7, R2 8, R3 7/10); braki R3 → Artur (Projektant) → MVP; przegląd Pawła (02) |
 | README: tabela „Użyte narzędzia” | Prezenter | zamknięte (biblioteki makiety i MVP uzupełni Programista) |
 
 Ustalenia Artura: operator przy stanowisku (kilka min/auto); priorytet: mniej przeoczeń; ≤ 5 zaznaczeń, najpewniejsze pierwsze, „+N dalszych miejsc” (P21); dwa auta pokazu + „wczytaj własne zdjęcie” (P27); system sam dobiera wzorzec (najbliższy + „wzorzec niepewny”); zatwierdź/odrzuć z powodem; decyzje w raporcie z auta (raport po wszystkich decyzjach, P30); każdy ładunek wygasza swoje miejsca, „wygaszone: N” (P29); zdjęcie .bmp/.png/.jpg (P31); kolor konturu po decyzji + cofnij (P32); pusta naczepa nic nie wygasza (P34); dalsze miejsca do rozwinięcia i decyzji (P35); skala kolorów pewności (P37).
 Otwarte: — (blokada zleceń zdjęta 14:01)
-W toku: MVP (Programista, zlecone 14:01); demo.md DRAFT (Prezenter, zlecone)
+W toku: MVP (Programista, 14:01); braki R3 do Artura + spec (Projektant, 14:04); demo.md DRAFT zamknięte (e438880)
 Lista Artura na noc: P2–P38 z makiety + wnioski z sond → MVP (01-mvp-z-makiety.md), materiały do stanu faktycznego (Prezenter), pre-mortem (Analityk).
