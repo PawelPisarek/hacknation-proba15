@@ -197,3 +197,4 @@ P44 14:05 odpowiedź: B — decyzje przy miejscach, które zostają, zachowujemy
 P45 14:05 odpowiedź: A — w pełni auto A, auto B i własne zdjęcie jako krótkie ujęcia poza 2 min (Artur w pokoju)
 P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:05 Projektant: spec poprawiony o P40–P46 (KA17, 7.8); zmiana dla makiety/MVP: P44 B — zmiana towaru nie kasuje decyzji przy miejscach, które zostają
+14:05 Szef: slajdy DRAFT przyjęte (10 slajdów) → recenzja R1 slajdów i demo (Analityk)
