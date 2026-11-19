@@ -1,4 +1,4 @@
-# hacknation-proba15 — RTG Różnica (nazwa robocza)
+# Drugie Spojrzenie (repo hacknation-proba15)
 
 Narzędzie dla operatorów RTG na granicy: porównuje obraz naczepy ze wzorcem czystego pojazdu i zaznacza na obrazie miejsca, które mogą kryć przemyt. Decyzję o kontroli fizycznej nadal podejmuje człowiek.
 
