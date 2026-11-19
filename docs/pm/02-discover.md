@@ -16,9 +16,12 @@ Kontekst: **nowy produkt** (narzędzie dla KAS), odkrywanie ma ustawić decyzję
 ## Decyzja, którą to odkrywanie ustawia
 Co wchodzi do MVP i demo (jedno auto czyste + jedno z dodatkiem, P18, główna ścieżka do 2 min) oraz co sprawdzamy eksperymentem przed zaufaniem wynikowi.
 
+## W MVP wprost z P19
+Wybór zgłoszonego towaru z listy (plus „pusta naczepa”) jest w MVP, bo wynika z odpowiedzi Artura P19 — nie z założenia Z5. Bez wybranego towaru zaznaczamy wszystko (P19); ten przypadek nie wchodzi do oceny czystych obrazów.
+
 ## Pomysły (krok 2) i wybór Artura (moment (b), 11:25)
 Wybrane:
-1. **Dobór wzorca** — system sam szuka najbliższej pustej naczepy tego typu w bibliotece; gdy typu brak: najbliższa podobna + „wzorzec niepewny” (P6, P11, P19).
+1. **Dobór wzorca** — system sam szuka najbliższej pustej naczepy tego typu w bibliotece; gdy typu brak: najbliższa podobna + „wzorzec niepewny” (P6, P11, P19). **Wybór zgłoszonego towaru z listy jest częścią tego pomysłu i jest w MVP (P19).**
 2. **Zaznaczenia z oceną pewności** — do 5 na auto, najpewniejsze pierwsze (P8).
 3. **Zatwierdź / odrzuć jednym kliknięciem** — „do kontroli” albo odrzucenie z powodem z listy: element konstrukcji, zwykły ładunek, zakłócenie obrazu, inne (P7, P9). Po „do kontroli” samo oznaczenie w raporcie (P16).
 4. **Widok obok siebie** — jeden monitor, podział ekranu: wzorzec i badany obraz, różnica podświetlona (P15).
@@ -34,18 +37,20 @@ Najryzykowniejsze: **Z1 dobór wzorca**.
 |---|---|---|---|---|
 | Z1 | System znajdzie właściwy wzorzec w bibliotece (**najryzykowniejsze**) | wykonalność | Na zbiorze testowym: dla każdego badanego obrazu sprawdzić, czy wybrany wzorzec to ten sam typ naczepy | trafność doboru zmierzona i podana; przy złym typie widoczne „wzorzec niepewny” |
 | Z2 | Do 5 zaznaczeń wystarcza na złapanie dodatków | wartość | Policzyć FN przy limicie 5 | FN na zbiorze testowym podane obok FP |
-| Z3 | Czyste naczepy nie dostają zaznaczeń | wykonalność | Przebieg na czystych parach (pusta naczepa vs czysta) | 0 zaznaczeń lub podany odsetek FP; krzywa próg → FP/FN |
-| Z4 | Operator zdąży ocenić zaznaczenia w kilka minut | użyteczność | Demo: przejście 1 auta od wyboru towaru do raportu | główna ścieżka w demo ≤ 2 min |
+| Z3 | Czyste naczepy dostają 0 zaznaczeń (zadanie §6) | wykonalność | Przebieg na czystych obrazach testowych **z prawidłowo wybranym towarem**; przypadek bez wybranego towaru (zaznaczamy wszystko, P19) nie wchodzi do oceny czystych | 0 zaznaczeń na czystych; krzywa próg → FP/FN raportowana osobno |
+| Z4 | Operator zdąży ocenić zaznaczenia w kilka minut (P2) | użyteczność | Demo: przejście 1 auta od wyboru towaru do raportu | główna ścieżka w demo ≤ 2 min (ustalenie Szefa) |
 | Z5 | Wybór zgłoszonego towaru z listy ogranicza zbędne ramki na zgodnym ładunku, nie ukrywając skrytek | wartość / ryzyko | Para: ten sam ładunek z i bez dodatku; porównać ramki przy wyborze towaru i bez wyboru | dodatek nadal zaznaczony po wyborze towaru; ramki na zgodnym ładunku spadają |
-| Z6 | Wynik na danych sztucznych jest wiarygodnym wskaźnikiem | wykonalność | Zbiór z szumem, przesunięciem, różnymi typami; uczciwy opis ograniczeń | w slajdach i README: wynik na danych sztucznych, nie KAS |
+| Z6 | Czas analizy jednego obrazu ~50 MB mieści się w limicie (zadanie §7) | wykonalność | Pomiar na karcie OMENa: od wczytania .bmp do raportu | < 1 min na obraz (cel z zapasem ≤ 30 s) |
+| Z7 | Podejścia B (PatchCore) i C (EfficientAD) mieszczą się w 4 GB pamięci karty | wykonalność | Przebieg na kaflach na GTX 1050, pomiar szczytu pamięci | mieści się w 4 GB; inaczej zostaje podejście A + mniejszy model |
+| Z8 | Wynik na danych sztucznych z zakłóceniami (szum, przesunięcie) przenosi się na trudniejszy wariant zbioru | wiarygodność | Uczyć/stroić na łatwiejszym wariancie, ocenić FP/FN na trudniejszym | spadek FN i FP poniżej ustalonego przez ludzi progu, podany obok wyniku |
 
 Te eksperymenty wracają w `/write-prd` i specu jako kryteria akceptacji i ryzyka.
 
 ## Czego nie wiem o produkcie
-Wszystkie pytania z listy mają odpowiedź (P2–P19). Otwarte tylko założenia: liczba aut dziennie (P14); próg zaznaczeń — ustalają ludzie po krzywej FP/FN (01).
+Pytania P2–P19 mają odpowiedź; P20 (lista rodzajów towaru) czeka — do odpowiedzi w pliku zostaje rekomendowana lista, zależne od P20. Otwarte tylko założenia: liczba aut dziennie (P14); próg zaznaczeń — ustalają ludzie po krzywej FP/FN (01).
 
 UPROSZCZENIE: biblioteka wzorców — mały zbiór sztucznych naczep — zamiast realnych zdjęć KAS — dorobienie: duże (dane KAS).
-UPROSZCZENIE: lista rodzajów towaru — kilka pozycji (plandeka, chłodnia, kontener, pusta) — zamiast pełnej klasyfikacji — dorobienie: małe.
+UPROSZCZENIE: lista rodzajów zgłoszonego towaru — 6 grup (zależne od P20): drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa — zamiast pełnej klasyfikacji towarów — dorobienie: małe. (Typy naczep — plandeka, chłodnia, kontener — to osobna sprawa: wybór wzorca z biblioteki.)
 UPROSZCZENIE: bez integracji z repozytorium RTG i urządzeniami — pole identyfikujące kontrolę w raporcie — zamiast integracji (§9) — dorobienie: duże.
 
 <!-- skill: przeplywy-pm -->

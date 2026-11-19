@@ -70,3 +70,4 @@ P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego sameg
 11:29 Analityk: recenzja 1b R1 — 5 braków (3 produkt: nr 1, 2, 3; 2 technika: nr 4, 5); lista w odpowiedzi do Szefa
 11:29 Szef: 1b R1 (5 braków) → poprawka Projektant. Rozstrzygam: (1) wybór zgłoszonego towaru jest w MVP — wynika z odpowiedzi Artura P19, nie z Z5; (2) czyste obrazy testowe oceniamy z prawidłowo wybranym towarem, cel Z3 = 0 zaznaczeń na czystych (zadanie §6), bez „podanego odsetka”; (4) pokaz ≤ 2 min to ustalenie Szefa; (5) do założeń: < 1 min na obraz ~50 MB i zmieszczenie B/C w 4 GB karty, Z6 zastąpić mierzalnym. Brak (3) treść listy towarów → Artur przez Projektanta (P20).
 P20 11:30 Artur: jakie rodzaje zgłoszonego towaru ma mieć lista dla operatora? Rekomendacja: 6 grup — drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa — czeka
+11:30 Projektant: 1b R1 poprawione w docs/pm/02 (5 pozycji; lista towarów zależna od P20)
