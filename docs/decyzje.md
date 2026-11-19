@@ -146,3 +146,4 @@ P30 12:54 odpowiedź (Artur w pokoju): A — raport dostępny dopiero, gdy każd
 P31 12:54 odpowiedź (Artur w pokoju): B — własne zdjęcie: też .png i .jpg (operator dostaje zdjęcia w różnych formatach)
 P32 12:54 odpowiedź (Artur w pokoju): A — kontur zmienia kolor (zatwierdzone zielony, odrzucone szary) i jest „cofnij decyzję”
 P33 12:54 odpowiedź (Artur w pokoju): nic nie wyrzucać z ekranu
+12:54 Szef: P28–P33 odpowiedziane (Artur w pokoju) → makieta R2 do Programisty: P28, P29, P30, P31 (.bmp, .png, .jpg jednym przyciskiem), P32 + brak 6 (czyste decyzje po zmianie auta) i 7 (zrzuty E1–E4, auto B, własne zdjęcie)
