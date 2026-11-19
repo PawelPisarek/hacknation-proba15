@@ -1,6 +1,6 @@
-# Stan (Szef) — 11:58 sobota
+# Stan (Szef) — 11:59 sobota
 
-Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem 20:00 makieta + docs/hacktribe.md.
+Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
 | zadanie | kto | status |
 |---|---|---|
