@@ -13,10 +13,10 @@ Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi *
 ## Konkurenci bezpośredni (ten sam użytkownik: operator RTG / służba celna)
 | Konkurent | Pozycjonowanie | Mocna strona | Słaba strona |
 |---|---|---|---|
-| Nuctech — platforma inspekcji z AI | dostawca urządzeń KAS; głęboka sieć; wg jednego artykułu branżowego uczona też na danych symulowanych (niezweryfikowane) | jest już w urządzeniu | zamknięty; czy porównuje ze wzorcem — niezweryfikowane |
+| Nuctech — platforma inspekcji z AI | dostawca urządzeń KAS; głęboka sieć; wg jednego artykułu branżowego uczona też na danych symulowanych (niezweryfikowane; https://www.asadria.com/?p=25109) | jest już w urządzeniu | zamknięty; czy porównuje ze wzorcem — niezweryfikowane |
 | Multicontrol — oprogramowanie urządzeń | drugi dostawca KAS | jak wyżej | jak wyżej; dane nieznane |
-| Rapiscan (Insight) | kształt, tekstura, intensywność + głębokie wykrywanie przedmiotów; zgodność z manifestem (rapiscan-ase.com, patent US11099294) | dojrzały; certyfikacja — niezweryfikowane | porównuje ze zgłoszeniem, nie z pustym wzorcem pojazdu (wg znalezionych źródeł); model licencji/chmura — niezweryfikowane |
-| Smiths Detection | algorytmy wykrywania materiałów wybuchowych w bagażu (artykuł branżowy) | renoma | czy dotyczy pojazdów — niezweryfikowane |
+| Rapiscan (Insight) | kształt, tekstura, intensywność + głębokie wykrywanie przedmiotów; zgodność z manifestem (rapiscan-ase.com, patent US11099294: https://patentimages.storage.googleapis.com/ca/a9/48/5be1c9eb5bec46/US11099294.pdf) | dojrzały; certyfikacja — niezweryfikowane | porównuje ze zgłoszeniem, nie z pustym wzorcem pojazdu (wg znalezionych źródeł); model licencji/chmura — niezweryfikowane |
+| Smiths Detection | algorytmy wykrywania materiałów wybuchowych w bagażu (artykuł branżowy: https://www.asadria.com/?p=25109) | renoma | czy dotyczy pojazdów — niezweryfikowane |
 | Obecny detektor papierosów KAS | wykrywanie jednego rodzaju towaru | działa w produkcji | słaby przy małych ilościach w konstrukcji pojazdu (z zadania §1) |
 
 ## Konkurenci pośredni — podejścia do porównania obrazów (uruchamialne na GTX 1050 4 GB — do zmierzenia)
@@ -32,15 +32,23 @@ Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi *
 ## Macierz funkcji
 | Zdolność | Nasz produkt (cel) | Dostawcy sprzętu | Różnica pikseli (A) | PatchCore (B) | EfficientAD (C) |
 |---|---|---|---|---|---|
-| Porównanie ze wzorcem | tak | niejasne | tak | pośrednio (uczy się „normy”) | pośrednio |
-| Zaznaczenie miejsca na obrazie | tak | tak | tak | tak (mapa ciepła) | tak |
-| Bez chmury | tak | różnie | tak | tak | tak |
-| Duże pliki ~50 MB, partie | tak (kafle) | tak | tak | tak (kafle) | tak (kafle) |
+| Porównanie ze wzorcem | tak | ? (niezweryfikowane) | tak | pośrednio (uczy się „normy”) | pośrednio |
+| Zaznaczenie miejsca na obrazie | tak | ? (niezweryfikowane) | tak | tak (mapa ciepła) | tak |
+| Bez chmury | tak | ? (niezweryfikowane) | tak | tak | tak |
+| Duże pliki ~50 MB, partie | tak (kafle) | ? (niezweryfikowane) | tak | tak (kafle) | tak (kafle) |
 | Zero zaznaczeń na czystych (zadanie §6: każde zaznaczenie = alarm FP) | cel — **zależne od P5**, patrz niżej | nieznane | słabo | dobrze wg publikacji, niezweryfikowane na RTG | jak B |
 | Wykryje nieznany dodatek | tak | tylko znane | tak | tak | tak |
+| Dobór wzorca z biblioteki (P6, P11; zależne od P19) | tak, z ostrzeżeniem „wzorzec niepewny” | ? | nie (wzorzec dany z góry; ACXIS ma bazę referencyjną) | pośrednio (norma z wielu czystych) | pośrednio |
+| Ocena pewności zaznaczeń, najpewniejsze pierwsze, limit 5 na auto (P8) | tak | ? | nie (A = surowa różnica, bez rankingu) | tak (wynik nietypowości) | tak (wynik nietypowości) |
+| Decyzja operatora „do kontroli”/odrzuć z powodem, zapisana w raporcie (P7, P9, P10) | tak | ? | nie | nie | nie |
+| Wynik przypisany do miejsca i przedmiotu kontroli (§9 zadania; pole identyfikujące kontrolę w raporcie z auta) | tak (pole w raporcie, P10) | ? | nie (do dopisania) | nie (do dopisania) | nie (do dopisania) |
+| Skalowalność na większe zbiory (kafle, partie, równoległość) | cel (§3, §7) | ? | dobra (prosta) | średnia (pamięć rośnie z liczbą obrazów) | dobra (mały model; niezweryfikowane na GTX 1050) |
 
 ## Fałszywe alarmy a małe skrytki (zależne od P5)
 Zadanie §6 liczy każde zaznaczenie na czystym obrazie jako alarm fałszywy, a małe skrytki (≈0,1% pikseli wg Jaccard i in.) wymagają czułości. Rozstrzyga to Artur (P5, 11:21): przeoczony dodatek jest gorszy, zbędny alarm = minuta więcej przy aucie, zaznaczeń na auto „kilka” — górna granica 5 (P8). Ten plik nie ustala progu: cel zero zaznaczeń na czystych w teście, 5 to limit na auto; kompromis czułość ↔ FP raportujemy krzywą, próg ustalają ludzie.
+
+## Wzorzec — zależne od P19
+Co jest wzorcem: A) obraz pustej naczepy tego samego typu (ładunek zgłoszony operator oznacza sam) czy B) obraz naczepy tego typu z podobnym ładunkiem — pytanie P19 do Artura. Do odpowiedzi: zależne od P19. „Wzorzec niepewny” operator widzi, gdy w bibliotece nie ma naczepy tego typu i system bierze najbliższą podobną (P11).
 
 ## Okazje do wyróżnienia (po uwzględnieniu prior art)
 1. **Automatyczny dobór wzorca z biblioteki** (P6, P11) — operator zwykle nie ma czystego zdjęcia tej samej naczepy; baza referencyjna z ACXIS to bliski odpowiednik, nasza działa lokalnie dla KAS i ostrzega „wzorzec niepewny”.
@@ -49,14 +57,14 @@ Zadanie §6 liczy każde zaznaczenie na czystym obrazie jako alarm fałszywy, a 
 4. **Wszystko lokalnie** i partie/kafle dla plików ~50 MB, < 1 min na obraz (zadanie §7).
 
 ## Zagrożenia
-1. **Dostawcy dodadzą porównanie ze wzorcem we własnym oprogramowaniu** — nasza wartość: dobór wzorca i niezależność od dostawcy (Nuctech i Multicontrol).
+1. **Dostawcy dodadzą porównanie ze wzorcem we własnym oprogramowaniu** (założenie, bez źródła) — nasza wartość: dobór wzorca i niezależność od dostawcy (Nuctech i Multicontrol).
 2. **Różne ułożenie i długość naczep** — dopasowanie wzorca może zawieść; ryzyko fałszywych alarmów.
 3. **Dane sztuczne ≠ rzeczywiste RTG** — wynik na własnym zbiorze nie dowodzi skuteczności na danych KAS (mówimy to na pokazie).
 
 ## Rekomendacje
 - **Postawić na**: porównanie ze wzorcem (A) jako baza + ocena nietypowości (B lub C) jako filtr fałszywych alarmów + dobór wzorca.
 - **Dorównać w**: czytelnym raporcie z zaznaczonymi miejscami.
-- **Pominąć**: pełne wykrywanie znanych przedmiotów (F), podejście E na danych KAS, integrację z urządzeniami dostawców.
+- **Pominąć**: pełne wykrywanie znanych przedmiotów (F), podejście E na danych KAS. **Integracja z urządzeniami dostawców i repozytorium RTG** (§9) nie jest w zakresie MVP, ale raport ma pole identyfikujące kontrolę (miejsce, przedmiot), żeby integracja była możliwa.
 - Na karcie 4 GB: kafle i małe modele; mieszczenie się B/C — do zmierzenia przez Programistę.
 
 ## Czego nie wiem o produkcie (pytania do Artura — moment (a))
@@ -78,6 +86,7 @@ Rozstrzyga zadanie (nie pytamy): praca bez internetu, dane sztuczne, działanie 
 - EfficientAD (RTX A6000): https://arxiv.org/pdf/2303.14535
 - Benchmark uczenia PatchCore / EfficientAD: https://arxiv.org/pdf/2403.15463
 - PatchCore a pamięć karty: https://github.com/openvinotoolkit/anomalib/discussions/1935
+- Nuctech (dane symulowane) i Smiths (bagaż): https://www.asadria.com/?p=25109
 - Niezweryfikowane: porównanie ze wzorcem u Nuctech/Multicontrol/Smiths; certyfikacja i licencje Rapiscan; PatchCore/EfficientAD na GTX 1050 4 GB.
 
 <!-- skill: przeplywy-pm -->
