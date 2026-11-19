@@ -24,7 +24,7 @@ def main():
     os.makedirs(a.wyjscie, exist_ok=True)
     n = 0
     for o in meta["obrazy"]:
-        if o["rola"] == "nauka" or o["plik"] not in wyn["obrazy"] or n >= a.ile:
+        if o["rola"] not in ("czysty", "dodatki") or o["plik"] not in wyn["obrazy"] or n >= a.ile:
             continue
         im = Image.open(os.path.join(a.dane, "obrazy", o["plik"])).convert("RGB")
         s = a.szer / im.width
