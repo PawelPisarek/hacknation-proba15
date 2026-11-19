@@ -54,3 +54,4 @@ P18 11:24 Artur: pokaz na jednym aucie czy na dwóch (czyste + z dodatkiem)? —
 11:25 Szef: 1a R2 — 5 braków → Projektant poprawia; brak 2 (jaki wzorzec: pusta naczepa vs z podobnym ładunkiem) → pytanie do Artura przez Projektanta; R3 = ostatnia runda
 P19 11:25 Artur: z czym system porównuje auto — A) z obrazem pustej naczepy tego samego typu (ładunek zgłoszony operator oznacza sam) czy B) z naczepą tego typu z podobnym ładunkiem? Rekomendacja A (tak opisuje to zadanie, pustych obrazów jest najwięcej); „wzorzec niepewny” widać, gdy brak naczepy tego typu — czeka
 11:25 Projektant: 1a R2 poprawione w docs/pm/01 (macierz: wyróżnienia i §9, „?” zamiast „tak/niejasne”, linki, wzorzec zależny od P19)
+11:25 Szef: 1a poprawione po R2 (2025dc1) → R3 Analityk; P19 (wzorzec) czeka na Artura
