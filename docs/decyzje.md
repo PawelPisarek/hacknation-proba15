@@ -107,3 +107,4 @@ P26 11:49 Artur: gdy zaznaczone miejsce leży w podłodze, jak operator ma zobac
 P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce skrytki: podwójna podłoga” przy pozycji na liście zaznaczeń, bez osobnego okna
 11:51 Analityk: recenzja hacktribe R1 (hasło 98/120, opis 380/500, nazwa 17/30) — brak braków zmieniających zakres lub kryteria
 11:51 Szef: spec poprawiony po R1 (65e2f20) → R2 Analityk (pkt podpowiedzi czeka na odpowiedź Artura)
+11:51 Analityk: recenzja 2 R2 (spec.md 65e2f20) — brak braków zmieniających zakres lub kryteria (podpowiedź przy podwójnej podłodze: P26 odpowiedziane 11:50, spec jeszcze bez dopisku — do wpisania przez Projektanta, nie brak R2)
