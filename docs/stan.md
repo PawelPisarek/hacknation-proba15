@@ -1,4 +1,4 @@
-# Stan (Szef) — 14:37 sobota
+# Stan (Szef) — 14:47 sobota
 
 Kamień: 20:00 makieta (GitHub Pages) + docs/hacktribe.md finalny; potem 07:00 MVP.
 
