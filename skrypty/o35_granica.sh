@@ -8,7 +8,7 @@ D=${D:-$HOME/dane/rtg/bib}; W=wyniki/o35; rm -rf $W; mkdir -p $W/we
 ln -s $D/obrazy/* $W/we/
 python -m rtg.wykryj --dane $W/we --biblioteka $D --wyjscie $W/partie > $W/partie.log
 tail -1 $W/partie.log
-python skrypty/ocena_partii.py $W/partie $D $W/ocena 0,0 0.03,0.05 0.05,0.08 0.05,0.12 > /dev/null
+PYTHONPATH=. python skrypty/ocena_partii.py $W/partie $D $W/ocena 0,0 0.03,0.05 0.05,0.08 0.05,0.12 > /dev/null
 echo "== nie_wiem"; python -m rtg.ocena --dane $D --wyniki $W/ocena/nie_wiem.json
 for f in $W/ocena/zgloszony_*.json; do echo "== $(basename $f .json)"; python -m rtg.ocena --dane $D --wyniki $f --bazowe $W/ocena/nie_wiem.json; done
 python - $W/partie <<'EOF'
