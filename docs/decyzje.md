@@ -72,3 +72,4 @@ P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego sameg
 P20 11:30 Artur: jakie rodzaje zgłoszonego towaru ma mieć lista dla operatora? Rekomendacja: 6 grup — drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa — czeka
 11:30 Projektant: 1b R1 poprawione w docs/pm/02 (5 pozycji; lista towarów zależna od P20)
 P20 11:31 odpowiedź (Artur w pokoju): tak — 6 grup (drobnica na paletach, płyny w beczkach, materiały sypkie, maszyny, meble/AGD, pusta naczepa) + „nie wiem” (wtedy zaznaczamy wszystko)
+11:31 Szef: 1b poprawione po R1 (1c1f7be) → R2 Analityk
