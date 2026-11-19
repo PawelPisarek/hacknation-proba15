@@ -75,7 +75,7 @@ Jedna strona: pole identyfikujące kontrolę (miejsce i przedmiot, §9), użyty 
 - **KA8 (Z8):** FN na trudniejszym wariancie rośnie najwyżej o 10 pp, FP na czystych zostaje 0 („strojenie” = progi na łatwym wariancie; „nauka” = model z czystych, §5).
 - **KA9 (P21):** na ekranie zawsze ≤ 5 zaznaczeń + „+N dalszych miejsc”.
 - **KA10 (P26):** na aucie z dodatkiem w podłodze właściwa pozycja listy ma dopisek „typowe miejsce skrytki: podwójna podłoga”, bez osobnego okna.
-- **KA11 (P27):** własny plik .bmp wczytany przyciskiem „wczytaj własne zdjęcie” daje wynik z tymi samymi zasadami: ≤ 5 zaznaczeń + „+N dalszych miejsc”, wzorzec dobrany sam (z paskiem „wzorzec niepewny”, gdy trzeba).
+- **KA11 (P27, P31):** własny plik .bmp, .png lub .jpg wczytany przyciskiem „wczytaj własne zdjęcie” daje wynik z tymi samymi zasadami: ≤ 5 zaznaczeń + „+N dalszych miejsc”, wzorzec dobrany sam (z paskiem „wzorzec niepewny”, gdy trzeba).
 
 ### 7.7 Ryzyka
 - Limit 5 może ukryć skrytkę poza piątką — łagodzi „+N dalszych miejsc”.

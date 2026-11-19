@@ -140,3 +140,9 @@ P30 12:52 Artur: raport z auta — dostępny dopiero, gdy każde miejsce ma decy
 P31 12:52 Artur: własne zdjęcie — tylko .bmp jednym przyciskiem (A) czy też .png i .jpg (B)? rekomendacja A — czeka
 P32 12:52 Artur: po decyzji kontur zmienia kolor (zatwierdzone zielony, odrzucone szary) i jest „cofnij decyzję” (A) czy kontur bez zmian (B)? rekomendacja A — czeka
 P33 12:52 Artur: co z ekranu makiety wyrzucić? rekomendacja: nic — czeka
+P28 12:54 odpowiedź (Artur w pokoju): A — „Zaznaczenia (5) i +2 dalszych miejsc” (z P21)
+P29 12:54 odpowiedź (Artur w pokoju): A — każdy rodzaj ładunku wygasza swoje typowe miejsca, ekran pokazuje „wygaszone: N”
+P30 12:54 odpowiedź (Artur w pokoju): A — raport dostępny dopiero, gdy każde miejsce ma decyzję
+P31 12:54 odpowiedź (Artur w pokoju): B — własne zdjęcie: też .png i .jpg (operator dostaje zdjęcia w różnych formatach)
+P32 12:54 odpowiedź (Artur w pokoju): A — kontur zmienia kolor (zatwierdzone zielony, odrzucone szary) i jest „cofnij decyzję”
+P33 12:54 odpowiedź (Artur w pokoju): nic nie wyrzucać z ekranu
