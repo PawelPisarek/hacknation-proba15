@@ -9,7 +9,7 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 1a /competitive-analysis | Projektant | zamknięte (R3) |
 | 1b /discover | Projektant | zamknięte (778bb05) |
 | makiety 3 wariantów (ze szkiców 03) | Programista | zamknięte (gh-pages fa0cf1c, 200×3) |
-| 2 /write-prd docs/spec.md | Projektant | zamknięte (odbiorca R2 czyste); P27 do E1 |
+| 2 /write-prd docs/spec.md | Projektant | zamknięte (odbiorca R2 czyste; P27 w E1, KA11) |
 | szkic HackTribe, szkielet README | Prezenter | zamknięte |
 | 6 nazwa + hasło → docs/hacktribe.md | Prezenter | zamknięte (kosmetyka + README wypchnięte) |
 | 3 założenia + atak (05) + sondy | Analityk + Programista | 05 zamknięte; sondy 1–3 zlecone (OMEN) |
