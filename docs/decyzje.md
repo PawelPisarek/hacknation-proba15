@@ -93,3 +93,6 @@ P22 11:42 odpowiedź (Artur w pokoju): wariant 3 (porównanie obok siebie) + z w
 P23 11:42 Artur: gdzie na ekranie wybór rodzaju towaru — nad obrazami przed analizą czy w oknie na starcie? — czeka
 P24 11:42 Artur: przyciski „do kontroli”/„odrzuć” przy każdej pozycji listy czy jedna para pod obrazami dla wybranej? — czeka
 P25 11:42 Artur: wzorzec niepewny — pasek ostrzeżenia nad obrazami czy znaczek przy nazwie wzorca? — czeka
+P23 11:43 odpowiedź (Artur w pokoju): wybór rodzaju towaru nad obrazami, w jednej linii
+P24 11:43 odpowiedź (Artur w pokoju): „do kontroli”/„odrzuć” przy każdej pozycji listy (wynika z P7)
+P25 11:43 odpowiedź (Artur w pokoju): „wzorzec niepewny” jako pasek nad obrazami
