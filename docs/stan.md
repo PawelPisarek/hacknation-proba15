@@ -9,5 +9,5 @@ Kamień: ~11:45 docs/spec.md (po pytaniach do Artura) + docs/materialy.md; potem
 | 1a /competitive-analysis + przesłuchanie Artura | Projektant | zlecone |
 | szkic HackTribe | Prezenter | zlecone |
 
-Otwarte pytania: P1 (Paweł, kto jest kim).
+Otwarte pytania: —
 Lista Artura na noc: —

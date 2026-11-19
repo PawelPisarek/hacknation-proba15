@@ -6,3 +6,4 @@
 11:17 Szef: aplikacja pod linkiem dostaje wynik z usługi na karcie OMENa (sieć lokalna); adresów sieci lokalnej nie commitujemy (repo publiczne).
 11:17 Szef: nazwa zespołu „Hackathon”.
 P1 11:17 Paweł: kto jest kim — Paweł technika, Artur produkt, nikt więcej? — czeka
+P1 11:18 odpowiedź: tak — Paweł technika (rozmowa z Szefem), Artur produkt (pokój Produkt), nikt więcej
