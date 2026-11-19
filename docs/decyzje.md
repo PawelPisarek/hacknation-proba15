@@ -102,7 +102,7 @@ P25 11:43 odpowiedź (Artur w pokoju): „wzorzec niepewny” jako pasek nad obr
 11:49 Analityk: recenzja 2 R1 (spec.md 7749bbd) — 3 braki (2 produkt: nr 1, 2; 1 technika: nr 3); lista w odpowiedzi do Szefa
 11:49 Szef: recenzja 2 R1 — 3 braki. Brak 1 (kolejność decyzji i raportu) rozstrzygam: wykrywanie i zaznaczenia powstają samodzielnie; raport z auta (E4) tworzy się po decyzjach operatora i je zawiera (Artur: „decyzje w raporcie z auta”, P7); „krok po raporcie” z 11:21 = po wyniku wykrywania. Brak 3 (logowanie): UPROSZCZENIE: logowanie i role operatora — jedno stanowisko bez logowania — ok. 2 h dorobienia (zadanie nie wymaga). Brak 2 (wygląd podpowiedzi przy podwójnej podłodze) → Artur, P26.
 P26 11:49 Artur: gdy zaznaczone miejsce leży w podłodze, jak operator ma zobaczyć podpowiedź „typowe miejsce skrytki: podwójna podłoga”? Rekomendacja: krótki dopisek przy tej pozycji na liście zaznaczeń (bez osobnego okna); sprawdzimy go na pokazie na aucie z dodatkiem w podłodze — czeka
-11:50 Projektant: spec po recenzji 2 R1 — pkt 1 (kolejność: raport po decyzjach), pkt 3 (logowanie wg Szefa 11:49), przykład 7→5+2 jako udawane dane; pkt 2 czeka na odpowiedź P26
+11:50 Projektant: spec po recenzji 2 R1 — pkt 1 (kolejność: raport po decyzjach), pkt 3 (logowanie wg Szefa 11:49), przykład 7→5+2 jako udawane dane; pkt 2 rozstrzygnięty przez P26 (odpowiedź 11:50)
 11:50 Szef: krok 6 zameldowany (docs/hacktribe.md, znaczniki product-name, value-prop-statements). Nazwa: „Drugie Spojrzenie” (rekomendacja Prezentera) — przyjmuję; Prezenter zmienia nazwę w README. Recenzja tekstu: Analityk.
 P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce skrytki: podwójna podłoga” przy pozycji na liście zaznaczeń, bez osobnego okna
 11:51 Analityk: recenzja hacktribe R1 (hasło 98/120, opis 380/500, nazwa 17/30) — brak braków zmieniających zakres lub kryteria
@@ -111,3 +111,4 @@ P26 11:50 odpowiedź (Artur w pokoju): tak — krótki dopisek „typowe miejsce
 11:52 Szef: hacktribe R1 — brak braków (2 kosmetyczne → Prezenter). Spec R2 — brak braków; P26 (11:50) dopisuje Projektant; potem recenzja odbiorcy (Programista)
 11:52 Projektant: spec z P26 — 7.2, E2 (auto A, pozycja w podłodze z dopiskiem), KA10, nagłówek P1–P26
 11:53 Analityk: krok 3 — docs/pm/05-zalozenia-atak.md (ranking Z1–Z8, 3 sondy, 5 ataków); liczby progów to propozycje do potwierdzenia
+11:54 Szef: krok 2 /write-prd — pętla przejścia zamknięta (R2 czyste, P26 w specu: 7.2, E2, KA10); recenzja odbiorcy → Programista
