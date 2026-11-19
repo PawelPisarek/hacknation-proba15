@@ -211,7 +211,7 @@ def partie(katalog, biblioteka, wyjscie):
         baza = os.path.splitext(plik)[0]
         pod.save(os.path.join(wyjscie, baza + "_zaznaczenia.png"))
         json.dump(w, open(os.path.join(wyjscie, baza + ".json"), "w"), ensure_ascii=False, indent=1)
-        zbior[plik] = {"ramki": [[q["x"], q["y"], q["w"], q["h"], q["ocena"]] for q in m], "wzorzec": w["wzorzec"],
+        zbior[plik] = {"ramki": [[q["x"], q["y"], q["w"], q["h"], q["punktacja"]] for q in m], "wzorzec": w["wzorzec"], "wzorzec_typ": w["typ"],
                        "niepewny": w["niepewny"], "czas_s": w["czas_s"]}
         print(plik, w["wzorzec"], "niepewny" if w["niepewny"] else "", len(m), "miejsc", w["czas_s"], "s", flush=True)
     json.dump({"towar": "nie_wiem", "obrazy": zbior}, open(os.path.join(wyjscie, "wyniki.json"), "w"), ensure_ascii=False, indent=1)
