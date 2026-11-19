@@ -201,3 +201,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:06 Szef: P45 A (pokaz: pełne auto A, B i własne zdjęcie jako krótkie ujęcia — demo.md bez zmian), P46 nic; spec z P40–P46 (2a07877) → recenzja Analityka
 14:06 Analityk: recenzja slajdy/demo R1, 10 braków (docs/pm/10-recenzja-slajdy-demo.md); produktowe: slajdy 1 brak FP/FN, 2 brak skalowalności/innowacyjności, 3 P40 jako plan; demo 1 „cel 0” wbrew sondom, 2 P45 niespójne, 3 brak stanów P41/P42
 14:07 Analityk: recenzja speca R1, 5 braków (docs/pm/11-recenzja-spec-P34-P46.md); produktowe 1–4 (P40, P42, P44, P45 tylko w KA17/7.8, nie w 7.2/7.3/7.4/7.1), technika 5 (P41/P43 w kryteriach)
+14:07 Szef: recenzja slajdy/demo R1 — 10 braków → Prezenter poprawia całość; braki „produkt” wynikają z ustaleń 40, 45 i pomiarów z 05-sondy, bez nowego pytania do pokoju Produkt
