@@ -64,3 +64,4 @@ P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego sameg
 11:26 Analityk: recenzja 1a R3 — brak braków zmieniających zakres lub kryteria (wzorzec zależny od P19, nie brak)
 11:26 Szef: P19 (A) → Programista: generator i ocena także w wariancie pusta naczepa vs załadowana; Projektant: 03-przed-prd i pytania (c) wstrzymane do zamknięcia 1b
 11:26 Projektant: P19 (A: pusta naczepa + wybór zgłoszonego towaru z listy) wpisane w docs/pm/01 i 02; docs/pm/03 nie meldowany, nowych pytań (c) nie zadaję do zamknięcia 1b (zlecenie Szefa)
+11:27 Szef: 1a zamknięte po R3 (brak braków); 1b /discover → Projektant (02-discover na końcowym 01 i P2–P19)
