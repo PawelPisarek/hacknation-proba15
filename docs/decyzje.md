@@ -199,3 +199,4 @@ P46 14:05 odpowiedź: nic (Artur w pokoju)
 14:05 Projektant: spec poprawiony o P40–P46 (KA17, 7.8); zmiana dla makiety/MVP: P44 B — zmiana towaru nie kasuje decyzji przy miejscach, które zostają
 14:05 Szef: slajdy DRAFT przyjęte (10 slajdów) → recenzja R1 slajdów i demo (Analityk)
 14:06 Szef: P45 A (pokaz: pełne auto A, B i własne zdjęcie jako krótkie ujęcia — demo.md bez zmian), P46 nic; spec z P40–P46 (2a07877) → recenzja Analityka
+14:06 Analityk: recenzja slajdy/demo R1, 10 braków (docs/pm/10-recenzja-slajdy-demo.md); produktowe: slajdy 1 brak FP/FN, 2 brak skalowalności/innowacyjności, 3 P40 jako plan; demo 1 „cel 0” wbrew sondom, 2 P45 niespójne, 3 brak stanów P41/P42
