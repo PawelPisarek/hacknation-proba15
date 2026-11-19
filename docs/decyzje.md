@@ -46,3 +46,8 @@ P13 11:25 Artur: co w wybranych pomysłach zmienić i czy któryś z odrzuconych
 P12 11:24 odpowiedź (Artur w pokoju): według funkcji dla operatora (zgodne z decyzją Szefa 11:22)
 P13 11:24 odpowiedź (Artur w pokoju): nic więcej do zmiany — wybór z 11:25 zostaje (3 tylko podwójna podłoga, 7 odrzucony)
 11:24 Analityk: recenzja 1a R2 — 5 braków (1 produkt: nr 2; 4 technika: nr 1, 3, 4, 5); lista w odpowiedzi do Szefa
+P14 11:24 Artur: ile aut/dzień i ile minut na auto? — czeka
+P15 11:24 Artur: jeden monitor czy wzorzec i badany obok siebie? — czeka
+P16 11:24 Artur: po „do kontroli” samo oznaczenie w raporcie czy komunikat dla kontrolera? — czeka
+P17 11:24 Artur: co operator widzi, gdy nic nie zaznaczono? — czeka
+P18 11:24 Artur: pokaz na jednym aucie czy na dwóch (czyste + z dodatkiem)? — czeka
