@@ -22,3 +22,4 @@ P5 11:21 odpowiedź (Artur w pokoju): przeoczony dodatek gorszy; zbędny alarm =
 P6 11:21 odpowiedź (Artur w pokoju): system dobiera wzorzec sam (operator zwykle nie ma czystego zdjęcia tej samej naczepy) — inaczej niż rekomendacja
 P7 11:21 odpowiedź (Artur w pokoju): operator zatwierdza („do kontroli”) albo odrzuca jednym kliknięciem; przy odrzuceniu powód z listy — inaczej niż rekomendacja
 11:21 Projektant: P7 zmienia zakres (ekran zatwierdzania, lista powodów) — wygrywa odpowiedź Artura; do Szefa: sprzeczność z „bez udziału człowieka” w zadaniu do rozstrzygnięcia przy P8+ jeśli zajdzie potrzeba
+11:20 Analityk: recenzja 1a R1 — 5 braków (2 produkt: nr 2, 4; 3 technika: nr 1, 3, 5); lista w odpowiedzi do Szefa
