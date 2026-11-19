@@ -66,3 +66,4 @@ P19 11:26 odpowiedź (Artur w pokoju): A — wzorzec to pusta naczepa tego sameg
 11:26 Projektant: P19 (A: pusta naczepa + wybór zgłoszonego towaru z listy) wpisane w docs/pm/01 i 02; docs/pm/03 nie meldowany, nowych pytań (c) nie zadaję do zamknięcia 1b (zlecenie Szefa)
 11:27 Szef: 1a zamknięte po R3 (brak braków); 1b /discover → Projektant (02-discover na końcowym 01 i P2–P19)
 11:27 Projektant: 1b — docs/pm/02-discover.md dokończony na końcowym 01 i P2–P19; kosmetyka R3 w 01
+11:28 Szef: 1b zameldowane (5a30b18, znacznik jest) → recenzja przejścia 1b R1 Analityk
