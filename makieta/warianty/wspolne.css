@@ -1,0 +1,10 @@
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f8f9fa;color:#212529}
+header{background:#1c2b3a;color:#fff;padding:10px 14px;font-size:14px}header a{color:#9ad}
+main{padding:12px}.rtg{width:100%;height:auto;display:block;background:#e9ecef;border:1px solid #ced4da}
+.towary{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+button{font-size:16px;padding:10px 12px;border:1px solid #adb5bd;border-radius:6px;background:#fff;cursor:pointer}
+button.kontrola{background:#e03131;color:#fff;border-color:#e03131}button.odrzuc{background:#e9ecef}
+.dalsze{display:inline-block;background:#fff3bf;padding:4px 8px;border-radius:4px;margin:6px 0;font-weight:600}
+.brak{background:#d3f9d8;border:1px solid #8ce99a;padding:16px;border-radius:6px;margin:10px 0}
+.pokaz{margin-top:20px;font-size:14px}.decyzje{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.wariant{position:fixed;bottom:6px;right:8px;font-size:11px;color:#868e96}

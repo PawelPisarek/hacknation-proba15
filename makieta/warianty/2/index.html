@@ -1,0 +1,15 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Makieta – wariant 2: najpierw lista</title><link rel="stylesheet" href="../wspolne.css"><style>.uk{display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:12px}@media(max-width:640px){.uk{grid-template-columns:1fr}}.poz{display:block;width:100%;text-align:left;margin-bottom:6px}.poz.akt{border:2px solid #e03131;background:#fff5f5}.licznik{font-size:20px;font-weight:700}</style></head><body><script src="../wspolne.js"></script><script>
+const N="Wariant 2: najpierw lista";
+const {auto,towar}=stan(); if(!towar){wyborTowaru(N);} else {
+ const a=AUTA[auto]; let wyb=1;
+ function rysuj(){ const m=a.miejsca.find(x=>x.id===wyb);
+  document.body.innerHTML=naglowek(N)+`<main>${a.miejsca.length?`<div class="uk"><div>
+   <div class="licznik">${a.wszystkich} miejsc do sprawdzenia</div><small>pokazane ${a.miejsca.length}, najpewniejsze na górze</small><br>
+   ${a.miejsca.map(x=>`<button class="poz ${x.id===wyb?'akt':''}" onclick="wybierz(${x.id})"><b>${Math.round(x.ocena*100)}%</b> · ${x.id}. ${x.gdzie}</button>`).join("")}
+   ${dalsze(a)}</div>
+   <div><h3>Miejsce ${m.id}: ${m.gdzie} (${Math.round(m.ocena*100)}%)</h3>${wycinek(auto,m)}
+   <div class="decyzje"><button class="kontrola" onclick="decyzja('miejsce ${m.id}: do kontroli')">Do kontroli</button><button class="odrzuc" onclick="decyzja('miejsce ${m.id}: odrzuć')">Odrzuć</button></div>
+   <small>Całe auto:</small>${obraz(auto,{wybrane:wyb})}</div></div>`
+   : `<div class="licznik">0 miejsc do sprawdzenia</div>`+brak(a)+obraz(auto,{wzorzec:true})}</main><div class="wariant">makieta · udawane dane</div>`; }
+ window.wybierz=id=>{wyb=id;rysuj();}; rysuj(); }
+</script></body></html>

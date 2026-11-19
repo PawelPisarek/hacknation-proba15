@@ -1,0 +1,14 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Makieta – wariant 1: jeden obraz</title><link rel="stylesheet" href="../wspolne.css"><style>.lista1{font-size:14px;margin:6px 0}</style></head><body><script src="../wspolne.js"></script><script>
+const N="Wariant 1: jeden obraz na cały ekran";
+const {auto,towar}=stan(); if(!towar){wyborTowaru(N);} else {
+ const a=AUTA[auto]; let wzorzec=false;
+ function rysuj(){ document.body.innerHTML=naglowek(N)+`<main>
+  ${a.miejsca.length?`<div>${obraz(auto,{wybrane:1})}</div>
+   <div class="lista1">Zaznaczenia (najpewniejsze pierwsze): ${a.miejsca.map(m=>`${m.id}. ${m.gdzie} ${Math.round(m.ocena*100)}%`).join(" · ")} ${dalsze(a)}</div>
+   <div class="decyzje"><button class="kontrola" onclick="decyzja('do kontroli')">Do kontroli</button><button class="odrzuc" onclick="decyzja('odrzuć — bez kontroli')">Odrzuć</button>
+   <button onclick="przelacz()">${wzorzec?'Ukryj wzorzec':'Pokaż wzorzec'}</button></div>`
+   : brak(a)+`<div class="decyzje"><button class="odrzuc" onclick="decyzja('czyste — przepuść')">Przepuść</button><button onclick="przelacz()">${wzorzec?'Ukryj wzorzec':'Pokaż wzorzec'}</button></div>`+obraz(auto,{ramki:false})}
+  ${wzorzec?`<p><small>Wzorzec: ${a.wzorzec}</small></p>${obraz(auto,{wzorzec:true})}`:""}
+  </main><div class="wariant">makieta · udawane dane</div>`; }
+ window.przelacz=()=>{wzorzec=!wzorzec;rysuj();}; rysuj(); }
+</script></body></html>

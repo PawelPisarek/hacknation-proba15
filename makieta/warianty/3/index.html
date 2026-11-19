@@ -1,0 +1,12 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Makieta – wariant 3: porównanie</title><link rel="stylesheet" href="../wspolne.css"><style>.obok{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:640px){.obok{grid-template-columns:1fr}}.pasek{display:flex;gap:6px;overflow-x:auto;padding:8px 0}.pasek button{white-space:nowrap;font-size:14px}.pasek .akt{border:2px solid #e03131}</style></head><body><script src="../wspolne.js"></script><script>
+const N="Wariant 3: porównanie obok siebie";
+const {auto,towar}=stan(); if(!towar){wyborTowaru(N);} else {
+ const a=AUTA[auto]; let wyb=1;
+ function rysuj(){ document.body.innerHTML=naglowek(N)+`<main><div class="obok">
+   <div><b>Wzorzec</b><br><small>${a.wzorzec}</small>${obraz(auto,{wzorzec:true})}</div>
+   <div><b>Badane auto</b> <small>— różnica podświetlona</small><br><small>${a.nr}</small>${obraz(auto,{roznica:true,wybrane:wyb,ramki:a.miejsca.length>0})}</div></div>
+   ${a.miejsca.length?`<div class="pasek">${a.miejsca.map(m=>`<button class="${m.id===wyb?'akt':''}" onclick="wybierz(${m.id})">${m.id}. ${m.gdzie} · ${Math.round(m.ocena*100)}%</button>`).join("")}</div>${dalsze(a)}
+   <div class="decyzje"><button class="kontrola" onclick="decyzja('miejsce '+${wyb}+': do kontroli')">Do kontroli (miejsce ${wyb})</button><button class="odrzuc" onclick="decyzja('miejsce '+${wyb}+': odrzuć')">Odrzuć</button></div>`:brak(a)}
+   </main><div class="wariant">makieta · udawane dane</div>`; }
+ window.wybierz=id=>{wyb=id;rysuj();}; rysuj(); }
+</script></body></html>
