@@ -1,5 +1,5 @@
 <!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Drugie Spojrzenie — makieta R1</title>
+<title>Drugie Spojrzenie — makieta R2</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f1f3f5;color:#212529}
 header{background:#1c2b3a;color:#fff;padding:10px 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
@@ -24,27 +24,30 @@ button{font-size:15px;padding:9px 12px;border:1px solid #adb5bd;border-radius:6p
 .okno{position:fixed;inset:0;background:#0008;display:flex;align-items:center;justify-content:center;padding:12px}
 .okno .karta{max-width:420px;width:100%}.okno .karta button{display:block;width:100%;margin:6px 0;text-align:left}
 table{border-collapse:collapse;width:100%;background:#fff}td,th{border:1px solid #dee2e6;padding:6px 8px;text-align:left;font-size:14px}
-.stopka{font-size:11px;color:#868e96;text-align:right;padding:8px}
+.poz.zat{border-color:#2f9e44;background:#ebfbee}.poz.odr{border-color:#adb5bd;background:#f1f3f5;color:#495057}.poz.akt.zat{border:2px solid #2f9e44}.poz.akt.odr{border:2px solid #868e96}
+.wygaszone{font-size:14px;background:#f1f3f5;border:1px dashed #adb5bd;padding:5px 8px;border-radius:4px;margin-bottom:8px}.wygaszone small{color:#495057}
+button[disabled]{opacity:.5;cursor:not-allowed}.lista h3 .dalsze{font-size:13px;margin-left:6px}.stopka{font-size:11px;color:#868e96;text-align:right;padding:8px}
 </style></head><body><div id="app"></div><script>
 // Makieta R1: udawane dane pokazu, bez backendu (docs/spec.md 7.5).
 const TOWARY=[["drobnica","drobnica na paletach"],["plyny","płyny w beczkach"],["sypkie","materiały sypkie"],["maszyny","maszyny"],["meble","meble/AGD"],["pusta","pusta naczepa"],["nie_wiem","nie wiem (zaznaczamy wszystko)"]];
 const MIEJSCA_A=[
  {id:1,x:120,y:236,w:170,h:22,ocena:.94,gdzie:"podłoga, przód",podloga:true},
  {id:2,x:34,y:70,w:40,h:150,ocena:.88,gdzie:"ściana przednia"},
- {id:3,x:520,y:120,w:80,h:70,ocena:.71,gdzie:"w towarze, środek",towar:true},
+ {id:3,x:520,y:120,w:80,h:70,ocena:.71,gdzie:"w towarze, środek",gasi:["sypkie","maszyny"]},
  {id:4,x:760,y:252,w:140,h:14,ocena:.58,gdzie:"rama, tył"},
  {id:5,x:330,y:40,w:140,h:16,ocena:.47,gdzie:"dach"},
- {id:6,x:640,y:150,w:60,h:50,ocena:.36,gdzie:"w towarze, tył",towar:true},
- {id:7,x:880,y:100,w:40,h:60,ocena:.31,gdzie:"drzwi tylne"}];
+ {id:6,x:640,y:150,w:60,h:50,ocena:.36,gdzie:"w towarze, tył",gasi:["drobnica","plyny","meble"]},
+ {id:7,x:880,y:100,w:40,h:60,ocena:.31,gdzie:"podłoga, tył (pasy, kliny)",gasi:["pusta","drobnica"]}];
 const AUTA={
  A:{nazwa:"Auto A — z dodatkiem",nr:"WGM 4K21",typ:"plandeka 13,6 m",wzorzec:"W-PL-014",niepewny:false,miejsca:MIEJSCA_A,ladunek:true},
  B:{nazwa:"Auto B — czyste",nr:"PO 77812",typ:"plandeka 13,6 m",wzorzec:"W-PL-014",niepewny:false,miejsca:[],ladunek:true},
- W:{nazwa:"Własne zdjęcie",nr:"(wczytany plik)",typ:"skrzyniowa — brak w bibliotece",wzorzec:"W-PL-009 (najbliższy podobny)",niepewny:true,miejsca:MIEJSCA_A.slice(0,3).map(m=>({...m})),ladunek:true}};
+ W:{nazwa:"Własne zdjęcie",nr:"wczytany plik",typ:"skrzyniowa — brak w bibliotece",wzorzec:"W-PL-009",niepewny:true,miejsca:MIEJSCA_A.slice(0,3).map(m=>({...m})),ladunek:true}};
 const POWODY=["element konstrukcji","zwykły ładunek","zakłócenie obrazu","inne"];
 let S={ekran:"E1",auto:"A",towar:"nie_wiem",wyb:1,dec:{},odrzuc:null,plik:null};
 const pct=x=>Math.round(x*100)+"%";
-function widoczne(a){ // wybór towaru zgodnego z ładunkiem gasi zaznaczenia leżące w zgodnym towarze (udawane)
- let m=a.miejsca; if(S.towar==="drobnica") m=m.filter(x=>!(x.towar&&x.ocena<.5)); return [...m].sort((p,q)=>q.ocena-p.ocena);}
+const zgaszone=a=>a.miejsca.filter(x=>(x.gasi||[]).includes(S.towar)); // P29: każdy rodzaj ładunku gasi swoje typowe miejsca (udawane)
+function widoczne(a){return a.miejsca.filter(x=>!(x.gasi||[]).includes(S.towar)).sort((p,q)=>q.ocena-p.ocena);}
+const bezDecyzji=a=>widoczne(a).slice(0,5).filter(x=>!S.dec[x.id]).length; // P30
 function svg(a,{wzorzec,ramki=true}){
  let s=`<svg viewBox="0 0 1000 300" class="rtg" xmlns="http://www.w3.org/2000/svg"><rect width="1000" height="300" fill="#dee2e6"/>
  <rect x="30" y="36" width="900" height="214" fill="none" stroke="#495057" stroke-width="6"/><rect x="30" y="250" width="900" height="16" fill="#343a40"/>
@@ -53,50 +56,53 @@ function svg(a,{wzorzec,ramki=true}){
  if(S.plik&&S.auto==="W"&&!wzorzec) s+=`<image href="${S.plik}" x="0" y="0" width="1000" height="300" preserveAspectRatio="xMidYMid slice" opacity=".9"/>`;
  else if(!wzorzec&&a.ladunek){for(let i=0;i<8;i++) s+=`<rect x="${90+i*100}" y="118" width="80" height="130" fill="#868e96" opacity=".7"/>`;
   a.miejsca.forEach(m=>s+=`<rect x="${m.x+6}" y="${m.y+3}" width="${m.w-12}" height="${Math.max(m.h-6,4)}" fill="#343a40" opacity=".6"/>`);}
- (ramki?widoczne(a).slice(0,5):[]).forEach(m=>{const akt=m.id===S.wyb;
-  s+=`<rect x="${m.x}" y="${m.y}" width="${m.w}" height="${m.h}" fill="${wzorzec?'none':'#fcc41955'}" stroke="${akt?'#e03131':'#f08c00'}" stroke-width="${akt?5:3}" ${wzorzec?'stroke-dasharray="10 6"':''}/>
-  <text x="${m.x+4}" y="${m.y-5}" font-size="22" font-weight="700" fill="${akt?'#e03131':'#e8590c'}">${m.id}</text>`;});
+ (ramki?widoczne(a).slice(0,5):[]).forEach(m=>{const akt=m.id===S.wyb,d=S.dec[m.id];
+  const k=d?(d.k?'#2f9e44':'#868e96'):(akt?'#e03131':'#f08c00');
+  s+=`<rect x="${m.x}" y="${m.y}" width="${m.w}" height="${m.h}" fill="${wzorzec?'none':(d&&!d.k?'#adb5bd55':'#fcc41955')}" stroke="${k}" stroke-width="${akt?6:3}" ${wzorzec?'stroke-dasharray="10 6"':''}/>
+  <text x="${m.x+4}" y="${m.y-5}" font-size="22" font-weight="700" fill="${k}">${m.id}</text>`;});
  return s+`</svg>`;}
 function naglowek(){return `<header><b>Drugie Spojrzenie</b><span>porównanie RTG naczep</span>
- <a href="#" onclick="idz('E1');return false">wybór auta</a>${S.ekran!=="E1"?`<a href="#" onclick="idz('E4');return false">raport z auta</a>`:""}</header>`;}
+ <a href="#" onclick="idz('E1');return false">wybór auta</a>${S.ekran!=="E1"&&!bezDecyzji(AUTA[S.auto])?`<a href="#" onclick="idz('E4');return false">raport z auta</a>`:""}</header>`;}
 function E1(){return `<main><h2>Wybierz auto</h2><div class="auta">
  ${["A","B"].map(k=>`<div class="karta"><h3>${AUTA[k].nazwa}</h3><div>${AUTA[k].nr} · ${AUTA[k].typ}</div>${svg(AUTA[k],{wzorzec:false,ramki:false})}
  <p><button class="kontrola" onclick="wybierzAuto('${k}')">Analizuj</button></p></div>`).join("")}
- <div class="karta"><h3>Wczytaj własne zdjęcie</h3><p>Obraz RTG naczepy (.bmp, .png, .jpg). W makiecie wynik jest udawany.</p>
- <input type="file" id="plik" accept="image/*,.bmp"><p><button onclick="document.getElementById('plik').click()">Wczytaj własne zdjęcie</button></p></div></div></main>`;}
-function E2(){const a=AUTA[S.auto],m=widoczne(a),pok=m.slice(0,5),dal=m.length-pok.length;
+ <div class="karta"><h3>Wczytaj własne zdjęcie</h3><p>Obraz RTG naczepy: .bmp, .png albo .jpg. W makiecie wynik jest udawany.</p>
+ <input type="file" id="plik" accept=".bmp,.png,.jpg,.jpeg,image/bmp,image/png,image/jpeg" hidden><p><button class="kontrola" onclick="document.getElementById('plik').click()">Wczytaj własne zdjęcie</button></p></div></div></main>`;}
+function E2(){const a=AUTA[S.auto],m=widoczne(a),pok=m.slice(0,5),dal=m.length-pok.length,zg=zgaszone(a),tn=TOWARY.find(t=>t[0]===S.towar)[1],bd=bezDecyzji(a);
  if(!pok.find(x=>x.id===S.wyb)&&pok.length) S.wyb=pok[0].id;
  return `<main><div class="towar"><span>Zgłoszony towar:</span>${TOWARY.map(([k,n])=>`<button class="${S.towar===k?'akt':''}" onclick="ustawTowar('${k}')">${n}</button>`).join("")}</div>
- ${a.niepewny?`<div class="niepewny">⚠ Wzorzec niepewny — w bibliotece brak naczepy tego typu, użyto najbliższej podobnej (${a.wzorzec}).</div>`:""}
+ ${a.niepewny?`<div class="niepewny">⚠ Wzorzec niepewny — w bibliotece brak naczepy tego typu, użyto najbliższej podobnej: ${a.wzorzec}.</div>`:""}
  <div class="uklad"><div class="obrazy">
   <div><b>Wzorzec</b> <small>${a.wzorzec} · pusta naczepa</small>${svg(a,{wzorzec:true})}</div>
-  <div><b>Badane auto</b> <small>${a.nr} · różnica podświetlona</small>${svg(a,{wzorzec:false})}</div></div>
- <div class="lista"><h3>Zaznaczenia (${m.length})</h3>
- ${pok.length?pok.map(x=>{const d=S.dec[S.auto+x.id];return `<div class="poz ${x.id===S.wyb?'akt':''}" onclick="wybierz(${x.id})">
+  <div><b>Badane auto</b> <small>${S.auto==="W"&&S.plikNazwa?S.plikNazwa:a.nr} · różnica podświetlona</small>${svg(a,{wzorzec:false})}</div></div>
+ <div class="lista"><h3>Zaznaczenia (${pok.length})${dal>0?` <span class="dalsze">+${dal} dalszych miejsc</span>`:""}</h3>
+ ${zg.length?`<div class="wygaszone">wygaszone: ${zg.length} <small>(typowe miejsca ładunku „${tn}”: ${zg.map(x=>x.gdzie).join("; ")})</small></div>`:`<div class="wygaszone">wygaszone: 0</div>`}
+ ${pok.length?pok.map(x=>{const d=S.dec[x.id];return `<div class="poz ${x.id===S.wyb?'akt':''} ${d?(d.k?'zat':'odr'):''}" onclick="wybierz(${x.id})">
   <div class="g"><span>${x.id}. ${x.gdzie}</span><span class="ocena">${pct(x.ocena)}</span></div>
   ${x.podloga?`<div class="dopisek">typowe miejsce skrytki: podwójna podłoga</div>`:""}
   ${d?`<div class="dec ${d.k?'k':'o'}">${d.k?"✔ do kontroli":"✖ odrzucone: "+d.powod}</div>`:""}
-  <div class="przyc"><button class="kontrola" onclick="event.stopPropagation();doKontroli(${x.id})">do kontroli</button><button onclick="event.stopPropagation();S.odrzuc=${x.id};rysuj()">odrzuć</button></div></div>`}).join("")
+  <div class="przyc">${d?`<button onclick="event.stopPropagation();cofnij(${x.id})">cofnij decyzję</button>`:`<button class="kontrola" onclick="event.stopPropagation();doKontroli(${x.id})">do kontroli</button><button onclick="event.stopPropagation();S.odrzuc=${x.id};rysuj()">odrzuć</button>`}</div></div>`}).join("")
   +(dal>0?`<div class="dalsze">+${dal} dalszych miejsc</div>`:"")
   :`<div class="brak"><b>Brak zaznaczeń.</b><br>Użyty wzorzec: ${a.wzorzec} (pusta naczepa, ${a.typ}).</div>`}
- <p><button onclick="idz('E4')">Raport z auta →</button></p></div></div></main>${S.odrzuc?E3():""}`;}
+ <p>${bd?`<button disabled>Raport z auta →</button><br><small>raport dostępny, gdy każde miejsce ma decyzję (bez decyzji: ${bd})</small>`:`<button onclick="idz('E4')">Raport z auta →</button>`}</p></div></div></main>${S.odrzuc?E3():""}`;}
 function E3(){return `<div class="okno" onclick="if(event.target===this){S.odrzuc=null;rysuj()}"><div class="karta"><h3>Powód odrzucenia — miejsce ${S.odrzuc}</h3>
  ${POWODY.map(p=>`<button onclick="odrzuc('${p}')">${p}</button>`).join("")}<button onclick="S.odrzuc=null;rysuj()" style="text-align:center">anuluj</button></div></div>`;}
 function E4(){const a=AUTA[S.auto],m=widoczne(a),pok=m.slice(0,5),tn=TOWARY.find(t=>t[0]===S.towar)[1];
  return `<main><div class="karta"><h2>Raport z auta</h2><table>
  <tr><th>Kontrola</th><td>KAS-DS/2026/11/000${S.auto==="A"?"123":S.auto==="B"?"124":"125"} · przejście graniczne (sztuczne) · naczepa ${a.nr}</td></tr>
  <tr><th>Zgłoszony towar</th><td>${tn}</td></tr><tr><th>Wzorzec</th><td>${a.wzorzec}${a.niepewny?" — <b>wzorzec niepewny</b>":""}</td></tr>
- <tr><th>Zaznaczenia</th><td>${m.length?`${pok.length} pokazanych${m.length>5?` + ${m.length-5} dalszych miejsc`:""}`:"brak zaznaczeń"}</td></tr></table>
+ <tr><th>Wygaszone wyborem towaru</th><td>${zgaszone(a).length}</td></tr><tr><th>Zaznaczenia</th><td>${m.length?`${pok.length} pokazanych${m.length>5?` + ${m.length-5} dalszych miejsc`:""}`:"brak zaznaczeń"}</td></tr></table>
  ${pok.length?`<h3>Zaznaczenia i decyzje operatora</h3><table><tr><th>#</th><th>miejsce</th><th>ocena</th><th>decyzja</th></tr>
- ${pok.map(x=>{const d=S.dec[S.auto+x.id];return `<tr><td>${x.id}</td><td>${x.gdzie}</td><td>${pct(x.ocena)}</td><td>${d?(d.k?"do kontroli":"odrzucone — "+d.powod):"bez decyzji"}</td></tr>`}).join("")}</table>`:""}
+ ${pok.map(x=>{const d=S.dec[x.id];return `<tr><td>${x.id}</td><td>${x.gdzie}</td><td>${pct(x.ocena)}</td><td>${d?(d.k?"do kontroli":"odrzucone — "+d.powod):"bez decyzji"}</td></tr>`}).join("")}</table>`:""}
  <p><button onclick="idz('E2')">← wróć do analizy</button> <button onclick="window.print()">Drukuj</button></p></div></main>`;}
-function rysuj(){document.getElementById("app").innerHTML=naglowek()+({E1,E2,E4}[S.ekran])()+`<div class="stopka">makieta R1 · udawane dane pokazu</div>`;
- const f=document.getElementById("plik"); if(f) f.onchange=e=>{const r=new FileReader();r.onload=()=>{S.plik=r.result;wybierzAuto("W")};if(e.target.files[0]) r.readAsDataURL(e.target.files[0]);};
+function rysuj(){if(S.ekran==="E4"&&bezDecyzji(AUTA[S.auto])) S.ekran="E2";document.getElementById("app").innerHTML=naglowek()+({E1,E2,E4}[S.ekran])()+`<div class="stopka">makieta R2 · udawane dane pokazu</div>`;
+ const f=document.getElementById("plik"); if(f) f.onchange=e=>{const r=new FileReader();r.onload=()=>{S.plik=r.result;wybierzAuto("W")};const f0=e.target.files[0];if(!f0)return;if(!/\.(bmp|png|jpe?g)$/i.test(f0.name)){alert("Obsługiwane: .bmp, .png, .jpg");return;}S.plikNazwa=f0.name;r.readAsDataURL(f0);};
  location.hash=S.ekran+"-"+S.auto;}
 function idz(e){S.ekran=e;S.odrzuc=null;rysuj();scrollTo(0,0);}
-function wybierzAuto(k){S.auto=k;S.towar="nie_wiem";S.wyb=1;idz("E2");}
+function wybierzAuto(k){S.auto=k;S.towar="nie_wiem";S.wyb=1;S.dec={};idz("E2");} // usterka 6: decyzje od zera
 function ustawTowar(k){S.towar=k;rysuj();} function wybierz(id){S.wyb=id;rysuj();}
-function doKontroli(id){S.dec[S.auto+id]={k:true};S.wyb=id;rysuj();}
-function odrzuc(p){S.dec[S.auto+S.odrzuc]={k:false,powod:p};S.odrzuc=null;rysuj();}
+function doKontroli(id){S.dec[id]={k:true};S.wyb=id;rysuj();}
+function odrzuc(p){S.dec[S.odrzuc]={k:false,powod:p};S.odrzuc=null;rysuj();}
+function cofnij(id){delete S.dec[id];S.wyb=id;rysuj();} // P32
 const h=location.hash.slice(1).split("-"); if(["E1","E2","E4"].includes(h[0])&&AUTA[h[1]]&&h[1]!=="W"){S.ekran=h[0];S.auto=h[1];} rysuj();
 </script></body></html>
