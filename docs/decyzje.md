@@ -177,3 +177,11 @@ P39 13:05 odpowiedź (Artur w pokoju): nic z ekranu nie wyrzucać
 14:02 Analityk: krytyk R3 7/10, 7 braków (docs/pm/08-krytyk-makiety-R3.md); produktowe: 1 wygaszanie podłogi (wbrew sondom), 3 liczba po rozwinięciu, 4 blokada raportu „bez decyzji: 6”, 5 kolory, 6 zmiana towaru po decyzjach; technika: 2 spec bez P34–P38 poza KA16, 7 brak zrzutu „pusta naczepa”
 14:03 Szef: krytyk R3 7/10 (7 braków) — runda 3 z 3, makieta zamknięta; braki 1,3,4,5,6 + kształt pokazu 2 min → Projektant pyta Artura (odpowiedzi do MVP); brak 2 → Projektant poprawia spec; brak 7 (zrzuty pusta naczepa i pozostałe towary) → do MVP (01-mvp)
 14:03 Szef: demo.md DRAFT przyjęty (e438880); wariant pokazu czeka na odpowiedź Artura
+P40 14:03 Artur: wybór ładunku nie wygasza dachu, podłogi i przedniej ściany naczepy — tylko wnętrze ładunku (A) czy wygasza też podłogę, jak teraz na drobnicy (B)? rekomendacja A (z pomiarów: wygaszenie podłogi ukrywa prawdziwe skrytki) — czeka
+P41 14:03 Artur: po rozwinięciu „+N dalszych miejsc” nagłówek pokazuje „Zaznaczenia (7)” (A) czy zostaje „Zaznaczenia (5)” nad 7 wierszami (B)? rekomendacja A; ta sama zasada w raporcie — czeka
+P42 14:03 Artur: gdy raport jest zablokowany, przy przycisku komunikat „Brakuje decyzji: N — w tym M w dalszych miejscach” z przyciskiem „rozwiń” (A) czy tylko wyszarzony przycisk i mały znaczek (B)? rekomendacja A — czeka
+P43 14:03 Artur: przycisk „do kontroli” w kolorze neutralnym (niebieski), a czerwień tylko dla wysokiej pewności, odrzucone pozycje z wyraźniejszym tekstem (A) czy kolory jak teraz (B)? rekomendacja A — czeka
+P44 14:03 Artur: zmiana towaru po decyzjach — pytamy „zmiana skasuje decyzje, zmienić?” i po zgodzie decyzje oraz raport zaczynają od zera (A) czy decyzje przy miejscach, które zostają, są zachowane (B)? rekomendacja A — czeka
+P45 14:03 Artur: pokaz 2 min — w pełni tylko auto A, a auto B i własne zdjęcie jako krótkie ujęcia poza 2 min (A) czy skrócone auto A + auto B + własne zdjęcie w 2 min (B)? rekomendacja A (opis w docs/demo.md) — czeka
+P46 14:03 Artur: co z ekranu makiety wyrzucić (runda 3, odpowiedzi idą do wersji nocnej)? rekomendacja: nic — czeka
+14:03 Projektant: pytania P40–P46 (braki 1, 3, 4, 5, 6 krytyka R3 + pokaz 2 min + co wyrzucić) w pokoju Produkt
