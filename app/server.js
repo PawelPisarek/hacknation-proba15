@@ -3,7 +3,7 @@
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
-const OMEN = (process.env.OMEN_URL || "http://192.168.1.112:8770").replace(/\/$/, "");
+const OMEN = (process.env.OMEN_URL || "").replace(/\/$/, ""); // adres usługi tylko w zmiennej Coolify (nie w repo)
 const SHA = (process.env.SOURCE_COMMIT || process.env.COOLIFY_SOURCE_COMMIT || "").slice(0, 7) || "?";
 const PUB = path.join(__dirname, "public");
 const TYPY = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".json": "application/json", ".png": "image/png", ".css": "text/css" };
@@ -16,6 +16,7 @@ function wyslij(res, kod, obj) {
 }
 
 function doOmena(req, res, sciezka) {
+  if (!OMEN) return wyslij(res, 502, { blad: "brak OMEN_URL — usługa na karcie nieustawiona", awaryjny: true });
   const n = Number(req.headers["content-length"] || 0);
   if (n > MAX) return wyslij(res, 413, { blad: "plik większy niż 120 MB" });
   const u = new URL(OMEN + sciezka);
@@ -30,7 +31,7 @@ function doOmena(req, res, sciezka) {
 
 http.createServer((req, res) => {
   const u = new URL(req.url, "http://x");
-  if (u.pathname === "/api/wersja") return wyslij(res, 200, { sha: SHA, omen: OMEN.replace(/\/\/[^:/]+/, "//(sieć lokalna)") });
+  if (u.pathname === "/api/wersja") return wyslij(res, 200, { sha: SHA, omen: OMEN ? "ustawiony" : "brak" });
   if (u.pathname.startsWith("/api/")) return doOmena(req, res, u.pathname.slice(4) + u.search);
   let f = path.normalize(path.join(PUB, u.pathname === "/" ? "index.html" : u.pathname));
   if (!f.startsWith(PUB) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { res.writeHead(404); return res.end("nie ma"); }

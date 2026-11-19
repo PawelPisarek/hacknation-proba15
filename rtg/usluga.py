@@ -139,7 +139,7 @@ class Obsluga(BaseHTTPRequestHandler):
         PODGLADY[pid] = png
         while len(PODGLADY) > 30:
             PODGLADY.popitem(last=False)
-        wynik.update({"id": pid, "nazwa": nazwa, "auto": q.get("auto"), "podglad": f"/podglad/{pid}.png",
+        wynik.update({"zrodlo": "karta OMENa", "id": pid, "nazwa": nazwa, "auto": q.get("auto"), "podglad": f"/podglad/{pid}.png",
                       "wzorzec_png": f"/wzorzec/{wynik['typ']}.png"})
         self._odp(200, wynik)
 

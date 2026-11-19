@@ -102,7 +102,7 @@ function idz(e){S.ekran=e;S.odrzuc=null;rysuj();scrollTo(0,0);}
 function nowy(w,auto){S.w=w;S.auto=auto;S.towar="nie_wiem";S.dec={};S.rozwin=false;S.wyb=null;S.laduje=null;S.blad=null;idz("E2");} // decyzje od zera po zmianie auta
 async function analizujAuto(k){S.laduje="Analiza auta "+k+" na karcie OMENa…";S.awaryjny=false;rysuj();
  try{const r=await fetch("api/analiza?auto="+k,{method:"POST"});if(!r.ok)throw new Error((await r.json()).blad);nowy(await r.json(),k);}
- catch(e){try{const r=await fetch("zapis/"+k+".json");if(!r.ok)throw 0;S.awaryjny=true;nowy(await r.json(),k);}catch(_){S.laduje=null;S.blad="Usługa nie odpowiada i brak zapisanego wyniku: "+e.message;idz("E1");}}}
+ catch(e){try{const r=await fetch("zapis/"+k+".json");if(!r.ok)throw 0;S.awaryjny=true;const z=await r.json();z.zrodlo="zapis (tryb awaryjny)";nowy(z,k);}catch(_){S.laduje=null;S.blad="Usługa nie odpowiada i brak zapisanego wyniku: "+e.message;idz("E1");}}}
 async function analizujPlik(f0){S.laduje=`Wysyłam ${f0.name} (${(f0.size/1e6).toFixed(1)} MB) i liczę na karcie OMENa…`;S.awaryjny=false;rysuj();
  try{const r=await fetch("api/analiza?nazwa="+encodeURIComponent(f0.name),{method:"POST",body:f0,headers:{"Content-Type":"application/octet-stream"}});
   const j=await r.json();if(!r.ok)throw new Error(j.blad);S.plikNazwa=f0.name;nowy(j,"W");}
