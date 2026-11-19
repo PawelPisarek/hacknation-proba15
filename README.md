@@ -24,7 +24,16 @@ Obrazów KAS nie mamy (dane są wydawane dopiero na stoisku). Dlatego budujemy w
 
 ## Użyte narzędzia
 
-- **OpenMausBot** ([github.com/milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot), Apache-2.0) — zespół 5 botów: Szef, Projektant, Analityk, Programista, Prezenter; przygotowany przed hackathonem.
-- **Claude** (Anthropic) — modele, na których działają boty.
-- **pm-skills** ([github.com/phuryn/pm-skills](https://github.com/phuryn/pm-skills), MIT) — skille do pracy produktowej i tekstów.
-- **Biblioteki w kodzie** — _lista do uzupełnienia z kodu Programisty_.
+Narzędzia przygotowane przed hackathonem i użyte w projekcie. Znaczniki `<!-- skill: … -->` na końcu plików w `docs/` wskazują, którego skilla użyto.
+
+| Narzędzie | Do czego | Gdzie w repo |
+|---|---|---|
+| **OpenMausBot** ([github.com/milind-soni/OpenMausBot](https://github.com/milind-soni/OpenMausBot), Apache-2.0) | Zespół 5 botów. Szef — rozdziela pracę i rozmawia z Pawłem; Projektant — pyta Artura i pisze spec; Analityk — materiały, ryzyka, recenzje; Programista — kod, makieta, wdrożenia; Prezenter — README i teksty. | całe repo (`docs/decyzje.md`, `docs/stan.md`) |
+| **Claude** (Anthropic) | Modele, na których działają boty. | całe repo |
+| **pm-skills** ([github.com/phuryn/pm-skills](https://github.com/phuryn/pm-skills), MIT): `competitor-analysis`, `brainstorm-ideas-new`, `identify-assumptions-new`, `prioritize-assumptions`, `strategy-red-team`, `create-prd`, `test-scenarios` | Analiza konkurencji, pomysły i założenia, atak na założenia, PRD, scenariusze testów. | `docs/pm/01`–`06`, `docs/spec.md` |
+| **pm-skills** (Prezenter): `product-name`, `value-prop-statements` | Nazwa produktu, hasło i opis do formularza HackTribe. | `docs/hacktribe.md` |
+| Skill zespołu `przeplywy-pm` | Kolejność kroków pracy produktowej i recenzji przejść. | `docs/pm/`, `docs/spec.md` |
+| **NumPy** (`>=1.24`) | Obliczenia na obrazach, porównanie ze wzorcem. | `rtg/`, `requirements.txt` |
+| **Pillow** (`>=10`) | Odczyt i zapis plików .bmp, rysowanie zaznaczeń. | `rtg/`, `requirements.txt` |
+| **PyTorch** (CUDA) | Metoda „nauka” na karcie graficznej; instalowany osobno (patrz `bazowy.sh`). | `rtg/wykryj.py`, `bazowy.sh` |
+| Pozostałe biblioteki, makieta | _uzupełni Programista_ (makieta: stos jeszcze nieopisany w repo) | — |
