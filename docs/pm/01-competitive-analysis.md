@@ -1,79 +1,84 @@
 # 01 — Analiza konkurencji i podejść (/competitive-analysis)
 
-**Data**: 2026-11-19 (sobota, start próby 15)
+**Data**: 2026-11-19 (sobota, start próby 15); poprawione po recenzji R1 (Analityk)
 **Produkt**: wyszukiwarka anomalii na obrazach RTG naczep/ciężarówek (KAS) — porównanie badanego obrazu .bmp ze wzorcem, zaznaczenie różnic. Działa lokalnie (bez chmury), wynik z usługi na karcie OMENa (GTX 1050 4 GB).
-**Źródła**: `docs/zadanie.md`, `docs/decyzje.md`, wyszukiwanie w sieci 19.11 (linki na dole). Czego nie dało się potwierdzić — oznaczone „założenie”.
+**Perspektywa porównania** (decyzja Szefa 11:22): funkcje i sposób porównania obrazów, nie cena ani rynek — to narzędzie dla KAS, nie produkt na rynek; konkurentów szukamy sami poza wymienionymi w zadaniu.
+**Źródła**: `docs/zadanie.md`, `docs/decyzje.md`, `docs/materialy.md` §6, wyszukiwanie w sieci 19.11 (linki na dole). Czego nie dało się potwierdzić — oznaczone „niezweryfikowane” lub „założenie”.
 
 ## Przegląd rynku
-Operatorzy RTG oceniają obrazy ręcznie; dostawcy sprzętu dokładają moduły AI dwóch rodzajów: wykrywanie zagrożeń (ATD, szukanie znanych przedmiotów, np. broni czy papierosów) oraz weryfikacja zawartości względem zgłoszenia/manifestu (ACV). KAS ma już detektor papierosów, który słabo radzi sobie z małymi skrytkami w konstrukcji pojazdu — tu potrzebne jest porównanie ze wzorcem i wykrywanie „czegoś, czego nie powinno być”, a nie szukanie znanego przedmiotu. Żadne znalezione źródło nie opisało gotowego, jawnego narzędzia porównującego obraz pojazdu z obrazem wzorcowym u Nuctech/Multicontrol (założenie: takie moduły mogą istnieć, ale są zamknięte).
+Operatorzy RTG oceniają obrazy ręcznie; dostawcy sprzętu dokładają moduły AI dwóch rodzajów: wykrywanie zagrożeń (ATD, znane przedmioty, np. broń, papierosy) oraz weryfikacja zawartości względem zgłoszenia/manifestu (ACV). KAS ma już detektor papierosów, który słabo radzi sobie z małymi skrytkami w konstrukcji pojazdu — tu potrzebne jest porównanie ze wzorcem i wykrywanie „czegoś, czego nie powinno być”, a nie szukanie znanego przedmiotu.
+
+Porównanie obrazu cargo/pojazdu z obrazami wcześniejszymi lub referencyjnymi **jest znane** (prior art, `docs/materialy.md` §6): projekt UE ACXIS (baza referencyjna cargo, rejestracja obrazów i obraz różnicowy), patenty USPTO 10302807, 10768338, 11287391 (porównanie z wcześniejszymi obrazami pojazdu, różnica piksel po pikselu, skrytki poza kontenerem), UCL/Jaccard i in. (autoenkoder uczony na pustych kontenerach) i OSTI (podobieństwo głębokie obrazów pojazdów). Jawnego opisu takiego modułu u Nuctech/Multicontrol nie znalazłem — czy go mają, jest **niezweryfikowane**. Sama idea „porównaj ze wzorcem” nie jest więc nowością; wyróżnia nas wykonanie (sekcja „Okazje do wyróżnienia”).
 
 ## Konkurenci bezpośredni (ten sam użytkownik: operator RTG / służba celna)
 | Konkurent | Pozycjonowanie | Mocna strona | Słaba strona |
 |---|---|---|---|
-| Nuctech — platforma inspekcji z AI | dostawca urządzeń KAS; głęboka sieć trenowana także na danych symulowanych | jest już w urządzeniu, integracja z obrazem | zamknięty; nie wiadomo, czy porównuje ze wzorcem (założenie: nie jawnie) |
+| Nuctech — platforma inspekcji z AI | dostawca urządzeń KAS; głęboka sieć; wg jednego artykułu branżowego uczona też na danych symulowanych (niezweryfikowane) | jest już w urządzeniu | zamknięty; czy porównuje ze wzorcem — niezweryfikowane |
 | Multicontrol — oprogramowanie urządzeń | drugi dostawca KAS | jak wyżej | jak wyżej; dane nieznane |
-| Rapiscan (Insight/eXaminer) | analiza kształtu, tekstury, intensywności + głębokie wykrywanie przedmiotów; zgodność z manifestem (patent) | dojrzały, certyfikowany | porównuje ze zgłoszeniem, nie z pustym wzorcem pojazdu; chmura/licencje |
-| Smiths Detection | algorytmy wykrywania materiałów wybuchowych (bagaż), certyfikacje | renoma | nie dotyczy dużych pojazdów (według znalezionych źródeł) |
-| Obecny detektor papierosów KAS | wykrywanie jednego rodzaju towaru | działa w produkcji | słaby przy małych ilościach w konstrukcji pojazdu (z zadania) |
+| Rapiscan (Insight) | kształt, tekstura, intensywność + głębokie wykrywanie przedmiotów; zgodność z manifestem (rapiscan-ase.com, patent US11099294) | dojrzały; certyfikacja — niezweryfikowane | porównuje ze zgłoszeniem, nie z pustym wzorcem pojazdu (wg znalezionych źródeł); model licencji/chmura — niezweryfikowane |
+| Smiths Detection | algorytmy wykrywania materiałów wybuchowych w bagażu (artykuł branżowy) | renoma | czy dotyczy pojazdów — niezweryfikowane |
+| Obecny detektor papierosów KAS | wykrywanie jednego rodzaju towaru | działa w produkcji | słaby przy małych ilościach w konstrukcji pojazdu (z zadania §1) |
 
-## Konkurenci pośredni — podejścia do porównania obrazów (uruchamialne na GTX 1050 4 GB)
+## Konkurenci pośredni — podejścia do porównania obrazów (uruchamialne na GTX 1050 4 GB — do zmierzenia)
 | Podejście | Jak działa | Plusy | Minusy / ryzyko |
 |---|---|---|---|
-| A. Różnica pikseli po dopasowaniu (rejestracja + różnica / SSIM) | wyrównuje wzorzec i badany obraz, odejmuje, progowanie, ramki | proste, szybkie, wyjaśnialne, bez uczenia; dobre na parę „przed/po” | wrażliwe na przesunięcie, skalę, szum i różne ułożenie naczepy → fałszywe alarmy |
-| B. PatchCore / pamięć fragmentów „czystych” (anomalib) | uczy się na samych czystych obrazach, szuka fragmentów nietypowych | bardzo dobry na jakość wykrywania, uczenie w minutach; mapa ciepła | pamięć rośnie z liczbą obrazów (potrzebne ograniczenie, np. 10% fragmentów); pamięć 4 GB — do sprawdzenia; obrazy 50 MB trzeba ciąć na kafle |
-| C. EfficientAD (mała sieć „uczeń–nauczyciel”) | wykrywanie anomalii w milisekundach | ~2–5 ms/obraz w publikacji (na dużej karcie); mały model | dłuższe uczenie (godziny w jednym teście); wynik na 1050 — założenie, do zmierzenia |
-| D. Autoenkoder / rekonstrukcja | uczy się odtwarzać „czysty” obraz, różnica = anomalia | prosty, mały | rozmyta rekonstrukcja → fałszywe alarmy na krawędziach |
-| E. Para obrazów w jednej sieci (porównanie wzorzec ↔ badany, wykrywanie zmian) | sieć dostaje oba obrazy, zwraca maskę zmian | najlepiej pasuje do „wzorzec vs badany” | potrzebuje obrazów z oznaczonymi dodatkami (sztuczny zbiór — możemy wygenerować) |
-| F. Nadzorowane wykrywanie obiektów (YOLO itp.) | szuka znanych „dodatków” | szybkie, dokładne na znanych typach | nie wykryje nieznanych skrytek; jak obecny detektor KAS |
+| A. Różnica pikseli po dopasowaniu (rejestracja + różnica / SSIM) — **prior art: ACXIS, patenty 10302807 / 10768338 / 11287391** | wyrównuje wzorzec i badany obraz, odejmuje, progowanie, ramki | proste, szybkie, wyjaśnialne, bez uczenia | wrażliwe na przesunięcie, skalę, szum, inne ułożenie naczepy → fałszywe alarmy |
+| B. PatchCore / pamięć fragmentów „czystych” (anomalib; metoda z wiedzy autora, arXiv 2106.08265 — niezweryfikowane w tej sesji) | uczy się na czystych obrazach, szuka fragmentów nietypowych | uczenie ok. 8 min w benchmarku przemysłowym (arXiv 2403.15463, inne dane niż nasze); mapa ciepła | pamięć rośnie z liczbą obrazów; przykład w dokumentacji anomalib redukuje do 10% fragmentów (nie pomiar); mieści się w 4 GB — niezweryfikowane; obrazy 50 MB trzeba ciąć na kafle |
+| C. EfficientAD (mała sieć „uczeń–nauczyciel”) | wykrywanie anomalii w milisekundach | 2,2–4,5 ms/obraz w publikacji **na RTX A6000, nie na GTX 1050** (arXiv 2303.14535) | dłuższe uczenie (ok. 5,5 h w benchmarku arXiv 2403.15463); czas na GTX 1050 — niezweryfikowane, do zmierzenia |
+| D. Autoenkoder / rekonstrukcja (prior art: Jaccard i in., UCL, arXiv 1609.02805 — na pustych kontenerach) | uczy się odtwarzać „czysty” obraz, różnica = anomalia | prosty, mały | rozmyta rekonstrukcja → fałszywe alarmy na krawędziach |
+| E. Para obrazów w jednej sieci (zmiany wzorzec ↔ badany; OSTI: podobieństwo głębokie obrazów pojazdów) | sieć dostaje oba obrazy, zwraca maskę zmian | najlepiej pasuje do „wzorzec vs badany” | potrzebuje obrazów z oznaczonymi dodatkami, a zadanie §5 każe uczyć na prawidłowych — **działa tylko na naszym zbiorze sztucznym (z maskami) i nie przenosi się na dane KAS**; poza zakresem albo eksperyment |
+| F. Nadzorowane wykrywanie obiektów (YOLO itp.) | szuka znanych „dodatków” | szybkie na znanych typach | nie wykryje nieznanych skrytek; jak obecny detektor KAS |
 
 ## Macierz funkcji
 | Zdolność | Nasz produkt (cel) | Dostawcy sprzętu | Różnica pikseli (A) | PatchCore (B) | EfficientAD (C) |
 |---|---|---|---|---|---|
 | Porównanie ze wzorcem | tak | niejasne | tak | pośrednio (uczy się „normy”) | pośrednio |
-| Zaznaczenie miejsca na obrazie | tak (ramki/maska) | tak | tak | tak (mapa ciepła) | tak |
-| Bez chmury / bez internetu | tak | różnie | tak | tak | tak |
+| Zaznaczenie miejsca na obrazie | tak | tak | tak | tak (mapa ciepła) | tak |
+| Bez chmury | tak | różnie | tak | tak | tak |
 | Duże pliki ~50 MB, partie | tak (kafle) | tak | tak | tak (kafle) | tak (kafle) |
-| Mało fałszywych alarmów | cel | zależy | słabo | dobrze | dobrze |
+| Zero zaznaczeń na czystych (zadanie §6: każde zaznaczenie = alarm FP) | cel — **zależne od P5**, patrz niżej | nieznane | słabo | dobrze wg publikacji, niezweryfikowane na RTG | jak B |
 | Wykryje nieznany dodatek | tak | tylko znane | tak | tak | tak |
 
-## Mapa pozycjonowania (oś: wiedza o wzorcu ↔ szukanie znanych rzeczy; oś: wyjaśnialność)
-- Dostawcy ATD i YOLO: „szukają znanych rzeczy”, niska wyjaśnialność.
-- Różnica pikseli: „porównuje ze wzorcem”, wysoka wyjaśnialność, wysoka fałszywa alarmowość.
-- PatchCore/EfficientAD: „uczą się normy”, średnia wyjaśnialność (mapa ciepła).
-- **Nasza przestrzeń**: porównanie ze wzorcem + uczenie normy + wynik, który operator rozumie („tu coś doszło”) — połączenie A (dopasowanie, różnica) z B/C (ocena, czy różnica jest istotna).
+## Fałszywe alarmy a małe skrytki (zależne od P5)
+Zadanie §6 liczy każde zaznaczenie na czystym obrazie jako alarm fałszywy, a małe skrytki (≈0,1% pikseli wg Jaccard i in.) wymagają czułości. Rozstrzyga to Artur (P5, 11:21): przeoczony dodatek jest gorszy, zbędny alarm = minuta więcej przy aucie, zaznaczeń na auto „kilka” — górna granica 5 (P8). Ten plik nie ustala progu: cel zero zaznaczeń na czystych w teście, 5 to limit na auto; kompromis czułość ↔ FP raportujemy krzywą, próg ustalają ludzie.
 
-## Okazje do wyróżnienia
-1. **Wzorzec + norma razem** — dopasowanie pary obrazów i ocena nietypowości fragmentów ogranicza fałszywe alarmy bez uczenia na „dodatkach”.
-2. **Pokazanie różnic, nie werdyktu** — operator dostaje zaznaczone miejsca i może je odrzucić; wspiera, nie zastępuje.
-3. **Skalowanie na duże pliki** — kafle i partie, przetwarzanie < 1 min na obraz (wymóg zadania).
-4. **Wszystko lokalnie** — wymóg wdrożenia KAS (bez chmury).
+## Okazje do wyróżnienia (po uwzględnieniu prior art)
+1. **Automatyczny dobór wzorca z biblioteki** (P6, P11) — operator zwykle nie ma czystego zdjęcia tej samej naczepy; baza referencyjna z ACXIS to bliski odpowiednik, nasza działa lokalnie dla KAS i ostrzega „wzorzec niepewny”.
+2. **Ocena pewności i do 5 zaznaczeń na auto** (P8) — operator widzi najpewniejsze pierwsze.
+3. **Decyzja operatora z powodem zapisana w raporcie z auta** (P7, P10).
+4. **Wszystko lokalnie** i partie/kafle dla plików ~50 MB, < 1 min na obraz (zadanie §7).
 
 ## Zagrożenia
-1. **Dostawcy dodadzą porównanie ze wzorcem we własnym oprogramowaniu** — dla nas: wartość w jakości i niezależności od dostawcy (Nuctech i Multicontrol).
-2. **Różne ułożenie i długość naczep** — dopasowanie wzorca może zawieść; ryzyko dla wyniku (fałszywe alarmy).
-3. **Dane sztuczne ≠ rzeczywiste RTG** — wynik na własnym zbiorze nie dowodzi skuteczności na danych KAS (założenie do powiedzenia na pokazie).
+1. **Dostawcy dodadzą porównanie ze wzorcem we własnym oprogramowaniu** — nasza wartość: dobór wzorca i niezależność od dostawcy (Nuctech i Multicontrol).
+2. **Różne ułożenie i długość naczep** — dopasowanie wzorca może zawieść; ryzyko fałszywych alarmów.
+3. **Dane sztuczne ≠ rzeczywiste RTG** — wynik na własnym zbiorze nie dowodzi skuteczności na danych KAS (mówimy to na pokazie).
 
 ## Rekomendacje
-- **Postawić na**: porównanie ze wzorcem (A) jako baza + ocena nietypowości (B lub C) jako filtr fałszywych alarmów.
-- **Dorównać w**: czytelnym raporcie z zaznaczonymi miejscami i licznikiem alarmów na obraz.
-- **Pominąć**: pełne wykrywanie znanych przedmiotów (F) i integrację z urządzeniami dostawców.
-- Na karcie 4 GB: kafle obrazów i małe modele; do zmierzenia przez Programistę (założenie: PatchCore z ograniczoną pamięcią lub EfficientAD-S mieszczą się).
+- **Postawić na**: porównanie ze wzorcem (A) jako baza + ocena nietypowości (B lub C) jako filtr fałszywych alarmów + dobór wzorca.
+- **Dorównać w**: czytelnym raporcie z zaznaczonymi miejscami.
+- **Pominąć**: pełne wykrywanie znanych przedmiotów (F), podejście E na danych KAS, integrację z urządzeniami dostawców.
+- Na karcie 4 GB: kafle i małe modele; mieszczenie się B/C — do zmierzenia przez Programistę.
 
 ## Czego nie wiem o produkcie (pytania do Artura — moment (a))
-Rozstrzyga zadanie (nie pytamy): praca bez internetu, dane sztuczne, działanie bez człowieka, format .bmp, ekran po polsku.
-1. Kto jest głównym użytkownikiem: operator przy stanowisku RTG czy ktoś analizujący obrazy później z repozytorium?
-2. Jaki ma dziś problem z oceną obrazu — co mu zabiera czas lub czego nie widzi?
-3. Co zyska: mniej przeoczonych skrytek czy mniej czasu na obraz?
-4. Co gorsze dla użytkownika: alarm na czystej naczepie czy przeoczony dodatek?
-5. Czy użytkownik ma sam wskazać wzorzec dla każdego obrazu, czy system ma go dobierać z zebranych wzorców?
-6. Co użytkownik robi po alarmie: zatwierdza/odrzuca miejsce, czy tylko czyta raport?
+Rozstrzyga zadanie (nie pytamy): praca bez internetu, dane sztuczne, działanie bez człowieka, format .bmp, język ekranu, perspektywa porównania (decyzja Szefa).
+1. Użytkownik — P2: operator przy stanowisku, kilka minut na auto.
+2. Problem — P3: podwójna podłoga, ściana przy kabinie.
+3. Zysk — P4: mniej przeoczonych skrytek.
+4. Cena błędu — P5: przeoczony dodatek gorszy; zaznaczeń kilka.
+5. Wzorzec — P6, P11: system dobiera sam z biblioteki.
+6. Po alarmie — P7: zatwierdza/odrzuca z powodem.
 
 ## Źródła
-- Rapiscan — technologia (ATD/ACV, algorytmy): https://rapiscan-ase.com/resource-center/technology
-- Przegląd analizy obrazów RTG cargo: https://openaccess.library.uitm.edu.my/Record/ndltd-bl.uk-oai-ethos.bl.uk-747225/Description
-- EfficientAD (opóźnienie 2,2–4,5 ms na RTX A6000; PatchCore ~148 ms): https://arxiv.org/pdf/2303.14535
-- PatchCore a pamięć karty (anomalib): https://github.com/openvinotoolkit/anomalib/discussions/1935
-- Brak wyników o jawnym porównaniu ze wzorcem u Nuctech/Smiths — oznaczone jako założenie.
+- Rapiscan — technologia: https://rapiscan-ase.com/resource-center/technology
+- Przegląd analizy obrazów RTG cargo (ATD/ACV): https://openaccess.library.uitm.edu.my/Record/ndltd-bl.uk-oai-ethos.bl.uk-747225/Description
+- ACXIS (prior art): https://openaccessgovernment.org/automated-comparison-x-ray-images-cargo-scanning-acxis/25162
+- Jaccard i in., autoenkoder na pustych kontenerach: https://arxiv.org/pdf/1609.02805
+- OSTI, podobieństwo głębokie obrazów pojazdów: https://www.osti.gov/servlets/purl/1877523
+- Patenty: https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10302807 (też 10768338, 11287391)
+- EfficientAD (RTX A6000): https://arxiv.org/pdf/2303.14535
+- Benchmark uczenia PatchCore / EfficientAD: https://arxiv.org/pdf/2403.15463
+- PatchCore a pamięć karty: https://github.com/openvinotoolkit/anomalib/discussions/1935
+- Niezweryfikowane: porównanie ze wzorcem u Nuctech/Multicontrol/Smiths; certyfikacja i licencje Rapiscan; PatchCore/EfficientAD na GTX 1050 4 GB.
 
 <!-- skill: przeplywy-pm -->
 <!-- skill: competitor-analysis -->
