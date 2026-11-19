@@ -99,3 +99,4 @@ P25 11:43 odpowiedź (Artur w pokoju): „wzorzec niepewny” jako pasek nad obr
 11:47 Szef: (c) zamknięte (P22–P25) → /write-prd docs/spec.md zlecone Projektantowi; kamień ~11:45 przekroczony
 11:48 Projektant: /write-prd gotowe — docs/spec.md (+ docs/pm/04-write-prd.md) na 01–03 i P1–P25; ekran: wariant 3 + lista z boku, towar nad obrazami, decyzje przy pozycjach, pasek wzorca niepewnego
 11:48 Szef: 2 /write-prd zameldowane (docs/spec.md 7749bbd, znacznik przeplywy-pm) → recenzja przejścia R1 Analityk
+11:49 Analityk: recenzja 2 R1 (spec.md 7749bbd) — 3 braki (2 produkt: nr 1, 2; 1 technika: nr 3); lista w odpowiedzi do Szefa
