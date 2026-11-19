@@ -4,11 +4,24 @@ Narzędzie dla operatorów RTG na granicy: porównuje obraz naczepy ze wzorcem c
 
 **Dla kogo:** operatorzy RTG Służby Celno-Skarbowej (zadanie KAS „Automatyczna wyszukiwarka anomalii”). Treść zadania: [docs/zadanie.md](docs/zadanie.md).
 
-**Linki:** makieta — _(do uzupełnienia)_ · wersja na ksefbot.pl — _(do uzupełnienia)_ · opis dla HackTribe: [docs/hacktribe.md](docs/hacktribe.md)
+**Linki:** makieta — [pawelpisarek.github.io/hacknation-proba15/makieta/](https://pawelpisarek.github.io/hacknation-proba15/makieta/) · wersja na ksefbot.pl — _(do uzupełnienia)_ · opis dla HackTribe: [docs/hacktribe.md](docs/hacktribe.md)
 
 ## Jak uruchomić
 
-_Komendy dopisze Programista (wymagania, instalacja, start, przykład na pliku .bmp)._
+Wymagania: Python ≥ 3.10, `pip install -r requirements.txt`, PyTorch z CUDA (wykrywanie działa tylko na karcie graficznej).
+
+```sh
+# dane syntetyczne: biblioteka pustych wzorców + badane naczepy (pełny rozmiar: --skala 1 --bity 24, ~50 MB/obraz)
+python -m rtg.generator --wyjscie dane/bib --wariant biblioteka --grupy 12 --skala 0.25
+# wykrywanie: H1 różnica / H2 nauka; towar „nie wiem” albo zgłoszony
+python -m rtg.wykryj --dane dane/bib --metoda roznica nauka --towar nie_wiem zgloszony --wyjscie wyniki/bib
+# ocena wg zadania: FP (czyste), FN, FN@5, +N, dobór wzorca, czas, pamięć karty; --wymagaj = kod 1 przy niezaliczeniu
+python -m rtg.ocena --dane dane/bib --wyniki wyniki/bib/nauka_zgloszony.json --bazowe wyniki/bib/nauka_nie_wiem.json --krzywa 1,1.5,2 --wymagaj
+# podgląd ramek (PNG)
+python -m rtg.raport --dane dane/bib --wyniki wyniki/bib/nauka_zgloszony.json --wyjscie wyniki/raport
+```
+
+Makieta: statyczna strona `makieta/index.html` (bez budowania, udawane dane), otwierana wprost w przeglądarce.
 
 ## Jak oceniamy
 
@@ -36,4 +49,5 @@ Narzędzia przygotowane przed hackathonem i użyte w projekcie. Znaczniki `<!-- 
 | **NumPy** (`>=1.24`) | Obliczenia na obrazach, porównanie ze wzorcem. | `rtg/`, `requirements.txt` |
 | **Pillow** (`>=10`) | Odczyt i zapis plików .bmp, rysowanie zaznaczeń. | `rtg/`, `requirements.txt` |
 | **PyTorch** (CUDA) | Metoda „nauka” na karcie graficznej; instalowany osobno (patrz `bazowy.sh`). | `rtg/wykryj.py`, `bazowy.sh` |
-| Pozostałe biblioteki, makieta | _uzupełni Programista_ (makieta: stos jeszcze nieopisany w repo) | — |
+| NumPy, Pillow, PyTorch (CUDA) | obliczenia na obrazach, odczyt .bmp, wykrywanie na karcie graficznej | `rtg/` |
+| Makieta | czysty HTML/CSS/JS bez bibliotek, udawane dane | `makieta/index.html` |
