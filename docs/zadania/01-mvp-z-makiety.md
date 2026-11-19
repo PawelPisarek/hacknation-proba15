@@ -25,8 +25,12 @@
 - **P37:** pewność w skali kolorów (wysoka czerwona, średnia pomarańczowa, niska żółta), napis decyzji w kolorze decyzji.
 - **P38:** w raporcie z auta (E4) zostaje wiersz „wygaszone wyborem ładunku: N”.
 
-## Część obliczeniowa i tryb partiami
-- Prawdziwa analiza obrazów z usługi na karcie OMENa (czas < 1 min / obraz ~50 MB, mieści się w 4 GB karty).
+## Część obliczeniowa, poprawki z sond 1–3 i tryb partiami
+- Prawdziwa analiza obrazów z usługi na karcie OMENa (czas < 1 min / obraz ~50 MB, mieści się w 4 GB karty — w sondach 0,52–1,10 s i ≤ 269 MB).
+- **Wnioski z `docs/pm/05-sondy.md` do wdrożenia w wykrywaczu:**
+  1. **Wyrównanie lokalne / siatka + normalizacja kontrastu przed różnicą:** zbić fałszywe alarmy na konstrukcji/ładunku (w sondach FP na pustych H1 82 / H2 125, na załadowanych z wyborem 165 / 173) oraz spadek na trudnym wariancie (dobór 80%, FN +27–39 pp).
+  2. **Strefa wygaszania towaru bez dachu, podłogi i ściany przedniej (Z5):** dziś wybór towaru gasi 20/62 (H1) i 23/70 (H2) prawdziwych dodatków; wygaszać wyłącznie wnętrze przestrzeni ładunkowej, nigdy stref skrytek konstrukcyjnych (dach, podłoga, ściana przednia).
+  3. **Krótkie kroki z zapisem pośrednim na OMENie:** preempcja innego projektu przerywa przebiegi dłuższe niż ~3 min (`DUE TO PREEMPTION`), więc strojenie i ewentualny pomiar H7 (PatchCore/EfficientAD) dzielić na krótkie kroki ze wznawianiem.
 - Działający tryb partiami z wiersza poleceń (`python -m rtg.wykryj --dane <katalog>` → JSON z ramkami i pewnością + obraz z zaznaczeniem; towar „nie wiem”).
 - Wdrożenie na `ksefbot.pl` (Coolify, wyłącznie aplikacja z `/data/hacknation.json`).
 
