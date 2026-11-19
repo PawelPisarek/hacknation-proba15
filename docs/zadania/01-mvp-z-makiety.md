@@ -40,3 +40,17 @@
 3. Meldunek zawiera linię wyniku uruchomienia: kod HTTP wdrożenia, wynik testów ekranów A1–A11, wynik oceny B1–B8 (FP, FN@5, FN pełna, czas/obraz, pamięć karty).
 4. Wpis w `docs/decyzje.md` z godziną z `date +%H:%M` (bez łączenia numeru P ze słowem „czeka”).
 - Brak 7 z krytyka R3: zrzuty ekranu dla „pusta naczepa” oraz płynów, sypkich, maszyn i mebli w MVP.
+
+## Po krytyku R3 (Artur w pokoju 14:04)
+- P40 A: wybór ładunku wygasza tylko wnętrze ładunku — nigdy dachu, podłogi ani przedniej ściany.
+- P41 A: po rozwinięciu „+N” nagłówek pokazuje pełną liczbę („Zaznaczenia (7)”); tak samo w raporcie.
+- P42 A: zablokowany raport — komunikat „Brakuje decyzji: N — w tym M w dalszych miejscach” z przyciskiem „rozwiń”.
+- P43 A: „do kontroli” w kolorze neutralnym (niebieski), czerwień tylko dla wysokiej pewności; odrzucone pozycje z czytelnym tekstem.
+- P44 B: zmiana towaru po decyzjach zachowuje decyzje przy miejscach, które zostają.
+
+## Z pre-mortem (docs/pm/09-pre-mortem.md) — działania BLOK na noc
+- Wyniki obu aut pokazu zapisane w aplikacji jako tryb awaryjny, gdy usługa na OMENie nie odpowiada.
+- Własny plik do 50 MB przez publiczny adres: limit i timeout proxy ≥ 120 s, test przez ksefbot.pl.
+- Po wdrożeniu: `curl` = 200 i zapytanie testowe z prawdziwym wynikiem (nie dane makiety); commit SHA w stopce.
+- Test auta A z dodatkiem w podłodze po każdym z 6 towarów — pozycja nadal widoczna.
+- Lista A1–A11 (06-scenariusze-testow.md) skryptem o 05:00.
